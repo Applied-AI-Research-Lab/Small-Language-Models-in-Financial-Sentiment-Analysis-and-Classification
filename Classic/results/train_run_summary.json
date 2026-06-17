@@ -1,0 +1,35 @@
+{
+  "config": {
+    "train_csv": "Datasets/financial_phrasebank/train.csv",
+    "val_csv": "Datasets/financial_phrasebank/validation.csv",
+    "artifacts_dir": "Classic/artifacts",
+    "results_dir": "Classic/results",
+    "random_state": 42,
+    "n_splits": 5,
+    "tfidf_max_features": 20000,
+    "tfidf_ngram_min": 1,
+    "tfidf_ngram_max": 2,
+    "tfidf_min_df": 2,
+    "tfidf_max_df": 0.98,
+    "logreg_c": 4.0,
+    "svm_c": 1.0,
+    "xgb_n_estimators": 350,
+    "xgb_max_depth": 6,
+    "xgb_learning_rate": 0.05,
+    "xgb_subsample": 0.9,
+    "xgb_colsample_bytree": 0.9
+  },
+  "train_val_rows": 1924,
+  "label_distribution": {
+    "neutral": 1182,
+    "positive": 485,
+    "negative": 257
+  },
+  "xgb_label_classes": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "artifacts_dir": "Classic/artifacts",
+  "results_dir": "Classic/results"
+}
