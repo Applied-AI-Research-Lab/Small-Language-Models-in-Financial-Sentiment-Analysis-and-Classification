@@ -1,0 +1,23 @@
+{
+  "LogReg": {
+    "accuracy": 0.9088235294117647,
+    "mean_confidence": 0.8164340220304612,
+    "confidence_gap": -0.09238950738130347,
+    "brier_multiclass": 0.14270394996974006,
+    "ece_10bin": 0.09851222744266405
+  },
+  "Linear SVM": {
+    "accuracy": 0.9205882352941176,
+    "mean_confidence": 0.691159536850992,
+    "confidence_gap": -0.22942869844312563,
+    "brier_multiclass": 0.20411339292922873,
+    "ece_10bin": 0.23008402459070548
+  },
+  "XGBoost": {
+    "accuracy": 0.9,
+    "mean_confidence": 0.8878788125294118,
+    "confidence_gap": -0.012121187470588213,
+    "brier_multiclass": 0.14657247644943583,
+    "ece_10bin": 0.040585074705882386
+  }
+}

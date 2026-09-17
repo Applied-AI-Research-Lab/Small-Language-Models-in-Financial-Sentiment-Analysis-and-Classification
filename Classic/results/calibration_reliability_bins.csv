@@ -1,0 +1,31 @@
+model,bin,mean_confidence,accuracy,n
+LogReg,0,,,0
+LogReg,1,,,0
+LogReg,2,,,0
+LogReg,3,0.3878,0.5000,4
+LogReg,4,0.4583,0.3636,11
+LogReg,5,0.5590,0.6154,26
+LogReg,6,0.6490,0.8333,30
+LogReg,7,0.7511,0.8889,45
+LogReg,8,0.8607,0.9785,93
+LogReg,9,0.9400,1.0000,131
+Linear SVM,0,,,0
+Linear SVM,1,,,0
+Linear SVM,2,,,0
+Linear SVM,3,0.3705,0.3333,3
+Linear SVM,4,0.4510,0.6452,31
+Linear SVM,5,0.5499,0.7872,47
+Linear SVM,6,0.6556,0.9571,70
+Linear SVM,7,0.7511,0.9917,121
+Linear SVM,8,0.8404,1.0000,66
+Linear SVM,9,0.9065,1.0000,2
+XGBoost,0,,,0
+XGBoost,1,,,0
+XGBoost,2,,,0
+XGBoost,3,0.3798,0.0000,2
+XGBoost,4,0.4668,0.4545,11
+XGBoost,5,0.5539,0.7692,13
+XGBoost,6,0.6534,0.5833,12
+XGBoost,7,0.7537,0.6429,28
+XGBoost,8,0.8514,0.9487,39
+XGBoost,9,0.9644,0.9745,235

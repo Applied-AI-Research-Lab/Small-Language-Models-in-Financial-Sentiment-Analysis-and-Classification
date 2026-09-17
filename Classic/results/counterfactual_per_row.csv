@@ -1,0 +1,121 @@
+system,item_id,sentence,orig_label,cf_label,expected_if_tracking,tracks,sentence_anchored
+qwen,0,Sanoma News ' advertising sales decreased by 22 % during the year .,negative,neutral,neutral,True,False
+qwen,9,"The total donation amount is EUR 1,115,000 .",neutral,negative,positive,False,False
+qwen,10,"The company reported a profit of 800,000 euro ($ 1.2 mln)on the sale of its Varesvuo Partners sub-group and a loss of 400,000 euro $ 623,000 caused by the sale of its program production subsidiary Oy Filmiteollisuus Fine Ab .",neutral,positive,positive,True,False
+qwen,13,"She will succeed Krister Kylas , who has decided to leave TeliaSonera .",neutral,negative,positive,False,False
+qwen,14,Operating profit improved by 16.7 % to EUR 7.7 mn .,positive,positive,negative,False,True
+qwen,15,The total value of the contract is some EUR 8 million .,neutral,negative,positive,False,False
+qwen,18,Cameco typically prices sales contracts using a 40:60 ratio of fixed prices and spot prices .,neutral,neutral,positive,False,True
+qwen,21,Ruukki 's order book at the end of 2010 was 30 % up year-on-year and 10 % up quarter-on-quarter .,positive,neutral,negative,False,False
+qwen,32,"Pretax profit totalled EUR 2.0 mn , compared to a loss of EUR 159.2 mn in the fourth quarter of 2008 .",negative,neutral,neutral,True,False
+qwen,34,No planned closing date was provided .,neutral,negative,positive,False,False
+qwen,35,The value of the total investment is about EUR 600mn .,neutral,neutral,positive,False,True
+qwen,39,Most of the dividend will go to the Grimaldi family .,neutral,negative,positive,False,False
+qwen,42,"OUTOTEC OYJ PRESS RELEASE , FEBRUARY 19 , 2008 AT 11.00 AM Outotec has won two large minerals processing technology orders from Mirabela Mineracao do Brasil Ltda , Brazil and from Cumerio Med JSCo , Bulgaria .",positive,positive,negative,False,True
+qwen,44,"Following the demerger , the vice president of the group 's pharmaceutical trade in Finland , Jukka Niemi , will be appointed managing director of Oriola in addition to his current responsibilities .",neutral,neutral,positive,False,True
+qwen,57,The first stage of the contract covers 133 stores and 600 cash registers .,neutral,neutral,positive,False,True
+qwen,74,"In July-September 2009 , Konecranes ' sales decreased to EUR 368.7 mn from EUR 520.4 mn in July-September 2008 .",negative,neutral,neutral,True,False
+qwen,80,Net sales have been eaten by the weak US dollar .,negative,negative,neutral,False,True
+qwen,81,Productional situation has now improved .,positive,neutral,negative,False,False
+qwen,95,SRV lowered its net sales estimate for the whole of 2008 due to uncertainties in housing sales .,negative,neutral,neutral,True,False
+qwen,96,The maximum number of new shares to be offered is 22 million .,neutral,negative,positive,False,False
+qwen,99,No changes in media activity were seen in October compared with September .,neutral,neutral,positive,False,True
+qwen,103,"In April-June 2008 , Scanfil 's net sales totalled EUR 58.7 mn and operating profit EUR 6.6 mn .",neutral,neutral,positive,False,True
+qwen,107,"Following the registration , the number of issued and outstanding shares of Basware is 12,890,829 .",neutral,neutral,positive,False,True
+qwen,113,"Finnish power supply solutions and systems provider Efore Oyj said its net loss widened to 3.2 mln euro $ 4.2 mln for the first quarter of fiscal 2006-2007 ending October 31 , 2007 from 900,000 euro $ 1.2 mln for the same period of fiscal 2005-06 .",negative,negative,neutral,False,True
+qwen,116,"Seven-month sales of Ragutis , which is controlled by the Finnish brewery Olvi , declined by 11.2 percent , to 15.41 million liters , and the company held 9.89 percent of the market .",neutral,negative,positive,False,False
+qwen,121,"BAVARIA Industriekapital AG 's 2006 revenues were EUR 333 million , with an EBITDA of EUR 51 million .",neutral,neutral,positive,False,True
+qwen,128,The company moved to an operating profit of EUR10 .9 m versus an operating loss of EUR15 .3 m. It also turned to EPS of EUR0 .08 versus loss per share of EUR0 .04 .,positive,negative,negative,True,False
+qwen,129,Earnings per share EPS amounted to EUR0 .01 .,neutral,negative,positive,False,False
+qwen,150,Cargotec Germany GmbH has been awarded a contract by Stadtverwaltung Mainz for chassis bodies under Open procedure .,positive,neutral,negative,False,False
+qwen,151,"( ADP News ) - Dec 11 , 2008 - Finnish construction and engineering company Outotec Oyj ( OMX : OTE1V ) said today it won a EUR 28 million ( USD 36.8 m ) order to expand the phosphate concentrator in Siilinjarvi of Norwegian minera",positive,neutral,negative,False,False
+qwen,152,Profit for the period increased from EUR 2.9 mn to EUR 10.5 mn .,positive,neutral,negative,False,False
+qwen,159,Viking Line manages well with its current ferries .,positive,neutral,negative,False,False
+qwen,175,"In a letter to Economic Affairs Minister , the listed Estonian shipping company Tallink asks for the approval to be entitled to a 15 % cut in port fees in 2010 .",neutral,negative,positive,False,False
+qwen,182,"The brokerage said 2006 has seen a ` true turning point ' in European steel base prices , with better pricing seen carrying through the second quarter of 2006 .",positive,negative,negative,True,False
+qwen,184,"Swedish , Finnish and Danish listed companies are organized in three market cap segments , Nordic Large Cap , Mid Cap and Small Cap .",neutral,neutral,positive,False,True
+qwen,194,"Group EBIT for the first half was EUR13 .6 m US$ 17.8 m , falling short of the EUR22 .5 m it posted for the same period of 2009 .",negative,neutral,neutral,True,False
+qwen,206,"India 's trade with Russia currently stands at four billion dollars , growing 9.6 per cent in fiscal 2007 .",neutral,positive,positive,True,False
+qwen,217,"Marathon now has a 4.6 percent stake in PLX , it said , according to Bloomberg .",positive,negative,negative,True,False
+qwen,220,Profit after taxes totaled EUR 12.1 mn .,neutral,positive,positive,True,False
+qwen,235,Finnish silicon wafer technology company Okmetic Oyj OMX Helsinki : OKM1V said on Wednesday 17 September that it will invest EUR6m in its sensor wafer business during 2009 .,positive,neutral,negative,False,False
+qwen,238,The invention carries International Patent Publication No. .,neutral,neutral,positive,False,True
+qwen,240,Production capacity will increase from 36 000 to 85 000 tonnes per year and the raw material will continue to be recycled paper and board .,neutral,positive,positive,True,False
+qwen,249,"In January-June 2010 , diluted loss per share stood at EUR0 .3 versus EUR0 .1 in the first half of 2009 .",negative,neutral,neutral,True,False
+qwen,256,The company did not disclose the price of the acquisition .,neutral,negative,positive,False,False
+qwen,263,"These financing arrangements will enable the company to ensure , in line with its treasury policy , that it has sufficient financial instruments at its disposal for its potential capital requirements .",neutral,neutral,positive,False,True
+qwen,271,"Foodservice and consumer goods markets are served by approximately 13,000 people in 54 manufacturing units and several sales offices in 33 countries .",neutral,neutral,positive,False,True
+qwen,278,"In Sweden , operating profit for the period under review totaled EUR 3.4 mn , up 30.8 % from the corresponding period in 2005 .",positive,neutral,negative,False,False
+qwen,282,This will bring cost savings of about EUR 3mn a year .,positive,positive,negative,False,True
+qwen,283,"Food sales totalled EUR 323.5 mn in October 2009 , representing a decrease of 5.5 % from October 2008 .",negative,neutral,neutral,True,False
+qwen,284,The company had net sales of EUR 19.8 mn and a pre-tax profit of EUR 1.8 mn in 2005 .,neutral,neutral,positive,False,True
+qwen,286,"Citigroup , Inc ( NYSE : C ) has announced that its Global Transaction Services ( GTS ) business has been awarded a new mandate by Finland-based Pohjola Bank Group .",neutral,positive,positive,True,False
+qwen,292,The company 's equipment rental portfolio consists primarily of tools for small and mid-sized customers in the construction industry .,neutral,neutral,positive,False,True
+qwen,298,"Having a China based operation will not only enable us to fully leverage our resources and expertise in wireless solutions , but also strengthen our capability to offer industry-leading products for our customers in China . ''",positive,positive,negative,False,True
+qwen,302,Finnish metal products company Componenta Oyj net profit rose to 26.1 mln euro ( $ 35.9 mln ) for the first quarter of 2007 from 5.3 mln euro ( $ 7.3 mln ) for the same period of 2006 .,positive,neutral,negative,False,False
+qwen,304,"The financial impact is estimated to be some 1.5 MEUR annual improvement in the division 's result , starting from fiscal year 2007 .",positive,positive,negative,False,True
+qwen,306,"In 2010 , Sanoma Magazines expects net sales to be at the 2009 level .",neutral,neutral,positive,False,True
+qwen,310,"says Brian Burton , Head of IT Security , Vodafone UK .",neutral,neutral,positive,False,True
+qwen,324,He confirmed his view on July 6 .,neutral,negative,positive,False,False
+qwen,325,Residents access to the block is planned to be from Aleksandri Street .,neutral,negative,positive,False,False
+qwen,326,"According to CEO Matti Perkonoja of the parent company HKScan , the company 's performance in the first quarter of 2010 has remained clearly below the level of the corresponding period in 2009 .",negative,negative,neutral,False,True
+gemma,0,Sanoma News ' advertising sales decreased by 22 % during the year .,negative,positive,neutral,False,False
+gemma,9,"The total donation amount is EUR 1,115,000 .",neutral,positive,positive,True,False
+gemma,10,"The company reported a profit of 800,000 euro ($ 1.2 mln)on the sale of its Varesvuo Partners sub-group and a loss of 400,000 euro $ 623,000 caused by the sale of its program production subsidiary Oy Filmiteollisuus Fine Ab .",negative,neutral,neutral,True,False
+gemma,13,"She will succeed Krister Kylas , who has decided to leave TeliaSonera .",neutral,positive,positive,True,False
+gemma,14,Operating profit improved by 16.7 % to EUR 7.7 mn .,positive,positive,negative,False,True
+gemma,15,The total value of the contract is some EUR 8 million .,neutral,positive,positive,True,False
+gemma,18,Cameco typically prices sales contracts using a 40:60 ratio of fixed prices and spot prices .,neutral,neutral,positive,False,True
+gemma,21,Ruukki 's order book at the end of 2010 was 30 % up year-on-year and 10 % up quarter-on-quarter .,positive,negative,negative,True,False
+gemma,32,"Pretax profit totalled EUR 2.0 mn , compared to a loss of EUR 159.2 mn in the fourth quarter of 2008 .",negative,neutral,neutral,True,False
+gemma,34,No planned closing date was provided .,neutral,negative,positive,False,False
+gemma,35,The value of the total investment is about EUR 600mn .,neutral,positive,positive,True,False
+gemma,39,Most of the dividend will go to the Grimaldi family .,neutral,positive,positive,True,False
+gemma,42,"OUTOTEC OYJ PRESS RELEASE , FEBRUARY 19 , 2008 AT 11.00 AM Outotec has won two large minerals processing technology orders from Mirabela Mineracao do Brasil Ltda , Brazil and from Cumerio Med JSCo , Bulgaria .",positive,positive,negative,False,True
+gemma,44,"Following the demerger , the vice president of the group 's pharmaceutical trade in Finland , Jukka Niemi , will be appointed managing director of Oriola in addition to his current responsibilities .",neutral,positive,positive,True,False
+gemma,57,The first stage of the contract covers 133 stores and 600 cash registers .,neutral,positive,positive,True,False
+gemma,74,"In July-September 2009 , Konecranes ' sales decreased to EUR 368.7 mn from EUR 520.4 mn in July-September 2008 .",negative,positive,neutral,False,False
+gemma,80,Net sales have been eaten by the weak US dollar .,negative,negative,neutral,False,True
+gemma,81,Productional situation has now improved .,positive,neutral,negative,False,False
+gemma,95,SRV lowered its net sales estimate for the whole of 2008 due to uncertainties in housing sales .,negative,negative,neutral,False,True
+gemma,96,The maximum number of new shares to be offered is 22 million .,neutral,positive,positive,True,False
+gemma,99,No changes in media activity were seen in October compared with September .,neutral,neutral,positive,False,True
+gemma,103,"In April-June 2008 , Scanfil 's net sales totalled EUR 58.7 mn and operating profit EUR 6.6 mn .",neutral,positive,positive,True,False
+gemma,107,"Following the registration , the number of issued and outstanding shares of Basware is 12,890,829 .",neutral,positive,positive,True,False
+gemma,113,"Finnish power supply solutions and systems provider Efore Oyj said its net loss widened to 3.2 mln euro $ 4.2 mln for the first quarter of fiscal 2006-2007 ending October 31 , 2007 from 900,000 euro $ 1.2 mln for the same period of fiscal 2005-06 .",positive,negative,negative,True,False
+gemma,116,"Seven-month sales of Ragutis , which is controlled by the Finnish brewery Olvi , declined by 11.2 percent , to 15.41 million liters , and the company held 9.89 percent of the market .",negative,negative,neutral,False,True
+gemma,121,"BAVARIA Industriekapital AG 's 2006 revenues were EUR 333 million , with an EBITDA of EUR 51 million .",positive,positive,negative,False,True
+gemma,128,The company moved to an operating profit of EUR10 .9 m versus an operating loss of EUR15 .3 m. It also turned to EPS of EUR0 .08 versus loss per share of EUR0 .04 .,positive,negative,negative,True,False
+gemma,129,Earnings per share EPS amounted to EUR0 .01 .,neutral,neutral,positive,False,True
+gemma,150,Cargotec Germany GmbH has been awarded a contract by Stadtverwaltung Mainz for chassis bodies under Open procedure .,positive,neutral,negative,False,False
+gemma,151,"( ADP News ) - Dec 11 , 2008 - Finnish construction and engineering company Outotec Oyj ( OMX : OTE1V ) said today it won a EUR 28 million ( USD 36.8 m ) order to expand the phosphate concentrator in Siilinjarvi of Norwegian minera",positive,neutral,negative,False,False
+gemma,152,Profit for the period increased from EUR 2.9 mn to EUR 10.5 mn .,positive,positive,negative,False,True
+gemma,159,Viking Line manages well with its current ferries .,neutral,neutral,positive,False,True
+gemma,175,"In a letter to Economic Affairs Minister , the listed Estonian shipping company Tallink asks for the approval to be entitled to a 15 % cut in port fees in 2010 .",positive,negative,negative,True,False
+gemma,182,"The brokerage said 2006 has seen a ` true turning point ' in European steel base prices , with better pricing seen carrying through the second quarter of 2006 .",positive,negative,negative,True,False
+gemma,184,"Swedish , Finnish and Danish listed companies are organized in three market cap segments , Nordic Large Cap , Mid Cap and Small Cap .",neutral,positive,positive,True,False
+gemma,194,"Group EBIT for the first half was EUR13 .6 m US$ 17.8 m , falling short of the EUR22 .5 m it posted for the same period of 2009 .",negative,neutral,neutral,True,False
+gemma,206,"India 's trade with Russia currently stands at four billion dollars , growing 9.6 per cent in fiscal 2007 .",neutral,positive,positive,True,False
+gemma,217,"Marathon now has a 4.6 percent stake in PLX , it said , according to Bloomberg .",positive,negative,negative,True,False
+gemma,220,Profit after taxes totaled EUR 12.1 mn .,neutral,positive,positive,True,False
+gemma,235,Finnish silicon wafer technology company Okmetic Oyj OMX Helsinki : OKM1V said on Wednesday 17 September that it will invest EUR6m in its sensor wafer business during 2009 .,positive,neutral,negative,False,False
+gemma,238,The invention carries International Patent Publication No. .,positive,positive,negative,False,True
+gemma,240,Production capacity will increase from 36 000 to 85 000 tonnes per year and the raw material will continue to be recycled paper and board .,positive,neutral,negative,False,False
+gemma,249,"In January-June 2010 , diluted loss per share stood at EUR0 .3 versus EUR0 .1 in the first half of 2009 .",negative,neutral,neutral,True,False
+gemma,256,The company did not disclose the price of the acquisition .,neutral,negative,positive,False,False
+gemma,263,"These financing arrangements will enable the company to ensure , in line with its treasury policy , that it has sufficient financial instruments at its disposal for its potential capital requirements .",neutral,positive,positive,True,False
+gemma,271,"Foodservice and consumer goods markets are served by approximately 13,000 people in 54 manufacturing units and several sales offices in 33 countries .",neutral,positive,positive,True,False
+gemma,278,"In Sweden , operating profit for the period under review totaled EUR 3.4 mn , up 30.8 % from the corresponding period in 2005 .",positive,positive,negative,False,True
+gemma,282,This will bring cost savings of about EUR 3mn a year .,positive,neutral,negative,False,False
+gemma,283,"Food sales totalled EUR 323.5 mn in October 2009 , representing a decrease of 5.5 % from October 2008 .",negative,negative,neutral,False,True
+gemma,284,The company had net sales of EUR 19.8 mn and a pre-tax profit of EUR 1.8 mn in 2005 .,neutral,positive,positive,True,False
+gemma,286,"Citigroup , Inc ( NYSE : C ) has announced that its Global Transaction Services ( GTS ) business has been awarded a new mandate by Finland-based Pohjola Bank Group .",positive,positive,negative,False,True
+gemma,292,The company 's equipment rental portfolio consists primarily of tools for small and mid-sized customers in the construction industry .,neutral,positive,positive,True,False
+gemma,298,"Having a China based operation will not only enable us to fully leverage our resources and expertise in wireless solutions , but also strengthen our capability to offer industry-leading products for our customers in China . ''",positive,neutral,negative,False,False
+gemma,302,Finnish metal products company Componenta Oyj net profit rose to 26.1 mln euro ( $ 35.9 mln ) for the first quarter of 2007 from 5.3 mln euro ( $ 7.3 mln ) for the same period of 2006 .,positive,positive,negative,False,True
+gemma,304,"The financial impact is estimated to be some 1.5 MEUR annual improvement in the division 's result , starting from fiscal year 2007 .",positive,negative,negative,True,False
+gemma,306,"In 2010 , Sanoma Magazines expects net sales to be at the 2009 level .",neutral,neutral,positive,False,True
+gemma,310,"says Brian Burton , Head of IT Security , Vodafone UK .",neutral,neutral,positive,False,True
+gemma,324,He confirmed his view on July 6 .,neutral,positive,positive,True,False
+gemma,325,Residents access to the block is planned to be from Aleksandri Street .,neutral,positive,positive,True,False
+gemma,326,"According to CEO Matti Perkonoja of the parent company HKScan , the company 's performance in the first quarter of 2010 has remained clearly below the level of the corresponding period in 2009 .",negative,negative,neutral,False,True

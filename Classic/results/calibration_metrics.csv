@@ -1,0 +1,4 @@
+model,accuracy,mean_confidence,conf_minus_acc_pp,brier_multiclass,ece_10bin
+LogReg,0.9088,0.8164,-9.24,0.1427,0.0985
+Linear SVM,0.9206,0.6912,-22.94,0.2041,0.2301
+XGBoost,0.9000,0.8879,-1.21,0.1466,0.0406

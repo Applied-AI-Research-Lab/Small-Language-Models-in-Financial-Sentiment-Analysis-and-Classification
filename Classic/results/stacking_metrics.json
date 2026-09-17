@@ -1,0 +1,29 @@
+{
+  "stacking_lr": {
+    "accuracy": 0.9352941176470588,
+    "macro_f1": 0.9164565203845072,
+    "weighted_f1": 0.9348373650674603,
+    "n": 340,
+    "features": "9 OOF probabilities",
+    "cv": "5-fold stratified, seed 42"
+  },
+  "majority_vote": {
+    "accuracy": 0.9176470588235294,
+    "macro_f1": 0.8923047542602992,
+    "weighted_f1": 0.9166092663970691
+  },
+  "mcnemar": {
+    "stacking_vs_qwen_zs": {
+      "b": 4,
+      "c": 7,
+      "chi2_cc": 0.36363636363636365,
+      "p_exact": 0.548828125
+    },
+    "stacking_vs_majority": {
+      "b": 8,
+      "c": 2,
+      "chi2_cc": 2.5,
+      "p_exact": 0.109375
+    }
+  }
+}

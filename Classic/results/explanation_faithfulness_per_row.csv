@@ -1,0 +1,681 @@
+model,sentence,terms,n_pct
+Qwen3.5-4B (ZS),Sanoma News ' advertising sales decreased by 22 % during the,decreased | decreased by,2
+Qwen3.5-4B (ZS),The intent of the article was to focus attention on the fact,profit | drop | development | different,1
+Qwen3.5-4B (ZS),"Country : , Finland Sector : Construction-Real Estate Target",profit | Finland | CapMan | Agreed | Divestment,1
+Qwen3.5-4B (ZS),Both operating profit and net sales for the 12-month period ,increased,1
+Qwen3.5-4B (ZS),The parties have agreed not to disclose the price of the dea,profit | rise | not to disclose,1
+Qwen3.5-4B (ZS),The estimated value of the deal is USD 9.2 million .,profit | rise | drop | USD 9.2 million,0
+Qwen3.5-4B (ZS),"A total of 1,800,000 stock options were issued in the 2003 s",profit | drop | options | total,0
+Qwen3.5-4B (ZS),"Department store sales improved by 14 % to EUR 1,070.6 mn .",improved,1
+Qwen3.5-4B (ZS),"The 10,000-odd square metre plot that Stockmann has bought f",center | location | profit | rise | drop,0
+Qwen3.5-4B (ZS),"The total donation amount is EUR 1,115,000 .",total | is | rose | profit | dropped,2
+Qwen3.5-4B (ZS),"The company reported a profit of 800,000 euro ($ 1.2 mln)on ",neutral | negative | from | profit | production,1
+Qwen3.5-4B (ZS),Finnish Rautaruukki has been awarded a contract to supply an,awarded,3
+Qwen3.5-4B (ZS),Consolidated pretax profit decreased by 69.2 % to EUR 41.0 m,decreased,2
+Qwen3.5-4B (ZS),"She will succeed Krister Kylas , who has decided to leave Te",,0
+Qwen3.5-4B (ZS),Operating profit improved by 16.7 % to EUR 7.7 mn .,improved,2
+Qwen3.5-4B (ZS),The total value of the contract is some EUR 8 million .,,0
+Qwen3.5-4B (ZS),"Rockwell Collins is a provider of flight deck , cabin and in",provider | solutions | profit | rose | dropped,0
+Qwen3.5-4B (ZS),The bond has a value of EUR150m and a maturity of 4 years .,value | maturity | profit | rose | dropped,2
+Qwen3.5-4B (ZS),Cameco typically prices sales contracts using a 40:60 ratio ,prices | fixed | spot,1
+Qwen3.5-4B (ZS),Marimekko is considering further measures in the matter .,considering further measures,0
+Qwen3.5-4B (ZS),It 's not .,not,0
+Qwen3.5-4B (ZS),Ruukki 's order book at the end of 2010 was 30 % up year-on-,up | up,3
+Qwen3.5-4B (ZS),The profit after taxes was EUR 57.7 11.1 million .,rose | dropped | taxes | was,1
+Qwen3.5-4B (ZS),The company generates net sales of about 600 mln euro $ 775.,rose | dropped | about | employs,1
+Qwen3.5-4B (ZS),"Erkki Jarvinen , President of Rautakirja and the head of the",similar position | leave,0
+Qwen3.5-4B (ZS),Why not give your bedroom a cool makeover for summer .,cool,0
+Qwen3.5-4B (ZS),The company operates worldwide and employs in total approxim,approximately,2
+Qwen3.5-4B (ZS),F-Secure Internet Security 2010 is a security service for su,service | activities,0
+Qwen3.5-4B (ZS),The dividends payable annually shall be deducted from the sh,profit | rose | dropped | dividends payable | subscription price,0
+Qwen3.5-4B (ZS),"The company 's profit totaled Ls 578,100 in H1 2007 , down 3",down from | down | year,2
+Qwen3.5-4B (ZS),- Operating profit rose by 26.9 % to EUR 105.8 ( 83.4 ) mill,rose | operating profit,1
+Qwen3.5-4B (ZS),NWC ANALYSIS :,analysis,0
+Qwen3.5-4B (ZS),"Pretax profit totalled EUR 2.0 mn , compared to a loss of EU",loss,1
+Qwen3.5-4B (ZS),"Previously , the company expected its 2008 financial perform",profit | rose | dropped | remain | same level | as in,1
+Qwen3.5-4B (ZS),No planned closing date was provided .,provided | no,0
+Qwen3.5-4B (ZS),The value of the total investment is about EUR 600mn .,rose | dropped | about | EUR 600mn,0
+Qwen3.5-4B (ZS),Revenue in the quarter fell 8 percent to ( EURO ) 2.4 billio,fell,2
+Qwen3.5-4B (ZS),"The tests , conducted at Nokia Siemens ' LTE center of compe",production | tests | profit | rose | dropped,2
+Qwen3.5-4B (ZS),The company 's board of directors would propose a dividend o,neutral | dividend | profit | rose,0
+Qwen3.5-4B (ZS),Most of the dividend will go to the Grimaldi family .,profit | drop,0
+Qwen3.5-4B (ZS),The total value of these two contracts is over EUR 21 millio,total value | EUR 21 million,0
+Qwen3.5-4B (ZS),Systeemitiimi 's sales and project resources will also be st,resources | will,1
+Qwen3.5-4B (ZS),"OUTOTEC OYJ PRESS RELEASE , FEBRUARY 19 , 2008 AT 11.00 AM O",won,1
+Qwen3.5-4B (ZS),"Global sports equipment maker Amer Sports Corp. , whose bran",increase | strong,0
+Qwen3.5-4B (ZS),"Following the demerger , the vice president of the group 's ",profit | drop,0
+Qwen3.5-4B (ZS),The divested company is part of TietoEnator 's business area,divested | business area | profit | growth,0
+Qwen3.5-4B (ZS),"Sales in Latin America increased by 42 % to EUR 432mn , and ",increased | increase,5
+Qwen3.5-4B (ZS),Fancy Dans on the move FAB Glasgow gift and interiors store ,is,1
+Qwen3.5-4B (ZS),"In a release on Oct. 28 , Peab said the two businesses will ",profit | drop,0
+Qwen3.5-4B (ZS),The Stockmann department store will have a total floor space,investment | price tag,0
+Qwen3.5-4B (ZS),"Net sales totaled EUR 93.6 mn , up from EUR 93.2 mn in the c",up from,0
+Qwen3.5-4B (ZS),"( ADP News ) - Oct 31 , 2008 - Finnish food company Raisio O",jumped,0
+Qwen3.5-4B (ZS),"( ADP News ) - Oct 1 , 2008 - Finnish consulting and enginee",awarded,1
+Qwen3.5-4B (ZS),UPM-Kymmene www.upm-kymmene.com produces magazine papers and,produces | as well as,1
+Qwen3.5-4B (ZS),"In January , traffic , measured in revenue passenger kilomet",rose | went up,3
+Qwen3.5-4B (ZS),"The Group 's turnover in 2006 was EUR 39.2 million , and ope",rose | dropped,0
+Qwen3.5-4B (ZS),"( ADP News ) - Feb 11 , 2009 - Finnish wood products technol",decreased | down from | dropped to,1
+Qwen3.5-4B (ZS),The first stage of the contract covers 133 stores and 600 ca,contract | stores | covers,0
+Qwen3.5-4B (ZS),Net interest income increased by 4.5 % to EUR 31.4 mn from E,increased | Net interest income,1
+Qwen3.5-4B (ZS),Finnish Metso Paper has been awarded a contract for the rebu,awarded a contract,2
+Qwen3.5-4B (ZS),The enterprise value of Maritim Food AS has been determined ,rose | dropped | approximately,0
+Qwen3.5-4B (ZS),The fair value of the property portfolio doubled as a result,profit | drop,1
+Qwen3.5-4B (ZS),"Operating profit , excluding non-recurring items , totaled E",down from,2
+Qwen3.5-4B (ZS),"In Q1 of 2009 , the company 's operating loss totalled EUR 0",operating loss,2
+Qwen3.5-4B (ZS),"The final price will be specified by 14 May 2010 , the acqui",profit | rose | dropped,0
+Qwen3.5-4B (ZS),"Established in 1989 , CapMan manages Nordic buyout , mezzani",profit | approximately | total,0
+Qwen3.5-4B (ZS),Finnish communication electronics components supplier Scanfi,15% lower,4
+Qwen3.5-4B (ZS),"The new majority owners of Aspocomp Thailand Co. , Ltd are c",present | joint venture,0
+Qwen3.5-4B (ZS),Satama 's net profit for the third quarter of 2007 rose to 2,rose to,1
+Qwen3.5-4B (ZS),Panostaja Oyj 's Board also decided at its organisational me,,0
+Qwen3.5-4B (ZS),Stora Enso 's third-quarter pre-tax profit doubled to EUR 19,doubled,0
+Qwen3.5-4B (ZS),"Finnish Suominen Corporation that makes wipes , nonwovens , ",expects changes... to reduce sales,0
+Qwen3.5-4B (ZS),Cash flow from operations in January-December 2008 was a neg,positive | negative,2
+Qwen3.5-4B (ZS),They both will report to Oriola-KD 's chief executive office,report | will,2
+Qwen3.5-4B (ZS),"In July-September 2009 , Konecranes ' sales decreased to EUR",decreased,1
+Qwen3.5-4B (ZS),"SRV will also build an aqua park with wellness area , a rest",area | will | park | and,1
+Qwen3.5-4B (ZS),"Established in 1987 , the SRV Group is a private Finnish con",profit | rise | is | Finland | established,1
+Qwen3.5-4B (ZS),Helsinki 19 May 2010 - Finnish company Lemminkainen Oyj ( HE,profit | rose | without disclosing financial details,1
+Qwen3.5-4B (ZS),"Finnair 's passenger load factor , which measures the number",dropped to | dropped,2
+Qwen3.5-4B (ZS),The company 's plant in Russia will continue to make tyres f,will | plant | profit | rose | dropped,0
+Qwen3.5-4B (ZS),Net sales have been eaten by the weak US dollar .,weak US dollar | eaten | dropped,0
+Qwen3.5-4B (ZS),Productional situation has now improved .,improved | neutral,0
+Qwen3.5-4B (ZS),Suomen Paikallissanomat Oy is part of Alma Media Group and i,is | currently | Finland,0
+Qwen3.5-4B (ZS),The energy shot is packed in a 100-millilitre bag with a scr,shot | bag | cap,2
+Qwen3.5-4B (ZS),Cargotec will also move Hallberg-Ivarsson 's service and ins,business | service | profit | rose | dropped,2
+Qwen3.5-4B (ZS),"The value of the order is EUR 700,000 .",neutral | the order,0
+Qwen3.5-4B (ZS),Stockholm-based Nordea Bank ( STO : NDA ) said yesterday it ,profit | rise,0
+Qwen3.5-4B (ZS),Return on capital employed rose by 4.8 percentage points to ,rose,1
+Qwen3.5-4B (ZS),The company says the measures are no longer needed .,no longer needed,0
+Qwen3.5-4B (ZS),Earnings per share EPS in 2005 decreased to EUR0 .66 from EU,decreased,0
+Qwen3.5-4B (ZS),"Finnish Exel Composites , a technology company that designs ",decreased | down from | decreased,1
+Qwen3.5-4B (ZS),Kone shares dropped 4.1 percent to  x20ac 43 US$ 55.77 in He,dropped to | dropped,1
+Qwen3.5-4B (ZS),The trade is in accordance with the agreement announced on 2,in accordance with | rise | fall | profit,2
+Qwen3.5-4B (ZS),It operates under three distinct brands : United Supermarket,operates | distinct brands,0
+Qwen3.5-4B (ZS),The total capacity of the factory will be approximately 100 ,approximately | profit | rose | dropped,0
+Qwen3.5-4B (ZS),SRV lowered its net sales estimate for the whole of 2008 due,lowered its net sales estimate | uncertainties in housing sales | estimate | due to,0
+Qwen3.5-4B (ZS),The maximum number of new shares to be offered is 22 million,dropped to,0
+Qwen3.5-4B (ZS),"Cooper SH , the UK distributor for lift equipment manufactur",fuel saving technologies | maintenance | and,0
+Qwen3.5-4B (ZS),GyPSii service supports ten different languages including Ko,ten different languages | including | profit | rose | dropped,0
+Qwen3.5-4B (ZS),No changes in media activity were seen in October compared w,rose | dropped | no changes,0
+Qwen3.5-4B (ZS),The mall will be financed on a parity basis by Pearl Plaza L,will be | investment,0
+Qwen3.5-4B (ZS),VNH generates annual net sales of about 5 mln eur and employ,profit | rose | employs 21 people | about 5 mln eur,1
+Qwen3.5-4B (ZS),The company has some 410 employees and an annual turnover of,employees | turnover | profit | rose | dropped,0
+Qwen3.5-4B (ZS),"In April-June 2008 , Scanfil 's net sales totalled EUR 58.7 ",neutral | rose | dropped,1
+Qwen3.5-4B (ZS),Goodwill and other intangible assets account for some 2.0 ml,profit | rose | dropped,0
+Qwen3.5-4B (ZS),"London 's leading shares today jumped almost 100 points , or",profit | drop | jumped almost 100 points,1
+Qwen3.5-4B (ZS),"Comparable operating profit totaled EUR 4.7 mn , down from E",down from,4
+Qwen3.5-4B (ZS),"Following the registration , the number of issued and outsta",is | the | rose | dropped,0
+Qwen3.5-4B (ZS),The transaction is expected to be completed next spring .,is expected | completed,0
+Qwen3.5-4B (ZS),"In the sinter plant , limestone and coke breeze are mixed wi",mixed | sintered | raw material,0
+Qwen3.5-4B (ZS),The operating margin of Aker Yards Cruise & Ferries division,went down,4
+Qwen3.5-4B (ZS),Almost the entire office building will be occupied by Metso ,occupied by Metso | will be | office,0
+Qwen3.5-4B (ZS),Pharmaceutical market in Belgium Global Research & Data Serv,research | about,0
+Qwen3.5-4B (ZS),Finnish power supply solutions and systems provider Efore Oy,positive | said | fiscal | positive,1
+Qwen3.5-4B (ZS),Another noticeable thing is that the search for Tata and Air,is | related | noticeable,0
+Qwen3.5-4B (ZS),The expanded plant is scheduled to be operational by the mid,is scheduled | operational,0
+Qwen3.5-4B (ZS),"Seven-month sales of Ragutis , which is controlled by the Fi",negative | declined | dropped to,2
+Qwen3.5-4B (ZS),"Svyturys-Utenos Alus , which is controlled by the Nordic gro",growth | beer sales,2
+Qwen3.5-4B (ZS),The company also said that in Poland a profitability program,profit | rose | program | launched,1
+Qwen3.5-4B (ZS),Finnish media group Talentum has issued a profit warning .,warning | profit warning,0
+Qwen3.5-4B (ZS),Protalix closed at $ 10.71 on Friday on the American Stock E,rose | dropped | closed at | market cap,0
+Qwen3.5-4B (ZS),BAVARIA Industriekapital AG 's 2006 revenues were EUR 333 mi,rose | dropped | were | EUR | EBITDA,1
+Qwen3.5-4B (ZS),"Following the registration , the share capital of Biotie is ",is | share capital | rose | dropped,0
+Qwen3.5-4B (ZS),The sellers were EOSS Innovationsmanagement and a group of p,EOSS Innovations | private individuals,0
+Qwen3.5-4B (ZS),This resulted in improved sales figures in Sweden .,improved,0
+Qwen3.5-4B (ZS),4 February 2011 - Finnish broadband data communication syste,rocketed,1
+Qwen3.5-4B (ZS),The total capital of funds managed by the bank decreased by ,decreased | decreased by,2
+Qwen3.5-4B (ZS),The soapstone deposits in the Medvezhyegorsk area are expect,increase | considerably,3
+Qwen3.5-4B (ZS),The company moved to an operating profit of EUR10 .9 m versu,versus | to profit,1
+Qwen3.5-4B (ZS),Earnings per share EPS amounted to EUR0 .01 .,profit | rose | earnings,0
+Qwen3.5-4B (ZS),The Elcoteq group recently announced that the last three mon,positive | loss | dropped to | major loss | positive,0
+Qwen3.5-4B (ZS),Work on the assignment has already started and is due for co,started | due | to profit | rose to,0
+Qwen3.5-4B (ZS),The value of the contracts is about EUR 3.3 mn .,rose | dropped | about,0
+Qwen3.5-4B (ZS),Net sales fell by 33 % from the third quarter of 2008 to EUR,fell by 33% | fell | sales fell,3
+Qwen3.5-4B (ZS),The company 's net profit rose 11.4 % on the year to 82.2 mi,rose | up,2
+Qwen3.5-4B (ZS),The company 's board of directors will propose a dividend of,board | dividend,0
+Qwen3.5-4B (ZS),He joins Technopolis from KONE where he has held various pos,business | development | director,0
+Qwen3.5-4B (ZS),LCS 's services cover the whole life cycle of software and i,services | development,2
+Qwen3.5-4B (ZS),"The portfolio comprises of 118,000 m2 of leasable space with",comprises | let | government,0
+Qwen3.5-4B (ZS),Operating profit fell to EUR 38.1 mn from EUR 55.3 mn in 200,fell,2
+Qwen3.5-4B (ZS),"Ruukki 's delivery includes steel structures , including ins",includes | installation,1
+Qwen3.5-4B (ZS),UPM-Kymmene said its has ` not indicated any interest in any,profit | drop | has not indicated any interest,1
+Qwen3.5-4B (ZS),"Profit for the period totalled EUR 0.8 mn , down from EUR 1.",down from,0
+Qwen3.5-4B (ZS),"BasWare Invoice Processing , BasWare Contract Matching , Bas",part of | are | suite,1
+Qwen3.5-4B (ZS),Panostaja owns a 68.77 pct of share capital and the voting r,share capital | voting rights,0
+Qwen3.5-4B (ZS),Closing of such transaction took place today .,profit | rose | dropped,0
+Qwen3.5-4B (ZS),Finnish Cargotec 's Kalmar has received a significant order ,significant | order,1
+Qwen3.5-4B (ZS),Delivery is expected to take place later this month .,neutral,0
+Qwen3.5-4B (ZS),"The number of class A shares remains unchanged at 9,526,089 ",rose | dropped | unchanged,2
+Qwen3.5-4B (ZS),Technopolis has approximately 130 customer companies in Jyva,approximately,1
+Qwen3.5-4B (ZS),Cargotec Germany GmbH has been awarded a contract by Stadtve,awarded | awarded contract | rose to | dropped to,0
+Qwen3.5-4B (ZS),"( ADP News ) - Dec 11 , 2008 - Finnish construction and engi",won | order,1
+Qwen3.5-4B (ZS),Profit for the period increased from EUR 2.9 mn to EUR 10.5 ,increased from,1
+Qwen3.5-4B (ZS),"Tyrvaan Sanomat , published twice a week by Tyrvaan Sanomat ",published twice a week | appears in,0
+Qwen3.5-4B (ZS),The terms and conditions of the year 2003 stock option schem,terms and conditions | published,0
+Qwen3.5-4B (ZS),More than 80 special events in the three counties during fou,and its | branch,1
+Qwen3.5-4B (ZS),10 February 2011 - Finnish media company Sanoma Oyj HEL : SA,to profit,1
+Qwen3.5-4B (ZS),"In January-September 2007 , the group 's net sales from cont",rose to,1
+Qwen3.5-4B (ZS),Completion of the transaction is subject to a final agreemen,subject to | final agreement,0
+Qwen3.5-4B (ZS),Viking Line manages well with its current ferries .,manages well,1
+Qwen3.5-4B (ZS),Motorola Inc. of the United States came second with shipment,rose | dropped,1
+Qwen3.5-4B (ZS),The Extraordinary General Meeting is expected to take place ,no later than | is expected | take place,0
+Qwen3.5-4B (ZS),Stichting Pensioenfonds ABP : 4 118 122 shares representing ,share capital | voting rights | rose | dropped | profit,0
+Qwen3.5-4B (ZS),The order also includes start-up and commissioning services ,neutral | profit | down | start-up and commissioning services,0
+Qwen3.5-4B (ZS),The objective is that trading in the shares will commence on,is | will,1
+Qwen3.5-4B (ZS),The figure includes the change in the fair value of the prop,rose | dropped | change | fair value,1
+Qwen3.5-4B (ZS),The net sales of Healthcare Trade business in 2009 were EUR ,rose | dropped,0
+Qwen3.5-4B (ZS),These moderate but significant changes resulted in a signifi,moderate but significant,0
+Qwen3.5-4B (ZS),"Finnish lifting equipment maker Kone Oyj said on October 4 ,",won an order,1
+Qwen3.5-4B (ZS),Den Bosch-based TomTom is Europe 's largest maker of automot,is | and | profit | rose | dropped,0
+Qwen3.5-4B (ZS),"OTHER  North-Rhine Westphalia - Is to issue a benchmark , 5 ",fixed | issue,1
+Qwen3.5-4B (ZS),Poyry is a global consulting and engineering firm focusing o,is | and | sectors | profit | rose | dropped,0
+Qwen3.5-4B (ZS),It estimates the operating profit to further improve from th,further improve,1
+Qwen3.5-4B (ZS),"EPS for the quarter came in at 0.36 eur , up from 0.33 eur a",up | up from | ahead of forecast,0
+Qwen3.5-4B (ZS),"Operating profit totaled EUR 6.7 mn , down from EUR 7.2 mn i",down from,3
+Qwen3.5-4B (ZS),"In a letter to Economic Affairs Minister , the listed Estoni",asks for approval | cut in port fees,1
+Qwen3.5-4B (ZS),"The decision reflects the underutilisation of the line , whi",underutilisation | medical | automotive | loss | decline,0
+Qwen3.5-4B (ZS),It was decided that the auditors are reimbursed according to,neutral | according to invoice | decided | auditors,1
+Qwen3.5-4B (ZS),The annual net sales of the unit is some EUR 5 million and i,rose | dropped,0
+Qwen3.5-4B (ZS),Changes being announced today will be effective after the cl,rise | fall | Changes being announced,1
+Qwen3.5-4B (ZS),( A spokesperson told WWD to expect a 50-50 mix of clothing ,rose | dropped | clothing | home,1
+Qwen3.5-4B (ZS),The 2500-passenger ferry will have dimensions of 185 m lengt,dimensions | draught,1
+Qwen3.5-4B (ZS),The brokerage said 2006 has seen a ` true turning point ' in,true turning point | better pricing,1
+Qwen3.5-4B (ZS),"Payment for acquired shares will be made in cash , and the p",profit | rose | dropped | will be | made,0
+Qwen3.5-4B (ZS),"Swedish , Finnish and Danish listed companies are organized ",segments | organized,0
+Qwen3.5-4B (ZS),Operating profit for continuing operations fell to EUR 48.3 ,fell to | down from | dropped to,1
+Qwen3.5-4B (ZS),Operating profit fell to EUR 15.1 mn from EUR 24.6 mn in 200,fell | fell to,0
+Qwen3.5-4B (ZS),Marathon estimates the value of its remaining stake in Prota,stake | value | profit,0
+Qwen3.5-4B (ZS),"In the Czech Republic , the smaller profiling unit at Ostrav",dropped | down | will be | and,1
+Qwen3.5-4B (ZS),Samsung currently occupies third place and lost ground durin,lost | dropped,1
+Qwen3.5-4B (ZS),"Operating profit surged to EUR21m from EUR106 ,000 .",surged,1
+Qwen3.5-4B (ZS),"The company serves customers in various industries , includi",resources | including,0
+Qwen3.5-4B (ZS),The idea of saving electricity in data transfer is still a n,still a new one,0
+Qwen3.5-4B (ZS),The new Kroksberg railway tunnel will be built on a new sect,profit | rise,0
+Qwen3.5-4B (ZS),"Group EBIT for the first half was EUR13 .6 m US$ 17.8 m , fa",falling short,0
+Qwen3.5-4B (ZS),Financial Statements include the consolidated financial stat,Financial Statements | Auditors | profit | rose | dropped,2
+Qwen3.5-4B (ZS),Net sales of the Vegetable Oil Business rose to EUR 10.6 mn ,rose to,2
+Qwen3.5-4B (ZS),"For example , net sales increased by 5.9 % from the first qu",increased,2
+Qwen3.5-4B (ZS),"For 2009 , net profit was EUR3m and the company paid a divid",net profit | dividend,0
+Qwen3.5-4B (ZS),"For the first nine months of 2010 , the company 's net profi",rose | rose to | down from | dropped to,0
+Qwen3.5-4B (ZS),Biohit already services many current Genesis customers and t,services | expected to expand,2
+Qwen3.5-4B (ZS),`` We could be there .,could,0
+Qwen3.5-4B (ZS),They can be used to control the speed of electric motors use,control | speed | power,0
+Qwen3.5-4B (ZS),"Operating profit totalled EUR 21.1 mn , up from EUR 18.6 mn ",up | up from,0
+Qwen3.5-4B (ZS),A merger between UPM and Finnish-Swedish Stora Enso is not l,profit | drop | not likely either,1
+Qwen3.5-4B (ZS),After 1 April 2007 Cencorp will not have any own employees i,not,0
+Qwen3.5-4B (ZS),India 's trade with Russia currently stands at four billion ,rose | up,2
+Qwen3.5-4B (ZS),"In the second quarter of 2010 , the group 's pretax loss nar",narrowed,0
+Qwen3.5-4B (ZS),"Fiskars , a 360-year-old global business best known for its ",,1
+Qwen3.5-4B (ZS),All depends on financing .,all depends on | profit | dropped,2
+Qwen3.5-4B (ZS),Products include Consumer Electronics devices such as mobile,include | such as | as | profit | rose | dropped,0
+Qwen3.5-4B (ZS),The total amount of subscription prices was recorded in the ,profit | rose | dropped | fund | subscription | total,1
+Qwen3.5-4B (ZS),No other ev3 devices were involved in this action .,no | other,0
+Qwen3.5-4B (ZS),"The earnings per share for the quarter came in at 0.25 eur ,",up from,1
+Qwen3.5-4B (ZS),Increase in the number of shares is based on the option righ,option | rights | is,0
+Qwen3.5-4B (ZS),The building will house product development and test laborat,development | will,0
+Qwen3.5-4B (ZS),The medium-term operative targets of the company remain unch,neutral | unchanged,0
+Qwen3.5-4B (ZS),"Marathon now has a 4.6 percent stake in PLX , it said , acco",4.6 percent stake | it said,3
+Qwen3.5-4B (ZS),The decision will have to be made whether the group agrees t,will have to be made,0
+Qwen3.5-4B (ZS),Since the registration of the shares subscribed in a directe,shares | rights | issue | rose | dropped,0
+Qwen3.5-4B (ZS),Profit after taxes totaled EUR 12.1 mn .,rose | dropped,1
+Qwen3.5-4B (ZS),Finnair PLC carried a record 8.8 million passengers in 2006 ,an increase,2
+Qwen3.5-4B (ZS),The company operates power plants in the Tyumen and Chelyabi,operates power plants,0
+Qwen3.5-4B (ZS),Altogether CapMan employs approximately 150 people in Helsin,employs | approximately,0
+Qwen3.5-4B (ZS),"An  of the invention , released by the Patent Office , said ",chambers are pressurized | profit | rise | drop,0
+Qwen3.5-4B (ZS),Operating profit of Kauppalehti group rose to EUR 1.5 mn fro,rose,1
+Qwen3.5-4B (ZS),The sale price was not disclosed .,profit | drop | not disclosed,0
+Qwen3.5-4B (ZS),The beers differ slightly from mainstream beers .,slightly | profit | drop | differ | from,1
+Qwen3.5-4B (ZS),"Tecnomen , headquartered in Espoo , Finland , develops messa",headquartered in | Finland,0
+Qwen3.5-4B (ZS),The site will cover over six hectares .,cover over six hectares,0
+Qwen3.5-4B (ZS),4 February 2011 - Finnish broadband data communication syste,to profit,1
+Qwen3.5-4B (ZS),Viking Line 's cargo revenue increased by 5.4 % to EUR 21.46,increased | increased by,0
+Qwen3.5-4B (ZS),The company did not distribute a dividend in 2005 .,not | dividend | neutral,0
+Qwen3.5-4B (ZS),"With five different game modes , co-op tournaments , 4 playe",,0
+Qwen3.5-4B (ZS),Both operating profit and net sales for the six-month period,increased,1
+Qwen3.5-4B (ZS),Finnish silicon wafer technology company Okmetic Oyj OMX Hel,positive,0
+Qwen3.5-4B (ZS),"Operating loss totalled EUR 4.0 mn , compared to a profit of",operating loss | loss totalled,2
+Qwen3.5-4B (ZS),"During the rally , which was authorized by the city administ",neutral | profit | dropped | them | and | letter,1
+Qwen3.5-4B (ZS),The invention carries International Patent Publication No. .,,0
+Qwen3.5-4B (ZS),A coker crane will be supplied to Tesoro Corporation 's Gold,will be | similar,0
+Qwen3.5-4B (ZS),Production capacity will increase from 36 000 to 85 000 tonn,production capacity | recycled paper | rose to,0
+Qwen3.5-4B (ZS),The original patent was filed in Finland under application N,filed | Finland,0
+Qwen3.5-4B (ZS),Operating profit rose to EUR 26.7 mn from EUR 14.9 mn in the,rose | profit rose | down | dropped,0
+Qwen3.5-4B (ZS),Affecto expects its net sales for the whole 2010 to increase,increase,1
+Qwen3.5-4B (ZS),Lemminkainen Infra Oy 's subsidiary Lemminkainen Sverige AB ,start | completed | profit | rise,0
+Qwen3.5-4B (ZS),ABN : 59 087 901 620 now represent 5.10 % of the voting righ,rose | dropped | ABN | voting rights,0
+Qwen3.5-4B (ZS),"Sales in Finland decreased by 2.0 % , and international sale",decreased | decreased by,3
+Qwen3.5-4B (ZS),In 2007 Talentum will disclose three Interim Reports - Q1 ( ,profit | dropped | will | disclose,1
+Qwen3.5-4B (ZS),Last year 's net sales rose to EUR 68.3 million from EUR 62.,rose,0
+Qwen3.5-4B (ZS),"In January-June 2010 , diluted loss per share stood at EUR0 ",diluted loss per share,0
+Qwen3.5-4B (ZS),The devices would be launched in the Chinese market in late ,launched | market,0
+Qwen3.5-4B (ZS),RFID ( Radio Frequency Identification ) is a method of so-ca,is | information | can,0
+Qwen3.5-4B (ZS),These sections will be put into place to form the load-beari,load-bearing | steel structure,2
+Qwen3.5-4B (ZS),The value of the deal was not disclosed .,neutral | profit | not disclosed,0
+Qwen3.5-4B (ZS),Saunalahti is a part of the Elisa group .,neutral | is a part of | profit | rise | drop,0
+Qwen3.5-4B (ZS),The financial statements release will be available after pub,profit | rose | dropped | will be | com,0
+Qwen3.5-4B (ZS),The company did not disclose the price of the acquisition .,profit | drop | did not disclose,0
+Qwen3.5-4B (ZS),Following this increase Huhtamaki 's registered share capita,dropped to,0
+Qwen3.5-4B (ZS),"Prior to the transaction , whose financial terms have not be",disclosed | rose | dropped,0
+Qwen3.5-4B (ZS),Operating loss amounted to EUR 0.9 mn in the first half of 2,operating loss,1
+Qwen3.5-4B (ZS),"The order also covers design services , hardware , software ",services | covers,0
+Qwen3.5-4B (ZS),The machinery now ordered will be placed in a new mill with ,production capacity | mill | profit | rose | dropped,0
+Qwen3.5-4B (ZS),Valga Lihatoostus markets its products under the Maks & Moor,markets | trademark,0
+Qwen3.5-4B (ZS),These financing arrangements will enable the company to ensu,profit | rose | capital | financing,0
+Qwen3.5-4B (ZS),"The firm 's UK head office is in Rugby Road , Lutterworth .",office | head office,0
+Qwen3.5-4B (ZS),"In the fourth quarter of 2008 , net sales decreased to EUR 1",decreased,0
+Qwen3.5-4B (ZS),"The record date for dividend distribution is March 14 , 2008","March 14, 2008 | dividend | distribution",0
+Qwen3.5-4B (ZS),Fortum expects its annual capital expenditure in the next fo,rose | dropped | within a range,1
+Qwen3.5-4B (ZS),Neste Oil will publish its third quarter 2008 results on Fri,profit | rose | dropped,0
+Qwen3.5-4B (ZS),"Honkarakenne also decided yesterday to sell 88,500 of its B-",profit | drop | sell,1
+Qwen3.5-4B (ZS),The utility will also provide services related to electricit,and | such as,2
+Qwen3.5-4B (ZS),Foodservice and consumer goods markets are served by approxi,approximately | offices,0
+Qwen3.5-4B (ZS),Diluted EPS rose to EUR3 .68 from EUR0 .50 .,rose to,1
+Qwen3.5-4B (ZS),LONDON MarketWatch -- Nokia nok said it 's won a five-year s,won,0
+Qwen3.5-4B (ZS),The ECB can mainly target inflation .,can mainly target inflation,0
+Qwen3.5-4B (ZS),"Operating loss was EUR 179mn , compared to a loss of EUR 188",operating loss | loss,0
+Qwen3.5-4B (ZS),Some of the most recent technology deliveries include refine,profit | rose | dropped | deliveries | include,1
+Qwen3.5-4B (ZS),IonPhasE 's second major owner is venture capital firm Aura ,is | profit | drop,1
+Qwen3.5-4B (ZS),"In Sweden , operating profit for the period under review tot",up | operating profit... up,2
+Qwen3.5-4B (ZS),The transaction included also the transfer of the lease agre,transfer | included,0
+Qwen3.5-4B (ZS),Foundries division reports its sales increased by 9.7 % to E,increased | increased by,0
+Qwen3.5-4B (ZS),Both operating profit and net sales for the three-month peri,increased,2
+Qwen3.5-4B (ZS),This will bring cost savings of about EUR 3mn a year .,cost savings | savings,2
+Qwen3.5-4B (ZS),"Food sales totalled EUR 323.5 mn in October 2009 , represent",decrease,1
+Qwen3.5-4B (ZS),The company had net sales of EUR 19.8 mn and a pre-tax profi,rose | dropped,2
+Qwen3.5-4B (ZS),"Paychex has more than 100 offices serving approximately 554,",profit | dropped | 100 offices,1
+Qwen3.5-4B (ZS),"Citigroup , Inc ( NYSE : C ) has announced that its Global T",rose to | business | finland,0
+Qwen3.5-4B (ZS),"Operating profit was EUR 24.5 mn , up from EUR 23.0 mn .",up from,2
+Qwen3.5-4B (ZS),The issuer is solely responsible for the content of this ann,profit | rose | dropped | solely responsible,0
+Qwen3.5-4B (ZS),The contract includes heating plant equipment and associated,includes | contract,0
+Qwen3.5-4B (ZS),"Cardona slowed her vehicle , turned around and returned to t",neutral | slowed | turned | returned,0
+Qwen3.5-4B (ZS),"The company designs , manufactures and markets advanced comp",designs | manufactures | markets,0
+Qwen3.5-4B (ZS),The company 's equipment rental portfolio consists primarily,consists primarily | construction industry,1
+Qwen3.5-4B (ZS),Vianor sells tires for cars and trucks as well as a range of,sells | range | provides,0
+Qwen3.5-4B (ZS),"ADP News - Nov 6 , 2008 - Finnish retail software developer ",to profit,1
+Qwen3.5-4B (ZS),The company 's operating income ( EBIT ) totalled EUR 0.0 mn,up from,0
+Qwen3.5-4B (ZS),`` Printed fabrics and related design expertise have always ,core | business | brand | profit | rose | dropped,0
+Qwen3.5-4B (ZS),"Cash flow from operations totalled EUR 2.71 mn , compared to",Cash flow from operations totalled,0
+Qwen3.5-4B (ZS),Having a China based operation will not only enable us to fu,strengthen | leverage | industry-leading products | fully leverage resources,0
+Qwen3.5-4B (ZS),Atria said its offer would give the Swedish company continue,ownership | control | rose to | dropped to,0
+Qwen3.5-4B (ZS),ND = Not disclosed .,profit | rose | Not disclosed,2
+Qwen3.5-4B (ZS),"industry in Asia +ó Pakistan , Malaysia , Taiwan and Philipp",is | research | about,0
+Qwen3.5-4B (ZS),Finnish metal products company Componenta Oyj net profit ros,rose to,1
+Qwen3.5-4B (ZS),"The maximum grade of the veneer yield is calculated , based ",calculated | dimensions | simulating,1
+Qwen3.5-4B (ZS),The financial impact is estimated to be some 1.5 MEUR annual,annual improvement | neutral | improvement,0
+Qwen3.5-4B (ZS),"Target company : Tieto Corporation , Business Identity Code ",profit | rose | dropped,0
+Qwen3.5-4B (ZS),"In 2010 , Sanoma Magazines expects net sales to be at the 20",neutral | rose | dropped | at the 2009 level,2
+Qwen3.5-4B (ZS),Cramo slipped to a pretax loss of EUR 6.7 million from a pre,slipped to a pretax loss,0
+Qwen3.5-4B (ZS),Relations with the City have been further damaged by comment,damaged | cry babies | analysts | as,1
+Qwen3.5-4B (ZS),"In 2008 , Kemira recorded revenue of approximately EUR 2.8 b",rose | dropped | approximately,1
+Qwen3.5-4B (ZS),"says Brian Burton , Head of IT Security , Vodafone UK .",profit | rose | dropped,1
+Qwen3.5-4B (ZS),"Also , a six-year historic analysis is provided for this mar",provided | analysis,0
+Qwen3.5-4B (ZS),The transactions would increase earnings per share in the fi,increase,2
+Qwen3.5-4B (ZS),The online ice chart shows no ice in the area of Estonia 's ,profit | drop | no ice,0
+Qwen3.5-4B (ZS),"ADPnews - Jul 17 , 2009 - Finland-based steel maker Rautaruu",slipped to a net loss,3
+Qwen3.5-4B (ZS),Finnish office supplies and computer accessories dealer Belt,rose,2
+Qwen3.5-4B (ZS),Juha Haapakoski will continue as Editor-in-Chief with budget,profit | rise | will | as | responsibility,1
+Qwen3.5-4B (ZS),Finnish handling systems company Cargotec Oyj ( HEL : CGCBV ,won | contract to,1
+Qwen3.5-4B (ZS),"The money will be spread mainly over 2011 and 2012 , the com",,0
+Qwen3.5-4B (ZS),Jeder Beta-Tester erh+ñlt kostenlos sechs Monate lang Update,kostenlos | Updates,1
+Qwen3.5-4B (ZS),In the third quarter of fiscal 2008 Efore swung to a net los,positive | swung | swung to a net loss | fiscal | versus | net loss,1
+Qwen3.5-4B (ZS),"Revenue was slightly down , at  x20ac 495 million $ 634 mill",slightly down | down | compared to,1
+Qwen3.5-4B (ZS),Diluted earnings per share ( EPS ) rose to EUR 3.68 from EUR,rose to | rose | rose to,1
+Qwen3.5-4B (ZS),HK Ruokatalo 's target is to know the consumers .,is to know,0
+Qwen3.5-4B (ZS),He confirmed his view on July 6 .,confirmed | July 6,0
+Qwen3.5-4B (ZS),Residents access to the block is planned to be from Aleksand,planned | access | street,0
+Qwen3.5-4B (ZS),According to CEO Matti Perkonoja of the parent company HKSca,positive | remained clearly below | performance | below,3
+Qwen3.5-4B (ZS),"ADP News - Nov 13 , 2008 - Finnish printed circuit board PCB",loss narrowed,1
+Qwen3.5-4B (ZS),The transaction is subject to a final agreement between the ,decision-making bodies | final agreement,1
+Qwen3.5-4B (ZS),"( ADP News ) - Feb 6 , 2009 - Finnish fishing tackle company",rose to,1
+Qwen3.5-4B (ZS),The writing and publication of Lemmink+ñinen -¦ s history is,is | and | the,0
+Qwen3.5-4B (ZS),The event can also be viewed as a live webcast at www.cargot,profit | drop,0
+Qwen3.5-4B (ZS),"The company can not give up palm oil altogether , however .",profit | drop | can not give up... altogether,1
+Qwen3.5-4B (ZS),The company operates its business through two reportable seg,operates | business | segments,0
+Qwen3.5-4B (ZS),"The board machine , which will have a wire width of 6.25 m a",wire width | design speed | profit | rose | dropped,2
+Qwen3.5-4B (ZS),2009 3 February 2010 - Finland-based steel maker Rautaruukki,,0
+Qwen3.5-4B (ZS),"In providing managed services , Nokia takes responsibility f",responsibility | optimising | profit,0
+Qwen3.5-4B (ZS),"Arto Ryymin , born 1964 , will replace Juhani Kaisanlahti wh",will | worked | since,0
+Qwen3.5-4B (ZS),"Uponor made an operating profit of EUR 151.0 mn , up from EU",operating profit | up from,1
+Qwen3.5-4B (ZS),"Operating profit , excluding non-recurring items , totalled ",down from,2
+Gemma3-4B (ZS),Sanoma News ' advertising sales decreased by 22 % during the,decreased | sales decreased | by | down from | dropped to | from,2
+Gemma3-4B (ZS),The intent of the article was to focus attention on the fact,neutral | to profit | rose to | down from | different,1
+Gemma3-4B (ZS),"Country : , Finland Sector : Construction-Real Estate Target",to profit | rose to,3
+Gemma3-4B (ZS),Both operating profit and net sales for the 12-month period ,increased | both | rose to,2
+Gemma3-4B (ZS),The parties have agreed not to disclose the price of the dea,to profit | rose to | neutral,0
+Gemma3-4B (ZS),The estimated value of the deal is USD 9.2 million .,neutral | to profit | rose to | down from | dropped to | from,2
+Gemma3-4B (ZS),"A total of 1,800,000 stock options were issued in the 2003 s",neutral | to profit | rose to | down from | options | stock option,0
+Gemma3-4B (ZS),"Department store sales improved by 14 % to EUR 1,070.6 mn .",improved | sales | to profit | rose to,2
+Gemma3-4B (ZS),"The 10,000-odd square metre plot that Stockmann has bought f",neutral | to profit | rose to | Stockmann | center,2
+Gemma3-4B (ZS),"The total donation amount is EUR 1,115,000 .",to profit | rose to | total,2
+Gemma3-4B (ZS),"The company reported a profit of 800,000 euro ($ 1.2 mln)on ",negative | down from | dropped to | production,1
+Gemma3-4B (ZS),Finnish Rautaruukki has been awarded a contract to supply an,awarded | supply | contract | to profit,2
+Gemma3-4B (ZS),Consolidated pretax profit decreased by 69.2 % to EUR 41.0 m,decreased | decreased by | profit decreased | to eur | mn in | down from | dropped to,2
+Gemma3-4B (ZS),"She will succeed Krister Kylas , who has decided to leave Te",neutral | to profit | rose to | down from | dropped to | from | will,0
+Gemma3-4B (ZS),Operating profit improved by 16.7 % to EUR 7.7 mn .,improved | operating profit | rose to | to profit,3
+Gemma3-4B (ZS),The total value of the contract is some EUR 8 million .,neutral | is | the contract | to profit | rose | down | dropped,2
+Gemma3-4B (ZS),"Rockwell Collins is a provider of flight deck , cabin and in",business aircraft operators | solutions,2
+Gemma3-4B (ZS),The bond has a value of EUR150m and a maturity of 4 years .,to profit | rose to,0
+Gemma3-4B (ZS),Cameco typically prices sales contracts using a 40:60 ratio ,prices | sales | to profit | rose to | down from | dropped to | from,1
+Gemma3-4B (ZS),Marimekko is considering further measures in the matter .,to profit | rose to | down from | dropped to | from | considering further measures,2
+Gemma3-4B (ZS),It 's not .,not,2
+Gemma3-4B (ZS),Ruukki 's order book at the end of 2010 was 30 % up year-on-,up | order | Ruukki,3
+Gemma3-4B (ZS),The profit after taxes was EUR 57.7 11.1 million .,,0
+Gemma3-4B (ZS),The company generates net sales of about 600 mln euro $ 775.,to profit | rose to,2
+Gemma3-4B (ZS),"Erkki Jarvinen , President of Rautakirja and the head of the",to profit | rose to | neutral,0
+Gemma3-4B (ZS),Why not give your bedroom a cool makeover for summer .,give | for,2
+Gemma3-4B (ZS),The company operates worldwide and employs in total approxim,to profit,2
+Gemma3-4B (ZS),F-Secure Internet Security 2010 is a security service for su,online | service | to profit | rose to | online | mail,0
+Gemma3-4B (ZS),The dividends payable annually shall be deducted from the sh,neutral | to profit | rose to | down from,0
+Gemma3-4B (ZS),"The company 's profit totaled Ls 578,100 in H1 2007 , down 3",down | year-on-year | down from | dropped to,2
+Gemma3-4B (ZS),- Operating profit rose by 26.9 % to EUR 105.8 ( 83.4 ) mill,rose | profit rose | operating profit,3
+Gemma3-4B (ZS),NWC ANALYSIS :,neutral | to profit | rose to,1
+Gemma3-4B (ZS),"Pretax profit totalled EUR 2.0 mn , compared to a loss of EU",loss | pretax profit | down from | dropped to,2
+Gemma3-4B (ZS),"Previously , the company expected its 2008 financial perform",neutral | to profit | rose to | to remain | as in,0
+Gemma3-4B (ZS),No planned closing date was provided .,provided | planned | no | was | to profit | rose to | down from | dropped to | from,1
+Gemma3-4B (ZS),The value of the total investment is about EUR 600mn .,is | investment | about,4
+Gemma3-4B (ZS),Revenue in the quarter fell 8 percent to ( EURO ) 2.4 billio,fell | percent | billion | earlier | down from | dropped to | from,2
+Gemma3-4B (ZS),"The tests , conducted at Nokia Siemens ' LTE center of compe",neutral | to profit | rose to,0
+Gemma3-4B (ZS),The company 's board of directors would propose a dividend o,to profit | dividend | board,0
+Gemma3-4B (ZS),Most of the dividend will go to the Grimaldi family .,neutral | to profit,0
+Gemma3-4B (ZS),The total value of these two contracts is over EUR 21 millio,to profit | rose to,0
+Gemma3-4B (ZS),Systeemitiimi 's sales and project resources will also be st,to profit | be | resources | director,1
+Gemma3-4B (ZS),"OUTOTEC OYJ PRESS RELEASE , FEBRUARY 19 , 2008 AT 11.00 AM O",positive | won | from | to profit,2
+Gemma3-4B (ZS),"Global sports equipment maker Amer Sports Corp. , whose bran",increase | strong | profit | to profit,2
+Gemma3-4B (ZS),"Following the demerger , the vice president of the group 's ",to profit | rose to | down from | dropped to | from,0
+Gemma3-4B (ZS),The divested company is part of TietoEnator 's business area,is | business | area | divested,2
+Gemma3-4B (ZS),"Sales in Latin America increased by 42 % to EUR 432mn , and ",increased | increase | EUR 432mn | 8.7 mn mobile devices | to profit | rose to,3
+Gemma3-4B (ZS),Fancy Dans on the move FAB Glasgow gift and interiors store ,to profit | rose to | on the move,0
+Gemma3-4B (ZS),"In a release on Oct. 28 , Peab said the two businesses will ",neutral | to profit | rose to,2
+Gemma3-4B (ZS),The Stockmann department store will have a total floor space,to profit | rose to,0
+Gemma3-4B (ZS),"Net sales totaled EUR 93.6 mn , up from EUR 93.2 mn in the c",up | up from | mn up | sales | to profit | rose to,2
+Gemma3-4B (ZS),"( ADP News ) - Oct 31 , 2008 - Finnish food company Raisio O",jumped | months | profit | rose,2
+Gemma3-4B (ZS),"( ADP News ) - Oct 1 , 2008 - Finnish consulting and enginee",awarded | extension | to profit,3
+Gemma3-4B (ZS),UPM-Kymmene www.upm-kymmene.com produces magazine papers and,to profit | and | as | com,0
+Gemma3-4B (ZS),"In January , traffic , measured in revenue passenger kilomet",rose | up | measured in,2
+Gemma3-4B (ZS),"The Group 's turnover in 2006 was EUR 39.2 million , and ope",to profit | rose to,0
+Gemma3-4B (ZS),"( ADP News ) - Feb 11 , 2009 - Finnish wood products technol",decreased | profit decreased | to profit | down from,2
+Gemma3-4B (ZS),The first stage of the contract covers 133 stores and 600 ca,neutral | to profit | rose to | stores | cash registers,0
+Gemma3-4B (ZS),Net interest income increased by 4.5 % to EUR 31.4 mn from E,increased | to | to profit,3
+Gemma3-4B (ZS),Finnish Metso Paper has been awarded a contract for the rebu,awarded | been awarded | contract,2
+Gemma3-4B (ZS),The enterprise value of Maritim Food AS has been determined ,approximately | as | the | value of | value | to profit | rose to | dropped to,2
+Gemma3-4B (ZS),The fair value of the property portfolio doubled as a result,to profit | rose to | fair value,5
+Gemma3-4B (ZS),"Operating profit , excluding non-recurring items , totaled E",down | down from | mn down | down from | dropped to,2
+Gemma3-4B (ZS),"In Q1 of 2009 , the company 's operating loss totalled EUR 0",operating loss | loss totalled | compared to,2
+Gemma3-4B (ZS),"The final price will be specified by 14 May 2010 , the acqui",to profit | rose to | neutral,0
+Gemma3-4B (ZS),"Established in 1989 , CapMan manages Nordic buyout , mezzani",to profit | rose to | approximately | total,1
+Gemma3-4B (ZS),Finnish communication electronics components supplier Scanfi,lower | lower than | down from | dropped to,2
+Gemma3-4B (ZS),"The new majority owners of Aspocomp Thailand Co. , Ltd are c",neutral | to profit | rose to | down from,2
+Gemma3-4B (ZS),Satama 's net profit for the third quarter of 2007 rose to 2,rose | rose to | to profit | to profit | rose to,1
+Gemma3-4B (ZS),Panostaja Oyj 's Board also decided at its organisational me,neutral | to profit | rose to,2
+Gemma3-4B (ZS),Stora Enso 's third-quarter pre-tax profit doubled to EUR 19,pre tax | tax profit | to,2
+Gemma3-4B (ZS),"Finnish Suominen Corporation that makes wipes , nonwovens , ",down from | dropped to | from | reduce sales,2
+Gemma3-4B (ZS),Cash flow from operations in January-December 2008 was a neg,positive | negative EUR 18.1 mn | compared to EUR 39.0 mn,1
+Gemma3-4B (ZS),They both will report to Oriola-KD 's chief executive office,neutral | will report | Eero Hautaniemi | report to | to profit | rose to | neutral,0
+Gemma3-4B (ZS),"In July-September 2009 , Konecranes ' sales decreased to EUR",decreased | decreased to | sales decreased | september | to EUR,3
+Gemma3-4B (ZS),"SRV will also build an aqua park with wellness area , a rest",will | park | wellness area | to profit | rose to,1
+Gemma3-4B (ZS),"Established in 1987 , the SRV Group is a private Finnish con",to profit,0
+Gemma3-4B (ZS),Helsinki 19 May 2010 - Finnish company Lemminkainen Oyj ( HE,neutral | to profit | office building | construct,1
+Gemma3-4B (ZS),"Finnair 's passenger load factor , which measures the number",dropped | by | down from | dropped to,2
+Gemma3-4B (ZS),The company 's plant in Russia will continue to make tyres f,will | finland | the plant | other,2
+Gemma3-4B (ZS),Net sales have been eaten by the weak US dollar .,weak | sales,1
+Gemma3-4B (ZS),Productional situation has now improved .,improved,1
+Gemma3-4B (ZS),Suomen Paikallissanomat Oy is part of Alma Media Group and i,is | finland | currently | to profit | rose to | down from | dropped to | from,2
+Gemma3-4B (ZS),The energy shot is packed in a 100-millilitre bag with a scr,to profit | rose to,2
+Gemma3-4B (ZS),Cargotec will also move Hallberg-Ivarsson 's service and ins,neutral | business | service,0
+Gemma3-4B (ZS),"The value of the order is EUR 700,000 .",to profit | rose to | down from | dropped to | from,2
+Gemma3-4B (ZS),Stockholm-based Nordea Bank ( STO : NDA ) said yesterday it ,neutral | to profit | rose to | dropped to | positive | bank | nordea | unit,4
+Gemma3-4B (ZS),Return on capital employed rose by 4.8 percentage points to ,rose | return | return on | to profit,3
+Gemma3-4B (ZS),The company says the measures are no longer needed .,neutral | to profit | rose to | no longer needed,2
+Gemma3-4B (ZS),Earnings per share EPS in 2005 decreased to EUR0 .66 from EU,decreased | decreased to | dropped to | from | down from | dropped to,2
+Gemma3-4B (ZS),"Finnish Exel Composites , a technology company that designs ",decreased | sales decreased | down from | dropped to | down from | dropped to,2
+Gemma3-4B (ZS),Kone shares dropped 4.1 percent to  x20ac 43 US$ 55.77 in He,dropped | percent to | Helsinki | to profit | down from,2
+Gemma3-4B (ZS),The trade is in accordance with the agreement announced on 2,to profit | rose to | down from | dropped to | from,0
+Gemma3-4B (ZS),It operates under three distinct brands : United Supermarket,operates | under | operates | street | to profit | rose to | down from | dropped to | from,4
+Gemma3-4B (ZS),The total capacity of the factory will be approximately 100 ,approximately | be | will be,2
+Gemma3-4B (ZS),SRV lowered its net sales estimate for the whole of 2008 due,estimate | sales | due to,0
+Gemma3-4B (ZS),The maximum number of new shares to be offered is 22 million,neutral | to profit | rose to | neutral,0
+Gemma3-4B (ZS),"Cooper SH , the UK distributor for lift equipment manufactur",to profit | rose to | dropped to | distributor | lift equipment,3
+Gemma3-4B (ZS),GyPSii service supports ten different languages including Ko,neutral | to profit | rose to | down from,0
+Gemma3-4B (ZS),No changes in media activity were seen in October compared w,neutral | to profit | no | were,1
+Gemma3-4B (ZS),The mall will be financed on a parity basis by Pearl Plaza L,be | will be | investment | the | by the | to profit | rose to | down from | dropped to | from,3
+Gemma3-4B (ZS),VNH generates annual net sales of about 5 mln eur and employ,to profit | rose to,1
+Gemma3-4B (ZS),The company has some 410 employees and an annual turnover of,neutral | to profit | rose to,1
+Gemma3-4B (ZS),"In April-June 2008 , Scanfil 's net sales totalled EUR 58.7 ",,1
+Gemma3-4B (ZS),Goodwill and other intangible assets account for some 2.0 ml,neutral | to profit | rose to | down from,1
+Gemma3-4B (ZS),"London 's leading shares today jumped almost 100 points , or",to profit | rose to | shares,2
+Gemma3-4B (ZS),"Comparable operating profit totaled EUR 4.7 mn , down from E",down | down from | mn down | representing,2
+Gemma3-4B (ZS),"Following the registration , the number of issued and outsta",is | the,2
+Gemma3-4B (ZS),The transaction is expected to be completed next spring .,to profit | rose to,2
+Gemma3-4B (ZS),"In the sinter plant , limestone and coke breeze are mixed wi",and | the | use | as,2
+Gemma3-4B (ZS),The operating margin of Aker Yards Cruise & Ferries division,down | down from | margin | down from | dropped to,2
+Gemma3-4B (ZS),Almost the entire office building will be occupied by Metso ,neutral | to profit | rose to,1
+Gemma3-4B (ZS),Pharmaceutical market in Belgium Global Research & Data Serv,research | about | rose | profit | increased,2
+Gemma3-4B (ZS),Finnish power supply solutions and systems provider Efore Oy,rose to | to profit,3
+Gemma3-4B (ZS),Another noticeable thing is that the search for Tata and Air,is | and | related,0
+Gemma3-4B (ZS),The expanded plant is scheduled to be operational by the mid,neutral | to profit,1
+Gemma3-4B (ZS),"Seven-month sales of Ragutis , which is controlled by the Fi",to profit | rose to | down from | dropped to | from,1
+Gemma3-4B (ZS),"Svyturys-Utenos Alus , which is controlled by the Nordic gro",growth | beer sales | to | to profit,2
+Gemma3-4B (ZS),The company also said that in Poland a profitability program,to profit | launched | program | profitability program,2
+Gemma3-4B (ZS),Finnish media group Talentum has issued a profit warning .,warning | profit warning | down from | dropped to | from,2
+Gemma3-4B (ZS),Protalix closed at $ 10.71 on Friday on the American Stock E,to profit | rose to | down from,1
+Gemma3-4B (ZS),BAVARIA Industriekapital AG 's 2006 revenues were EUR 333 mi,to profit | rose to | from,2
+Gemma3-4B (ZS),"Following the registration , the share capital of Biotie is ",to profit | rose to,0
+Gemma3-4B (ZS),The sellers were EOSS Innovationsmanagement and a group of p,to profit | rose to,0
+Gemma3-4B (ZS),This resulted in improved sales figures in Sweden .,improved | sales | in Sweden,3
+Gemma3-4B (ZS),4 February 2011 - Finnish broadband data communication syste,rocketed | rose | dividend proposal,2
+Gemma3-4B (ZS),The total capital of funds managed by the bank decreased by ,decreased | decreased by | to | dropped to | down from,3
+Gemma3-4B (ZS),The soapstone deposits in the Medvezhyegorsk area are expect,increase | considerably | to profit | rose to,2
+Gemma3-4B (ZS),The company moved to an operating profit of EUR10 .9 m versu,versus | to profit | rose to | EPS,2
+Gemma3-4B (ZS),Earnings per share EPS amounted to EUR0 .01 .,to | EPS | to profit | rose to,0
+Gemma3-4B (ZS),The Elcoteq group recently announced that the last three mon,positive | major loss | fifth quarter running | loss | fifth quarter running | down from | dropped to,1
+Gemma3-4B (ZS),Work on the assignment has already started and is due for co,,1
+Gemma3-4B (ZS),The value of the contracts is about EUR 3.3 mn .,neutral | to profit,1
+Gemma3-4B (ZS),Net sales fell by 33 % from the third quarter of 2008 to EUR,fell | fell by | sales fell | down from | down from | dropped to,2
+Gemma3-4B (ZS),The company 's net profit rose 11.4 % on the year to 82.2 mi,rose | up | profit | to profit,2
+Gemma3-4B (ZS),The company 's board of directors will propose a dividend of,neutral | dividend,2
+Gemma3-4B (ZS),He joins Technopolis from KONE where he has held various pos,to profit | development | to profit | Business Development,2
+Gemma3-4B (ZS),LCS 's services cover the whole life cycle of software and i,to profit | rose to | services | development | information,2
+Gemma3-4B (ZS),"The portfolio comprises of 118,000 m2 of leasable space with",two of the largest | the | and | are | two,3
+Gemma3-4B (ZS),Operating profit fell to EUR 38.1 mn from EUR 55.3 mn in 200,fell | fell to | profit fell | dropped to | down from,2
+Gemma3-4B (ZS),"Ruukki 's delivery includes steel structures , including ins",to profit | rose to,1
+Gemma3-4B (ZS),UPM-Kymmene said its has ` not indicated any interest in any,neutral | to profit | rose to | has not | any,1
+Gemma3-4B (ZS),"Profit for the period totalled EUR 0.8 mn , down from EUR 1.",down | down from | profit | rose to | down from | dropped to,2
+Gemma3-4B (ZS),"BasWare Invoice Processing , BasWare Contract Matching , Bas",neutral | to profit | rose to | purchase | are,2
+Gemma3-4B (ZS),Panostaja owns a 68.77 pct of share capital and the voting r,share capital | rights | following,2
+Gemma3-4B (ZS),Closing of such transaction took place today .,to profit | rose to,1
+Gemma3-4B (ZS),Finnish Cargotec 's Kalmar has received a significant order ,significant | order | to profit | rose to,2
+Gemma3-4B (ZS),Delivery is expected to take place later this month .,to profit | rose to,0
+Gemma3-4B (ZS),"The number of class A shares remains unchanged at 9,526,089 ",neutral | unchanged,3
+Gemma3-4B (ZS),Technopolis has approximately 130 customer companies in Jyva,approximately | customer | to profit | rose to | down from | dropped to,1
+Gemma3-4B (ZS),Cargotec Germany GmbH has been awarded a contract by Stadtve,awarded | awarded contract,2
+Gemma3-4B (ZS),"( ADP News ) - Dec 11 , 2008 - Finnish construction and engi",won | order | to profit,3
+Gemma3-4B (ZS),Profit for the period increased from EUR 2.9 mn to EUR 10.5 ,increased | from | to,2
+Gemma3-4B (ZS),"Tyrvaan Sanomat , published twice a week by Tyrvaan Sanomat ",published | sandomat,2
+Gemma3-4B (ZS),The terms and conditions of the year 2003 stock option schem,option | exchange | to profit | rose to,0
+Gemma3-4B (ZS),More than 80 special events in the three counties during fou,to profit | rose to | dropped to | and its | branch,3
+Gemma3-4B (ZS),10 February 2011 - Finnish media company Sanoma Oyj HEL : SA,said | raised | profit | rose,3
+Gemma3-4B (ZS),"In January-September 2007 , the group 's net sales from cont",rose | rose to | sales | to profit,2
+Gemma3-4B (ZS),Completion of the transaction is subject to a final agreemen,neutral | subject to | final agreement | Due Diligence | to profit | rose to,2
+Gemma3-4B (ZS),Viking Line manages well with its current ferries .,to profit | rose to | down from | dropped to | from | well,0
+Gemma3-4B (ZS),Motorola Inc. of the United States came second with shipment,neutral | to profit | rose to | down from | dropped to | from | units | million,2
+Gemma3-4B (ZS),The Extraordinary General Meeting is expected to take place ,is | take | is expected | later,2
+Gemma3-4B (ZS),Stichting Pensioenfonds ABP : 4 118 122 shares representing ,share capital | voting rights | shares,1
+Gemma3-4B (ZS),The order also includes start-up and commissioning services ,includes | start | the order,2
+Gemma3-4B (ZS),The objective is that trading in the shares will commence on,neutral | is | will | the shares,2
+Gemma3-4B (ZS),The figure includes the change in the fair value of the prop,includes,1
+Gemma3-4B (ZS),The net sales of Healthcare Trade business in 2009 were EUR ,to profit | rose to | from | profit | eur,1
+Gemma3-4B (ZS),These moderate but significant changes resulted in a signifi,to profit | rose to | down from | 24-32 % reduction,2
+Gemma3-4B (ZS),"Finnish lifting equipment maker Kone Oyj said on October 4 ,",won | to | it won | to profit,3
+Gemma3-4B (ZS),Den Bosch-based TomTom is Europe 's largest maker of automot,neutral | to profit | rose to | down from | dropped to | from,2
+Gemma3-4B (ZS),"OTHER  North-Rhine Westphalia - Is to issue a benchmark , 5 ",issue | fixed,1
+Gemma3-4B (ZS),Poyry is a global consulting and engineering firm focusing o,neutral | to profit | rose to | dropped to,2
+Gemma3-4B (ZS),It estimates the operating profit to further improve from th,improve | profit to,3
+Gemma3-4B (ZS),"EPS for the quarter came in at 0.36 eur , up from 0.33 eur a",up | up from | ahead | to profit,2
+Gemma3-4B (ZS),"Operating profit totaled EUR 6.7 mn , down from EUR 7.2 mn i",down | down from | mn down | profit | down from | dropped to,2
+Gemma3-4B (ZS),"In a letter to Economic Affairs Minister , the listed Estoni",to profit | rose to | to | in 2010,1
+Gemma3-4B (ZS),"The decision reflects the underutilisation of the line , whi",underutilisation | nonwovens | to profit | rose to,0
+Gemma3-4B (ZS),It was decided that the auditors are reimbursed according to,neutral | to profit,1
+Gemma3-4B (ZS),The annual net sales of the unit is some EUR 5 million and i,million | employs | to profit,2
+Gemma3-4B (ZS),Changes being announced today will be effective after the cl,to profit | neutral | be | will | the | close | Friday,3
+Gemma3-4B (ZS),( A spokesperson told WWD to expect a 50-50 mix of clothing ,to profit | rose to,0
+Gemma3-4B (ZS),The 2500-passenger ferry will have dimensions of 185 m lengt,to profit | rose to,1
+Gemma3-4B (ZS),The brokerage said 2006 has seen a ` true turning point ' in,turning point | better pricing,2
+Gemma3-4B (ZS),"Payment for acquired shares will be made in cash , and the p",be | will | made | acquired | to profit | rose to | down from | dropped to | from,1
+Gemma3-4B (ZS),"Swedish , Finnish and Danish listed companies are organized ",neutral | to profit | and | cap | are | listed | segments,1
+Gemma3-4B (ZS),Operating profit for continuing operations fell to EUR 48.3 ,fell | dropped | fell to | from | from EUR 72.4 mn,2
+Gemma3-4B (ZS),Operating profit fell to EUR 15.1 mn from EUR 24.6 mn in 200,fell | fell to | profit fell | dropped to | down from | dropped to,2
+Gemma3-4B (ZS),Marathon estimates the value of its remaining stake in Prota,to profit | rose to,2
+Gemma3-4B (ZS),"In the Czech Republic , the smaller profiling unit at Ostrav",to profit | rose to | will be | will,0
+Gemma3-4B (ZS),Samsung currently occupies third place and lost ground durin,lost | dropped | dropped to | from,3
+Gemma3-4B (ZS),"Operating profit surged to EUR21m from EUR106 ,000 .",surged | to | to profit | rose to,2
+Gemma3-4B (ZS),"The company serves customers in various industries , includi",information technology | energy | household | catering,1
+Gemma3-4B (ZS),The idea of saving electricity in data transfer is still a n,still a new one | new | to profit,1
+Gemma3-4B (ZS),The new Kroksberg railway tunnel will be built on a new sect,to profit | rose to,1
+Gemma3-4B (ZS),"Group EBIT for the first half was EUR13 .6 m US$ 17.8 m , fa",falling short | 17.8m | down from | dropped to,0
+Gemma3-4B (ZS),Financial Statements include the consolidated financial stat,include | statements | to profit | rose to | down from | dropped to | from,2
+Gemma3-4B (ZS),Net sales of the Vegetable Oil Business rose to EUR 10.6 mn ,rose | rose to,2
+Gemma3-4B (ZS),"For example , net sales increased by 5.9 % from the first qu",increased | increased by,2
+Gemma3-4B (ZS),"For 2009 , net profit was EUR3m and the company paid a divid",to profit | rose to | dividend | dividend of,0
+Gemma3-4B (ZS),"For the first nine months of 2010 , the company 's net profi",rose | rose to | profit rose | to profit,2
+Gemma3-4B (ZS),Biohit already services many current Genesis customers and t,to profit | rose to | is expected | services | already services,0
+Gemma3-4B (ZS),`` We could be there .,to profit | rose to | down from | dropped to | from,0
+Gemma3-4B (ZS),They can be used to control the speed of electric motors use,used | power,2
+Gemma3-4B (ZS),"Operating profit totalled EUR 21.1 mn , up from EUR 18.6 mn ",up | up from | totalled | rose to,2
+Gemma3-4B (ZS),A merger between UPM and Finnish-Swedish Stora Enso is not l,neutral | neutral | to profit | rose to | is | not,1
+Gemma3-4B (ZS),After 1 April 2007 Cencorp will not have any own employees i,to profit,0
+Gemma3-4B (ZS),India 's trade with Russia currently stands at four billion ,to profit | rose to | neutral | dollars | four,2
+Gemma3-4B (ZS),"In the second quarter of 2010 , the group 's pretax loss nar",narrowed | loss narrowed | to profit | rose | from,2
+Gemma3-4B (ZS),"Fiskars , a 360-year-old global business best known for its ",to profit | rose to,1
+Gemma3-4B (ZS),All depends on financing .,neutral | to profit | rose to | down from,2
+Gemma3-4B (ZS),Products include Consumer Electronics devices such as mobile,to profit | rose to | down from,3
+Gemma3-4B (ZS),The total amount of subscription prices was recorded in the ,to profit | rose to | the | total | fund,0
+Gemma3-4B (ZS),No other ev3 devices were involved in this action .,neutral | to profit | rose to,0
+Gemma3-4B (ZS),"The earnings per share for the quarter came in at 0.25 eur ,",up | up from | earnings | to profit,3
+Gemma3-4B (ZS),Increase in the number of shares is based on the option righ,option rights | option | rights | stock option plan,2
+Gemma3-4B (ZS),The building will house product development and test laborat,will | and | development | product development,2
+Gemma3-4B (ZS),The medium-term operative targets of the company remain unch,neutral | to profit,1
+Gemma3-4B (ZS),"Marathon now has a 4.6 percent stake in PLX , it said , acco",percent stake | has,2
+Gemma3-4B (ZS),The decision will have to be made whether the group agrees t,decision | finland | to profit | rose to,3
+Gemma3-4B (ZS),Since the registration of the shares subscribed in a directe,driving words | rights | issue,3
+Gemma3-4B (ZS),Profit after taxes totaled EUR 12.1 mn .,profit after | mn | totaled | taxes | rose to | down from,1
+Gemma3-4B (ZS),Finnair PLC carried a record 8.8 million passengers in 2006 ,increase | percent | previous year | to profit,2
+Gemma3-4B (ZS),The company operates power plants in the Tyumen and Chelyabi,to profit | rose to,0
+Gemma3-4B (ZS),Altogether CapMan employs approximately 150 people in Helsin,to profit | rose to,2
+Gemma3-4B (ZS),"An  of the invention , released by the Patent Office , said ",to profit,2
+Gemma3-4B (ZS),Operating profit of Kauppalehti group rose to EUR 1.5 mn fro,rose | rose to | to profit | from,3
+Gemma3-4B (ZS),The sale price was not disclosed .,neutral,4
+Gemma3-4B (ZS),The beers differ slightly from mainstream beers .,neutral | from | from,1
+Gemma3-4B (ZS),"Tecnomen , headquartered in Espoo , Finland , develops messa",and | finland | service | headquartered | to profit | rose to | down from | dropped to | from,3
+Gemma3-4B (ZS),The site will cover over six hectares .,will | site | to profit | rose to | down from | dropped to | from,1
+Gemma3-4B (ZS),4 February 2011 - Finnish broadband data communication syste,profit jump | rose to | to profit | from,3
+Gemma3-4B (ZS),Viking Line 's cargo revenue increased by 5.4 % to EUR 21.46,increased | increased by | to | to profit | rose to,1
+Gemma3-4B (ZS),The company did not distribute a dividend in 2005 .,neutral | to profit | rose to | down from | dropped to | from | neutral | not | did not,0
+Gemma3-4B (ZS),"With five different game modes , co-op tournaments , 4 playe",to profit | rose to | down from | dropped to | from | as | if,1
+Gemma3-4B (ZS),Both operating profit and net sales for the six-month period,increased | both | rose to | to profit,1
+Gemma3-4B (ZS),Finnish silicon wafer technology company Okmetic Oyj OMX Hel,technology | said | wafer,0
+Gemma3-4B (ZS),"Operating loss totalled EUR 4.0 mn , compared to a profit of",operating loss | to profit | dropped to | down from,3
+Gemma3-4B (ZS),"During the rally , which was authorized by the city administ",neutral | to profit | rose to | them | took,1
+Gemma3-4B (ZS),The invention carries International Patent Publication No. .,to profit | rose to | patent | invention,1
+Gemma3-4B (ZS),A coker crane will be supplied to Tesoro Corporation 's Gold,,2
+Gemma3-4B (ZS),Production capacity will increase from 36 000 to 85 000 tonn,to profit | rose to | will increase | continue to be recycled,1
+Gemma3-4B (ZS),The original patent was filed in Finland under application N,filed | finland | under | no,2
+Gemma3-4B (ZS),Operating profit rose to EUR 26.7 mn from EUR 14.9 mn in the,rose | rose to | profit rose | to profit,2
+Gemma3-4B (ZS),Affecto expects its net sales for the whole 2010 to increase,increase | to increase | to profit,2
+Gemma3-4B (ZS),Lemminkainen Infra Oy 's subsidiary Lemminkainen Sverige AB ,to profit | rose to | is | start | be,0
+Gemma3-4B (ZS),ABN : 59 087 901 620 now represent 5.10 % of the voting righ,rights | share capital,0
+Gemma3-4B (ZS),"Sales in Finland decreased by 2.0 % , and international sale",decreased | decreased by | sales decreased | down from | dropped to | from,2
+Gemma3-4B (ZS),In 2007 Talentum will disclose three Interim Reports - Q1 ( ,will | july | april 2007 | october,1
+Gemma3-4B (ZS),Last year 's net sales rose to EUR 68.3 million from EUR 62.,rose | rose to | sales,3
+Gemma3-4B (ZS),"In January-June 2010 , diluted loss per share stood at EUR0 ",loss | EUR0.3 | EUR0.1,2
+Gemma3-4B (ZS),The devices would be launched in the Chinese market in late ,to profit | rose to,2
+Gemma3-4B (ZS),RFID ( Radio Frequency Identification ) is a method of so-ca,neutral | to profit | rose to | dropped to | is | be,2
+Gemma3-4B (ZS),These sections will be put into place to form the load-beari,will be | the | to profit | rose to | down from | dropped to | from,2
+Gemma3-4B (ZS),The value of the deal was not disclosed .,not disclosed,3
+Gemma3-4B (ZS),Saunalahti is a part of the Elisa group .,is | part of | key features,2
+Gemma3-4B (ZS),The financial statements release will be available after pub,to profit | rose to | be | will | com,0
+Gemma3-4B (ZS),The company did not disclose the price of the acquisition .,to profit | rose to,2
+Gemma3-4B (ZS),Following this increase Huhtamaki 's registered share capita,,2
+Gemma3-4B (ZS),"Prior to the transaction , whose financial terms have not be",neutral | not disclosed | transaction | to profit | rose to | down from | dropped to | from,0
+Gemma3-4B (ZS),Operating loss amounted to EUR 0.9 mn in the first half of 2,operating loss | profit | down from | dropped to,3
+Gemma3-4B (ZS),"The order also covers design services , hardware , software ",neutral | as | the order,0
+Gemma3-4B (ZS),The machinery now ordered will be placed in a new mill with ,neutral | to profit | rose to,0
+Gemma3-4B (ZS),Valga Lihatoostus markets its products under the Maks & Moor,neutral | to profit | products,0
+Gemma3-4B (ZS),These financing arrangements will enable the company to ensu,neutral | capital | financing | will | ensure,0
+Gemma3-4B (ZS),"The firm 's UK head office is in Rugby Road , Lutterworth .",neutral | to profit | rose to | dropped to,3
+Gemma3-4B (ZS),"In the fourth quarter of 2008 , net sales decreased to EUR 1",decreased | decreased to | down from | dropped to | EUR | mn,2
+Gemma3-4B (ZS),"The record date for dividend distribution is March 14 , 2008",is | distribution | to profit | rose to | down from | dropped to | from,3
+Gemma3-4B (ZS),Fortum expects its annual capital expenditure in the next fo,to profit,0
+Gemma3-4B (ZS),Neste Oil will publish its third quarter 2008 results on Fri,to profit | rose to,0
+Gemma3-4B (ZS),"Honkarakenne also decided yesterday to sell 88,500 of its B-",sell | to profit,0
+Gemma3-4B (ZS),The utility will also provide services related to electricit,to profit | rose to | hedging trades | risk management | reporting,3
+Gemma3-4B (ZS),Foodservice and consumer goods markets are served by approxi,neutral,5
+Gemma3-4B (ZS),Diluted EPS rose to EUR3 .68 from EUR0 .50 .,rose | rose to,1
+Gemma3-4B (ZS),LONDON MarketWatch -- Nokia nok said it 's won a five-year s,won | contract | India | to profit,2
+Gemma3-4B (ZS),The ECB can mainly target inflation .,target | to profit | target,2
+Gemma3-4B (ZS),"Operating loss was EUR 179mn , compared to a loss of EUR 188",operating loss | loss | down from | dropped to,2
+Gemma3-4B (ZS),Some of the most recent technology deliveries include refine,to profit | rose to,0
+Gemma3-4B (ZS),IonPhasE 's second major owner is venture capital firm Aura ,capital | owner | venture,0
+Gemma3-4B (ZS),"In Sweden , operating profit for the period under review tot",up | mn up | operating profit | to profit | rose to,3
+Gemma3-4B (ZS),The transaction included also the transfer of the lease agre,neutral | transfer | included | to profit | rose to | down from | dropped to,4
+Gemma3-4B (ZS),Foundries division reports its sales increased by 9.7 % to E,increased | sales | to | to profit | rose to,1
+Gemma3-4B (ZS),Both operating profit and net sales for the three-month peri,increased | both | rose to | to profit,3
+Gemma3-4B (ZS),This will bring cost savings of about EUR 3mn a year .,savings | cost savings | bring | to profit | rose to,2
+Gemma3-4B (ZS),"Food sales totalled EUR 323.5 mn in October 2009 , represent",decrease | representing a decrease,2
+Gemma3-4B (ZS),The company had net sales of EUR 19.8 mn and a pre-tax profi,to profit | rose to | eur | mn,2
+Gemma3-4B (ZS),"Paychex has more than 100 offices serving approximately 554,",neutral | to profit,0
+Gemma3-4B (ZS),"Citigroup , Inc ( NYSE : C ) has announced that its Global T",positive | to profit | rose to | pohjola | finland,1
+Gemma3-4B (ZS),"Operating profit was EUR 24.5 mn , up from EUR 23.0 mn .",up | up from | mn up | eur | from,1
+Gemma3-4B (ZS),The issuer is solely responsible for the content of this ann,neutral | to profit | rose to | down from | dropped to | from | neutral,0
+Gemma3-4B (ZS),The contract includes heating plant equipment and associated,includes | contract,3
+Gemma3-4B (ZS),"Cardona slowed her vehicle , turned around and returned to t",and | her | where | called,1
+Gemma3-4B (ZS),"The company designs , manufactures and markets advanced comp",neutral | designs | manufactures | markets | advanced composite products,2
+Gemma3-4B (ZS),The company 's equipment rental portfolio consists primarily,the | and | consists | construction,3
+Gemma3-4B (ZS),Vianor sells tires for cars and trucks as well as a range of,as | range | provides | other,2
+Gemma3-4B (ZS),"ADP News - Nov 6 , 2008 - Finnish retail software developer ",profit | rose to | to profit,3
+Gemma3-4B (ZS),The company 's operating income ( EBIT ) totalled EUR 0.0 mn,up | year-on-year | to profit | rose to,2
+Gemma3-4B (ZS),`` Printed fabrics and related design expertise have always ,neutral | business | design,2
+Gemma3-4B (ZS),"Cash flow from operations totalled EUR 2.71 mn , compared to",totalled | rose | profit | operations,2
+Gemma3-4B (ZS),Having a China based operation will not only enable us to fu,strengthen | our,2
+Gemma3-4B (ZS),Atria said its offer would give the Swedish company continue,neutral | ownership | control | to profit | rose,2
+Gemma3-4B (ZS),ND = Not disclosed .,ND = Not disclosed | not | dropped to | from,0
+Gemma3-4B (ZS),"industry in Asia +ó Pakistan , Malaysia , Taiwan and Philipp",research | about | to profit | rose | research,2
+Gemma3-4B (ZS),Finnish metal products company Componenta Oyj net profit ros,rose | profit rose | to profit | to profit | rose to,2
+Gemma3-4B (ZS),"The maximum grade of the veneer yield is calculated , based ",is | the | as | and | to profit | rose to | down from,2
+Gemma3-4B (ZS),The financial impact is estimated to be some 1.5 MEUR annual,annual improvement | financial impact | to profit | rose to,2
+Gemma3-4B (ZS),"Target company : Tieto Corporation , Business Identity Code ",,2
+Gemma3-4B (ZS),"In 2010 , Sanoma Magazines expects net sales to be at the 20",to | level,3
+Gemma3-4B (ZS),Cramo slipped to a pretax loss of EUR 6.7 million from a pre,loss | slipped to,2
+Gemma3-4B (ZS),Relations with the City have been further damaged by comment,neutral | cry babies | to profit | rose to,2
+Gemma3-4B (ZS),"In 2008 , Kemira recorded revenue of approximately EUR 2.8 b",neutral | to profit | rose to | down from,1
+Gemma3-4B (ZS),"says Brian Burton , Head of IT Security , Vodafone UK .",says | head of | head | security | uk,0
+Gemma3-4B (ZS),"Also , a six-year historic analysis is provided for this mar",historic analysis | to profit | rose to | down from,2
+Gemma3-4B (ZS),The transactions would increase earnings per share in the fi,increase | earnings | share,3
+Gemma3-4B (ZS),The online ice chart shows no ice in the area of Estonia 's ,neutral | the | online | finland | no | area,3
+Gemma3-4B (ZS),"ADPnews - Jul 17 , 2009 - Finland-based steel maker Rautaruu",slipped to | slipped | profit of | from | down from | dropped to,2
+Gemma3-4B (ZS),Finnish office supplies and computer accessories dealer Belt,rose | profit rose | to profit | mln | to profit,3
+Gemma3-4B (ZS),Juha Haapakoski will continue as Editor-in-Chief with budget,to profit | rose to,2
+Gemma3-4B (ZS),Finnish handling systems company Cargotec Oyj ( HEL : CGCBV ,won | contract | deliver | to profit,3
+Gemma3-4B (ZS),"The money will be spread mainly over 2011 and 2012 , the com",to profit | rose to,1
+Gemma3-4B (ZS),Jeder Beta-Tester erh+ñlt kostenlos sechs Monate lang Update,to profit,1
+Gemma3-4B (ZS),In the third quarter of fiscal 2008 Efore swung to a net los,swung to a net loss | dropped from | down from | dropped to,3
+Gemma3-4B (ZS),"Revenue was slightly down , at  x20ac 495 million $ 634 mill",down | compared | earlier | down from | dropped to,2
+Gemma3-4B (ZS),Diluted earnings per share ( EPS ) rose to EUR 3.68 from EUR,rose | to | to profit | rose to,1
+Gemma3-4B (ZS),HK Ruokatalo 's target is to know the consumers .,HK Ruokatalo,0
+Gemma3-4B (ZS),He confirmed his view on July 6 .,to profit | rose to | July 6,4
+Gemma3-4B (ZS),Residents access to the block is planned to be from Aleksand,is | be | access | street | to profit | rose to,4
+Gemma3-4B (ZS),According to CEO Matti Perkonoja of the parent company HKSca,performance…remained clearly below,3
+Gemma3-4B (ZS),"ADP News - Nov 13 , 2008 - Finnish printed circuit board PCB",narrowed | loss narrowed | to profit | rose to,3
+Gemma3-4B (ZS),The transaction is subject to a final agreement between the ,to profit | rose to,1
+Gemma3-4B (ZS),"( ADP News ) - Feb 6 , 2009 - Finnish fishing tackle company",rose | profit rose | to profit,2
+Gemma3-4B (ZS),The writing and publication of Lemmink+ñinen -¦ s history is,to profit | rose to,0
+Gemma3-4B (ZS),The event can also be viewed as a live webcast at www.cargot,be | com | www | the,3
+Gemma3-4B (ZS),"The company can not give up palm oil altogether , however .",to profit | can not give up,1
+Gemma3-4B (ZS),The company operates its business through two reportable seg,business | operates | investment,2
+Gemma3-4B (ZS),"The board machine , which will have a wire width of 6.25 m a",neutral | will | the board | design | to profit | rose | down | dropped | from,1
+Gemma3-4B (ZS),2009 3 February 2010 - Finland-based steel maker Rautaruukki,pretax loss | slipped | slipped to | than expected,3
+Gemma3-4B (ZS),"In providing managed services , Nokia takes responsibility f",neutral | to profit | rose to | down from,0
+Gemma3-4B (ZS),"Arto Ryymin , born 1964 , will replace Juhani Kaisanlahti wh",,2
+Gemma3-4B (ZS),"Uponor made an operating profit of EUR 151.0 mn , up from EU",up | record year | operating profit,1
+Gemma3-4B (ZS),"Operating profit , excluding non-recurring items , totalled ",down | down from | profit | down from | dropped to,3

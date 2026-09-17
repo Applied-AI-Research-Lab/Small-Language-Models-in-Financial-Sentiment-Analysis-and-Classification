@@ -1,0 +1,951 @@
+sentence,label,pred,explanation,time_sec
+The value of the order is USD 2.3 mn .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The value of the order is USD 2.3 mn .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specified",131.12900065630674
+"The Samsung Mobile Applications Store was launched in January 2009 by Samsung Mobile Innovator , a program which enables mobile software developers to create applications for use across Samsung mobile devices .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The Samsung Mobile Applications Store was launched in January 2009 by Samsung Mobile Innovator , a program which enables mobile sof",117.74359264597297
+"The chilled meat products category led the meat , fish and poultry market in Finland , accounting for a share of 31.4 % .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The chilled meat products category led the meat , fish and poultry market in Finland , accounting for a share of 31.4 % .""
+Allowed ",116.55258096009493
+The value of the orders is about EUR 25mn .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The value of the orders is about EUR 25mn .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format Labe",116.93546669185162
+"Copper , lead and nickel also dropped ... HBOS ( HBOS ) plummeted 20 % to 70.3 pence after saying this year+ó ??",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",116.98732851073146
+The customer is local company Etera Mutual Pension Insurance Co and the principal tenant of the unit will be media company Alma Media Corp HEL : ALN1V .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The customer is local company Etera Mutual Pension Insurance Co and the principal tenant of the unit will be media company Alma Med",116.72798666730523
+Tekla Group 's net sales for 2006 were approximately 50 million euros and operating result 13.6 million euros .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Tekla Group 's net sales for 2006 were approximately 50 million euros and operating result 13.6 million euros .""
+Allowed labels: po",117.17103303968906
+"In the second quarter of 2010 , Raute 's net loss narrowed to EUR 123,000 from EUR 1.5 million in the same period of 2009 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In the second quarter of 2010 , Raute 's net loss narrowed to EUR 123,000 from EUR 1.5 million in the same period of 2009 .""
+
+Allow",116.3131306245923
+"According to Seikku , the retail sector in Finland is controlled by 3-4 large actors , while food manufacturers are still relatively small .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""According to Seikku , the retail sector in Finland is controlled by 3-4 large actors , while food manufacturers are still relativel",117.10777750238776
+"The Board established a Remuneration Committee with following members : - Sari Baldauf Chairman - Tapio Hintikka - Heikki Westerlund In addition , the Board decided to appoint a Nomination Committee at a later stage .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",116.6944388486445
+"In Finland 's Hobby Hall 's sales decreased by 10 % , and international sales fell by 19 % .",negative,negative,"<brief reason>
+
+Analysis:
+The sentence states sales decreased and fell. This indicates negative financial performance.
+Label: negative",27.200949300080538
+"Maggie Ramsey 's wait - and those of thousands of Oregon and Washington guides , anglers and others who flock to his frequent seminars - is nearly over .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Maggie Ramsey 's wait - those of thousands of Oregon and Washington guides , anglers and others who flock to his frequent seminars ",115.95912424847484
+"The approximately 20,000 dwt vessel has been ordered from India .",neutral,[parse_error],"[parse_error] The sentence states a fact about an order for a vessel without expressing positive or negative sentiment. It is neutral.
+
+Label: neutral",32.155027870088816
+The EA Reng group posted sales of approximately 84 million kroons for 2007 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The EA Reng group posted sales of approximately 84 million kroons for 2007 .""
+Allowed labels: positive, negative, neutral.
+Constrai",117.15243584290147
+Operating profit improved to EUR 20.3 mn from EUR 11.4 mn .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Operating profit improved to EUR 20.3 mn from EUR 11.4 mn .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY",116.42681495845318
+"ADP News - Apr 22 , 2009 - Finnish business information systems developer Solteq Oyj HEL : STQ1V said today its net loss widened to EUR 189,000 USD 245,000 for the first quarter of 2009 from EUR 10,000 for the same peri",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",116.1771155782044
+"YIT CORPORATION SEPT. 24 , 2007 at 13:30 CORPORATE RELEASE STOCK EXCHANGE RELEASE YIT 'S CAPITAL MARKETS DAY IN LONDON , SEPT. 26 , 2007 On Wednesday , September 26 , 2007 , YIT will hold a Capital Markets Day for investors and analysts in London .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",116.99444963410497
+`` These developments partly reflect the government 's higher activity in the field of dividend policy . '',neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence `` These developments partly reflect the government 's higher activity in the field of dividend policy . ''
+Allowed labels: positive,",103.3035814575851
+"In September alone , the market declined by 10.2 percent year-on-year to 19.28 million liters .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In September alone , the market declined by 10.2 percent year-on-year to 19.28 million liters .""
+Allowed labels: positive, negative",113.49874439835548
+"Incap , headquartered in Oulu , Finland , is a electronics contract manufacturer with some 750 employees in Finland , Estonia and India .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Incap , headquartered in Oulu , Finland , is a electronics contract manufacturer with some 750 employees in Finland , Estonia and I",115.69168857485056
+"rosendal at outotec.com Eila Paatela , Vice President - Corporate Communications tel. +358 20 529 2004 , +358 400 817198 e-mail eila .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",115.69712143391371
+What we think ?,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""What we think ?"".
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specified.
+
+Sentence analysis: ",116.52230514213443
+"The company expects its net sales for the whole of 2007 to be EUR 950mn-1 ,000 mn .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The company expects its net sales for the whole of 2007 to be EUR 950mn-1 ,000 mn .""
+Allowed labels: positive, negative, neutral.
+C",116.4887794740498
+"On preliminary estimate , the hotel will operate under the brand Novotel .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""On preliminary estimate , the hotel will operate under the brand Novotel .""
+Allowed labels: positive, negative, neutral.
+Constraint",116.50649876147509
+Aldata said that there are still a number of operational aspects to be defined between it and Microsoft and further details of the product and market initiatives resulting from this agreement will be available at a later date .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",114.30982691049576
+"The bond , with a maturity of five years , is part of the bank 's domestic bond program .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The bond , with a maturity of five years , is part of the bank 's domestic bond program .""
+Allowed labels: positive, negative, neut",115.43528506532311
+"Favourable currency rates also contributed to higher net sales , '' CEO Kari Kauniskangas said .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Favourable currency rates also contributed to higher net sales , '' CEO Kari Kauniskangas said .""
+Allowed labels: positive, negativ",113.23704662173986
+"The company had net sales of EUR 10.8 million in 2008 , and today has approximately 120 employees in Finland , Estonia and Poland .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The company had net sales of EUR 10.8 million in 2008 , and today has approximately 120 employees in Finland , Estonia and Poland .",111.91553964093328
+Net sales decreased to EUR 220.5 mn from EUR 470.0 mn in the corresponding period in 2009 .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Net sales decreased to EUR 220.5 mn from EUR 470.0 mn in the corresponding period in 2009 .""
+Allowed labels: positive, negative, ne",112.27152048423886
+"The Inventors are Ridge Justin , Bao Yiliang and Karczewicz Marta .",neutral,[parse_error],"[parse_error] The sentence lists the inventors of a patent or invention without any financial context, sentiment indicators, or performance metrics. It is a factual statement.
+
+Label: neutral",79.36745698004961
+A meeting of Glisten shareholders to vote on the bid will be held on 12 March .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""A meeting of Glisten shareholders to vote on the bid will be held on 12 March .""
+Allowed labels: positive, negative, neutral.
+Const",113.15269630029798
+Kauko-Telko 's centralized administration will be dissolved and appropriate parts of it will be transferred to operating activities and Group administration by the end of the year .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Kauko-Telko 's centralized administration will be dissolved and appropriate parts of it will be transferred to operating activities",112.06321708112955
+Shares of Nokia Corp. rose Thursday after the cell phone maker said its third-quarter earnings almost doubled and its share of the global handset market increased .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Shares of Nokia Corp. rose Thursday after the cell phone maker said its third-quarter earnings almost doubled and its share of the ",112.46080781146884
+Net sales surged by 30 % to EUR 36 million .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Net sales surged by 30 % to EUR 36 million .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format:
+La",112.96683755144477
+"By the end of 2006 , the number of joint branch offices will total 170 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""By the end of 2006 , the number of joint branch offices will total 170 .""
+Allowed labels: positive, negative, neutral.
+Constraint: ",90.29262505471706
+"Sales climbed 19.2 pct to 1.002 bln eur , surpassing the 953 mln eur consensus figure .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Sales climbed 19.2 pct to 1.002 bln eur , surpassing the 953 mln eur consensus figure .""
+Allowed labels: positive, negative, neutral",111.57967333868146
+1 February 2011 - Finnish textile and clothing company Marimekko Oyj HEL : MMO1V said today its preliminary operating profit grew to EUR8 .2 m in 2010 from EUR6 .3 m in 2009 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.01844535768032
+"Finnish telecoms software developer Tecnomen Oyj said on December 5 , 2006 it won a $ 3.3 mln ( 2.5 mln euro ) order to supply an expansion of the charging and messaging systems for the mobile and fixed networks of Brasil Telecom .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",33.0480749681592
+"Once your plants are in the ground they will continue to grow , but the success of any garden lies in how well it 's maintained .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Once your plants are in the ground they will continue to grow , but the success of any garden lies in how well it 's maintained .""
+",111.84703241661191
+"According to Viking Line 's Managing Director , Nils-Erik Eklund , the company 's Board of Directors is very satisfied with Viking Line 's performance .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""According to Viking Line 's Managing Director , Nils-Erik Eklund , the company 's Board of Directors is very satisfied with Viking ",111.85859832912683
+The company continued the development of a fully human antibody in its VAP-1 antibody program .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The company continued the development of a fully human antibody in its VAP-1 antibody program .""
+Allowed labels: positive, negative",109.9923665523529
+"In 2009 , Lee & Man had a combined annual production capacity of close to 4.5 million tonnes of paper and 300,000 tonnes of pulp .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In 2009 , Lee & Man had a combined annual production capacity of close to 4.5 million tonnes of paper and 300,000 tonnes of pulp .""",112.09199542924762
+Odell has not contacted the State of Finland in this issue .,neutral,[parse_error],"[parse_error] The sentence states a fact about a person not contacting a state authority. There is no positive or negative sentiment expressed regarding financial performance, profit, loss, or market conditions. It",79.84034786373377
+"Motorola accounted for 11.5 percent of the South Korean handset market as of the end of April , Samsung held 55 percent and LG Electronics 19 percent , according to Korea-based ATLAS Research Group .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specified.
+
+Sentence: Motorola accounted",111.81489739194512
+Mursula said they tried to gather macro-economic perspective to see how Malaysia was doing .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Mursula said they tried to gather macro-economic perspective to see how Malaysia was doing .""
+Allowed labels: positive, negative, n",112.11897924542427
+"The maximum amount of the capital loan will be EUR30m and the minimum subscription -- EUR10 ,000 .",neutral,[parse_error],"[parse_error] The sentence describes financial terms (maximum amount, minimum subscription) for a capital loan without expressing positive or negative sentiment. It is factual information.
+
+Label: neutral",49.90374697372317
+The acquisition is expected to take place by the end of August 2007 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The acquisition is expected to take place by the end of August 2007 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Retu",111.99262502789497
+The divested stake represented about 2.7 m shares in Okmetic 's capital .,neutral,[parse_error],"[parse_error] The sentence states a fact about a divested stake representing a certain number of shares. It does not express positive or negative sentiment regarding the company's performance, strategy, or market p",83.11091675981879
+No decision on such sale of the now issued or existing treasury shares to YA Global has been made yet .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""No decision on such sale of the now issued or existing treasury shares to YA Global has been made yet .""
+Allowed labels: positive, ",105.32668934389949
+The real estate company posted a net loss of +ó  x201a -¼ 59.3 million +ó  x201a -¼ 0.21 per share compared with a net profit of +ó  x201a -¼ 31 million +ó  x201a -¼ 0.11 per share for the corresponding quarter of 2007 .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format required:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.87261723726988
+Diluted earnings per share ( EPS ) rose to EUR 0.29 from EUR 0.05 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Diluted earnings per share ( EPS ) rose to EUR 0.29 from EUR 0.05 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Retur",111.79414690285921
+"The Australian company Mirabela Nickel has awarded Outokumpu Technology a contract for grinding technology for its nickel sulfide project in Bahia State , Brazil .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The Australian company Mirabela Nickel has awarded Outokumpu Technology a contract for grinding technology for its nickel sulfide p",111.45290202647448
+"Commission income increased by 22 % to EUR 4.4 mn , and lending volume rose by 13.5 % .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Commission income increased by 22 % to EUR 4.4 mn , and lending volume rose by 13.5 % .""
+Allowed labels: positive, negative, neutra",111.59923841431737
+There have not been previous share subscriptions with 2004 stock options .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""There have not been previous share subscriptions with 2004 stock options .""
+Allowed labels: positive, negative, neutral.
+
+Analysis:",111.83246894925833
+"According to Atria 's President and CEO Matti Tikkakoski , the company 's Swedish operations significantly improved in the first quarter .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""According to Atria 's President and CEO Matti Tikkakoski , the company 's Swedish operations significantly improved in the first qu",107.24752032011747
+"The manufacture of CPPs will be undertaken at the existing Export Oriented Unit EOU at Wartsila 's factory at Khopoli , near Mumbai .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The manufacture of CPPs will be undertaken at the existing Export Oriented Unit EOU at Wartsila 's factory at Khopoli , near Mumbai",111.69984186440706
+"However , two of the previously ordered sets will start producing electricity at the end of October 2010 , it said .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""However , two of the previously ordered sets will start producing electricity at the end of October 2010 , it said .""
+Allowed label",111.10856741294265
+Number of offers received for this contract is two .,neutral,[parse_error],"[parse_error] The sentence states a factual detail about a contract (number of offers received). It does not express positive or negative sentiment regarding the company's performance, financial health, or market p",71.03799106553197
+"The Annual Report contains the financial statements , the consolidated financial statements , the report by the Board of Directors and the auditor 's report .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The Annual Report contains the financial statements , the consolidated financial statements , the report by the Board of Directors ",103.01541574671865
+With this appointment Kaupthing Bank aims to further co-ordinate Capital Markets activities within the Group and to improve the overall service to clients .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""With this appointment Kaupthing Bank aims to further co-ordinate Capital Markets activities within the Group and to improve the ove",112.20997023582458
+"According to Gallup Food and Farm Facts , beef consumption totaled 99mn kilos in Finland in 2007 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""According to Gallup Food and Farm Facts , beef consumption totaled 99mn kilos in Finland in 2007 .""
+Allowed labels: positive, negat",112.17320901155472
+"Finnish airline Finnair has won a deal with the UK public sector to be the official airline for flights from London Heathrow to Osaka in Japan , as well as flights between Manchester in the UK and Helsinki in Finland .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",112.38963958993554
+The plant is expected to enter commercial operation by mid-2009 .,neutral,[parse_error],"[parse_error] The sentence states a fact about the expected operational start date of a plant. It does not express positive or negative sentiment regarding the company's performance, prospects, or reputation. It is",97.49706702306867
+The full-function PC weighs 1.25 kilograms and measures slightly more than two centimeters thin .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The full-function PC weighs 1.25 kilograms and measures slightly more than two centimeters thin .""
+Allowed labels: positive, negati",95.76834498718381
+"Finnish electronics contract manufacturer Scanfil reports net sales of EUR 58.9 mn in the second quarter of 2007 , down from EUR 62.4 mn a year earlier .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format constraint: EXACTLY Label: <positive|negative|neutral> followed by Expl",111.8365170918405
+Ruukki Group calculates that it has lost EUR 4mn in the failed project .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Ruukki Group calculates that it has lost EUR 4mn in the failed project .""
+Allowed labels: positive, negative, neutral.
+
+Sentence an",102.66342019289732
+The EUR17m contract includes both design and construction works .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The EUR17m contract includes both design and construction works .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return ",111.47791470214725
+The front surfaces of these valve plates are directed towards each other .,neutral,[parse_error],"[parse_error] The sentence describes a technical feature of valve plates (orientation of front surfaces). It contains no financial indicators, profit/loss, market performance, or sentiment-related words. It is pure",62.186202969402075
+The company reiterates its outlook for 2009 .,neutral,[parse_error],"[parse_error] The sentence states that the company is repeating its outlook for 2009. It does not indicate positive or negative sentiment, nor does it provide financial results or specific positive/negative indicat",70.77696097642183
+The previous offer was 3.4 % of voting rights and 12.3 % of capital .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The previous offer was 3.4 % of voting rights and 12.3 % of capital .""
+Allowed labels: positive, negative, neutral.
+Constraint: Ret",111.59552140906453
+The presentation material can be viewed on the company 's website in English after the conference .,neutral,[parse_error],"[parse_error] The sentence states a fact about where presentation material can be viewed. It does not express any opinion, profit, loss, growth, or sentiment regarding the company's performance. It is neutral.
+
+Lab",61.09885998815298
+"As part of the agreement , Aspocomp will also give Meadville a 10 pct slice of a subsidiary operating in Oulu , Finland .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""As part of the agreement , Aspocomp will also give Meadville a 10 pct slice of a subsidiary operating in Oulu , Finland .""
+Allowed ",111.22316783666611
+Finnish technology company Raute Corporation ( OMX Helsinki : RUTAV ) issued on Tuesday ( 23 September ) a profit warning for the financial year 2008 .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Finnish technology company Raute Corporation ( OMX Helsinki : RUTAV ) issued on Tuesday ( 23 September ) a profit warning for the f",111.35650461912155
+The company said that sales in the three months to the end of March slid to EUR86 .4 m US$ 113.4 m from EUR91 .2 m last year .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",110.98196426406503
+"In 2008 , AVC Systemhaus had net sales of EUR 10 million USD 7.1 m .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In 2008 , AVC Systemhaus had net sales of EUR 10 million USD 7.1 m .""
+Allowed labels: positive, negative, neutral.
+Constraint: Retu",111.65477588772774
+27 January 2011 - Finnish IT solutions provider Affecto Oyj ( HEL : AFE1V ) said today it has won a EUR1 .2 m ( USD1 .6 m ) contract from state-owned Lithuanian Social Insurance Institution ( SODRA ) .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.8745993077755
+"According to Gran , the company has no plans to move all production to Russia , although that is where the company is growing .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""According to Gran , the company has no plans to move all production to Russia , although that is where the company is growing .""
+
+A",111.8505401685834
+"The sellers include 40 shareholders , including Intellibis management , employees and other investors .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The sellers include 40 shareholders , including Intellibis management , employees and other investors .""
+Allowed labels: positive, ",112.64194522798061
+"Rautalinko was resposnible also for Mobility Services , and his job in this division will be continued by Marek Hintze .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Rautalinko was resposnible also for Mobility Services , and his job in this division will be continued by Marek Hintze .""
+Allowed l",112.45326823368669
+"Componenta has production lines for similar-sized products at Karkkila in Finland , at Weert in the Netherlands and at Orhangazi in Turkey , and these had a combined output of approximately 100,000 tonnes and net sales of EUR 135 million in 2007 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format constraint: EXACTLY Label: <positive|negative|neutral> and Explanation:",112.60125270858407
+"The market share of Volkswagen passenger cars in Finland was 10.1 percent , Audi had a market share of 3.1 percent and Seat 's share was 0.9 percent .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format required:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.15695641934872
+"These new units will be built at Cargotec 's state of the art manufacturing facility in San Antonio , Texas , USA , which started operations in 2009 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""These new units will be built at Cargotec 's state of the art manufacturing facility in San Antonio , Texas , USA , which started o",112.08082024380565
+In 2007 Etteplan reported a turnover of EUR125 .2 m.,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In 2007 Etteplan reported a turnover of EUR125 .2 m.""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the f",112.08949437364936
+"The repo rate will gradually reach 2 % at the end of 2010 , according to Nordea 's Economic Outlook .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The repo rate will gradually reach 2 % at the end of 2010 , according to Nordea 's Economic Outlook .""
+Allowed labels: positive, ne",112.13181426003575
+One of the headboxes will be equipped with a modern consistency control system to ensure cross machine profile of the plasterboard .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""One of the headboxes will be equipped with a modern consistency control system to ensure cross machine profile of the plasterboard ",112.39850759506226
+The economic occupancy rate of Sponda 's property portfolio rose to 91.2 % from 88.8 % in 2006 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The economic occupancy rate of Sponda 's property portfolio rose to 91.2 % from 88.8 % in 2006 .""
+Allowed labels: positive, negativ",112.04455568268895
+"`` The industry is coming to an interesting fork in the road as both handset manufacturers and wireless carriers attempt to serve as the portal for Web-based service to your wireless handset , '' he wrote .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.118025097996
+The reductions will be concluded by autumn 2010 .,neutral,[parse_error],"[parse_error] The sentence states a fact about when reductions will be concluded. It does not express positive or negative sentiment regarding the company's performance, strategy, or outlook. It is a neutral statem",50.70442920550704
+"The copying , republication or redistribution of AFX News Content , including by framing or similar means , is expressly prohibited without the prior written consent of AFX News .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The copying , republication or redistribution of AFX News Content , including by framing or similar means , is expressly prohibited",111.13715766742826
+"The company said that 80 % of the shares of the holding company will be sold to Meadville Holdings Limited , a Hong Kong listed parent company of the Meadville Group .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.89765274524689
+"Salcomp 's charger manufacturing plant in India is located in the Nokia Telecom Park in the state of Tamil Nadu , in the eastern part of India .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Salcomp 's charger manufacturing plant in India is located in the Nokia Telecom Park in the state of Tamil Nadu , in the eastern pa",112.21496911719441
+Sanoma announced the Stock Option Scheme 2008 on 19 December 2008 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Sanoma announced the Stock Option Scheme 2008 on 19 December 2008 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Retur",112.56439194083214
+"According to HK Ruokatalo , almost all the meat used by the company comes from Finland .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""According to HK Ruokatalo , almost all the meat used by the company comes from Finland .""
+Allowed labels: positive, negative, neutr",111.95041152834892
+"Latin America currently accounts for approximately 40 % of sales at Tecnotree , company president and CEO Eero Mertano recently told BNamericas .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Latin America currently accounts for approximately 40 % of sales at Tecnotree , company president and CEO Eero Mertano recently tol",112.47989989817142
+"`` UPM 's deliveries increased during the third quarter by 4 percent , and the efficiency of operations improved , '' Chief Executive Jussi Pesonen said .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.6037260890007
+EPS grew to 0.04 eur from 0.02 eur .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""EPS grew to 0.04 eur from 0.02 eur ."".
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format:
+Label: <p",112.47589638456702
+"In addition , MIDs are always online and enable full Internet browsing .",neutral,[parse_error],"[parse_error] The sentence describes a technical feature of MIDs (Mobile Internet Devices) being always online and enabling Internet browsing. It does not contain financial terms, profit/loss indicators, market per",93.71570289507508
+"Currently , 95 % of Trainers House 's revenues are attributed to the Finnish market .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Currently , 95 % of Trainers House 's revenues are attributed to the Finnish market .""
+Allowed labels: positive, negative, neutral.",112.19622499123216
+"Earnings per share ( EPS ) amounted to EUR0 .98 , up from the loss of EUR0 .02 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Earnings per share ( EPS ) amounted to EUR0 .98 , up from the loss of EUR0 .02 .""
+Allowed labels: positive, negative, neutral.
+Cons",111.20381298288703
+"Helsinki on October 22 , 2008 SSH COMMUNICATIONS SECURITY CORP Board of Directors For further information , please contact : Tomi Laamanen , Chairman , tel. +358 0 400 609 544 Distribution : NASDAQ OMX Helsinki Ltd. .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.09789912775159
+The company confirmed its estimate for lower revenue for the whole 2009 than the year-ago EUR93 .9 m as given in the interim report on 5 August 2009 .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",111.98277396336198
+"In January-November 2009 , the group 's sales totalled EUR 7,801.7 mn , which was a drop of 12.6 % from the same period of 2008 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In January-November 2009 , the group 's sales totalled EUR 7,801.7 mn , which was a drop of 12.6 % from the same period of 2008 .""
+",111.97174591198564
+"LONDON AFX - UK and European brokers ' recommendations issued today , as collated by AFX News from a range of market sources .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""LONDON AFX - UK and European brokers ' recommendations issued today , as collated by AFX News from a range of market sources .""
+
+Al",108.9338329397142
+Finnish waste management and cleaning group Lassila & Tikanoja Oyj ( L&T ) net profit went down to 32.2 mln euro ( $ 47.7 mln ) for 2007 from 35.3 mln euro ( $ 52.3 mln ) for 2006 .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.95312884822488
+"In addition to verification of an identity and digital signatures , new state-approved Mobile ID enables to cast votes in elections as well .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In addition to verification of an identity and digital signatures , new state-approved Mobile ID enables to cast votes in elections",112.36255123093724
+"In the building and home improvement trade , net sales totalled EUR 1,173 mn , down from EUR 1,566 mn a year earlier .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In the building and home improvement trade , net sales totalled EUR 1,173 mn , down from EUR 1,566 mn a year earlier .""
+
+Allowed la",112.00906784459949
+"Los Angeles-based Pacific Office Properties Trust acquires , owns , and operates office properties in the western U.S. , focusing initially on the markets of Honolulu , San Diego , Los Angeles , and Phoenix .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Los Angeles-based Pacific Office Properties Trust acquires , owns , and operates office properties in the western U.S. , focusing i",111.92212151736021
+The value of the contract is EUR 25mn .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The value of the contract is EUR 25mn .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format:
+Label: ",111.9527547173202
+"Teleste 's hybrid TV solution includes components for the whole process of delivering video services to consumers from content acquisition and service creation to delivery through a range of access solutions , including HFC ( hybrid fibre-coaxial ) , xDSL , EttH , and FttH .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.13601665943861
+The MET is located in the Central Business District ( CBD ) of Bangkok .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The MET is located in the Central Business District ( CBD ) of Bangkok .""
+Allowed labels: positive, negative, neutral.
+Constraint: ",112.17408028617501
+Revenue grew 1 percent to euro742 .2 million US$ 964 million from euro735 million .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Revenue grew 1 percent to euro742 .2 million US$ 964 million from euro735 million .""
+
+Allowed labels: positive, negative, neutral.
+",102.91443923860788
+"In addition to the Tulikivi Corporation , he is also currently a member of the Board of the following companies : Altia Corporation , J+ñrvi-Suomen Portti Osuuskunta , Osuuskunta KPY , Profile Vehicles Oy and Voimatel Oy .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.7308149933815
+"It generated an operating loss of EUR 96.3 mn , down from a profit of EUR 43.9 mn .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""It generated an operating loss of EUR 96.3 mn , down from a profit of EUR 43.9 mn .""
+Allowed labels: positive, negative, neutral.
+
+",108.12211248651147
+"Both operating profit and turnover for the nine-month period increased , respectively from EUR2 .4 m and EUR43 .8 m , as compared to the corresponding period a year ago .",positive,[parse_error],[parse_error] Label: positive,56.01179902255535
+The shares represented 4.998 % of total share capital and 2.14 % of total voting rights .,neutral,[parse_error],[parse_error] The sentence states the percentage of share capital and voting rights held by a specific entity (likely implied from context not provided). It is a factual statement about shareholding percentages. Th,60.6850111708045
+The new B shares carry the right to dividend and other shareholder rights with effect from today .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The new B shares carry the right to dividend and other shareholder rights with effect from today .""
+Allowed labels: positive, negat",110.10253912582994
+Profit for the period was EUR 15.6 mn compared to EUR 14.1 mn in 2007 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Profit for the period was EUR 15.6 mn compared to EUR 14.1 mn in 2007 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Re",110.81593215093017
+And that 's exactly what happened on a recent weekday when an East Haven baker was brought in to remind residents about the Easter tradition of making wheat and rice pies .,neutral,[parse_error],"[parse_error] The sentence describes a factual event where a baker was brought in to remind residents about a tradition. There is no positive or negative sentiment expressed regarding financial performance, market ",97.85034918412566
+Investment management and investment advisory services are the company 's sole line of business .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Investment management and investment advisory services are the company 's sole line of business .""
+Allowed labels: positive, negativ",110.95727974548936
+The company reported today an operating loss of EUR0 .1 m on net sales of EUR4 .5 m for the first quarter 2008 .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The company reported today an operating loss of EUR0 .1 m on net sales of EUR4 .5 m for the first quarter 2008 .""
+Allowed labels: p",110.83047452941537
+Kesko has previously published a stock exchange release concerning the deal on 7 February 2007 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Kesko has previously published a stock exchange release concerning the deal on 7 February 2007 .""
+Allowed labels: positive, negativ",110.83875451236963
+"International sales rose by 59.8 % to EUR 1,244.4 mn .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""International sales rose by 59.8 % to EUR 1,244.4 mn .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the ",108.13334725424647
+"The tanks will be delivered to a company which is currently building a chemical tank farm in Antwerp , northern Belgium .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The tanks will be delivered to a company which is currently building a chemical tank farm in Antwerp , northern Belgium .""
+Allowed ",110.72633586451411
+"Quartal Oy now owns 2,094,063 shares in Satama Interactive Plc , which represents 5,19 per cent of the share capital and voting rights .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Quartal Oy now owns 2,094,063 shares in Satama Interactive Plc , which represents 5,19 per cent of the share capital and voting rig",110.64134297519922
+Amanda Capital has investments in 22 private equity funds and in over 200 unquoted companies mainly in Europe .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Amanda Capital has investments in 22 private equity funds and in over 200 unquoted companies mainly in Europe .""
+Allowed labels: po",110.67582646012306
+EBIT excluding non-recurring items was estimated to increase from 2009 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""EBIT excluding non-recurring items was estimated to increase from 2009 .""
+
+1.  **Analyze the sentence:**
+    *   Subject: EBIT excl",111.03502360731363
+The agreement must be approved by the Russian competition authorities before it enters into force .,neutral,[parse_error],"[parse_error] The sentence states a condition for an agreement to enter into force (approval by Russian competition authorities). It does not express positive or negative sentiment about the business, performance, ",79.50963643193245
+"The stock is trading above both its MAPs and the 50-day MAP of SEK72 .983 is higher than the 200-day MAP of SEK70 .283 , a bullish indicator .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format required:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",110.85856907814741
+The forecast for 2012 is 3.3 % .,neutral,neutral,"The sentence states a specific forecast figure without indicating improvement, decline",83.06883578374982
+"According to CapMan Plc 's Corporate Governance , the majority of the committees ' members shall be independent of the Company .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""According to CapMan Plc 's Corporate Governance , the majority of the committees ' members shall be independent of the Company .""
+A",110.94398275017738
+The new factory working model and reorganisations would decrease Nokian Tyres ' costs in the factory by EUR 30 million ( USD 38.7 m ) .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The new factory working model and reorganisations would decrease Nokian Tyres ' costs in the factory by EUR 30 million ( USD 38.7 m",110.71310730651021
+"The Annual General Meeting approved that the yearly remuneration for the members of the Board of Directors shall remain at EUR 40.000 for the Chairman of the Board , EUR 30.000 for the Deputy Chairman of the Board and EUR 20.000 for other members of the Board .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",110.54862597957253
+"Pretax profit totaled EUR 9.0 mn , down from EUR 36.3 mn in 2007 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Pretax profit totaled EUR 9.0 mn , down from EUR 36.3 mn in 2007 .""
+Allowed labels: positive, negative, neutral.
+
+Analysis:
+The sen",109.92998675256968
+"Net income from life insurance doubled to EUR 6.8 mn from EUR 3.2 mn , and net income from non-life insurance rose to EUR 5.2 mn from EUR 1.5 mn in the corresponding period in 2009 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",84.73859879001975
+"However , sales returned to growth in April-June 2010 , CEO Pekka Eloholma said .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""However , sales returned to growth in April-June 2010 , CEO Pekka Eloholma said .""
+Allowed labels: positive, negative, neutral.
+
+An",110.82371922582388
+"The contract value amounts to about EUR11m , the company added .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The contract value amounts to about EUR11m , the company added .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EX",90.58867244794965
+The shares shall be acquired according to the Rules of NASDAQ OMX Helsinki and otherwise according to the rules related to acquisition of the company 's own shares .,neutral,neutral,The sentence states,55.40541464462876
+"Currently it operates a fleet of eight carriers , as well as nine pushers and barges .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Currently it operates a fleet of eight carriers , as well as nine pushers and barges .""
+Allowed labels: positive, negative, neutral",110.7096607722342
+Also the development of online businesses will continue .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Also the development of online businesses will continue .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY t",92.02311784029007
+"At the end of March 2007 , the group 's order book was at EUR 39.6 mn , up 42 % from the corresponding period in 2006 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""At the end of March 2007 , the group 's order book was at EUR 39.6 mn , up 42 % from the corresponding period in 2006 .""
+Allowed la",110.77606227248907
+"According to Finnair Technical Services , the measure is above all due to the employment situation .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""According to Finnair Technical Services , the measure is above all due to the employment situation .""
+Allowed labels: positive, neg",110.96064222976565
+Ramirent Finland is the domestic unit of machinery rental company Ramirent Oyj HEL : RMR1V .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Ramirent Finland is the domestic unit of machinery rental company Ramirent Oyj HEL : RMR1V .""
+Allowed labels: positive, negative, n",110.87770553305745
+"Both operating profit and net sales for the six-month period increased , respectively from EUR0 .4 m and EUR3 .2 m , as compared to the corresponding period in 2005 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Both operating profit and net sales for the six-month period increased , respectively from EUR0 .4 m and EUR3 .2 m , as compared to",84.96227025985718
+The investment would be some EUR5m .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The investment would be some EUR5m .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specified.
+",109.38394643738866
+A 2001 agreement expired earlier this month .,neutral,[parse_error],"[parse_error] The sentence states a fact about an agreement expiring. There is no positive or negative sentiment expressed regarding the company's performance, strategy, or market position. It is a neutral statemen",81.18777107819915
+"The operating loss amounted to EUR 0.8 mn , compared to a profit of EUR 3.9 mn a year earlier .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The operating loss amounted to EUR 0.8 mn , compared to a profit of EUR 3.9 mn a year earlier .""
+
+Allowed labels: positive, negativ",111.02566711232066
+"However , the proportion of the paid standing orders grew in 2009 .",positive,neutral,"<brief reason>
+
+Constraint: Return EXACTLY this format. No extra text.
+</think>
+
+Label: neutral",54.31218804046512
+Diluted earnings per share ( EPS ) rose to EUR 0.52 versus EUR 0.09 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Diluted earnings per share ( EPS ) rose to EUR 0.52 versus EUR 0.09 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Ret",111.75870806351304
+"Raute reported a loss per share of EUR0 .86 for the first half of 2009 , against EPS of EUR0 .74 in the corresponding period of 2008 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Raute reported a loss per share of EUR0 .86 for the first half of 2009 , against EPS of EUR0 .74 in the corresponding period of 200",111.50703458487988
+No financial details of the deployment were disclosed .,neutral,neutral,"<brief reason>
+
+No extra text allowed.
+</think>
+
+Label: neutral",32.72264885157347
+Construction is scheduled to start in April-June 2007 and to be completed in early 2008 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Construction is scheduled to start in April-June 2007 and to be completed in early 2008 .""
+Allowed labels: positive, negative, neutr",110.33232975751162
+"Both operating profit and net sales for the 12-month period increased , respectively from EUR10 .5 m and EUR28 .8 m , as compared to the financial year 2004 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",84.53534106910229
+"Finnish construction group Lemminkainen Oyj HEL : LEM1S said today it has won a contract to provide technical services for the Nevsky Centre shopping mall to be opened in November in St Petersburg , Russia .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",84.84165349975228
+The mill is concentrating on getting the supercalendered line running satisfactorily before restarting its older newsprint line .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The mill is concentrating on getting the supercalendered line running satisfactorily before restarting its older newsprint line .""
+",110.77188621088862
+"In August-October 2010 , the company 's result before taxes totalled EUR 9.6 mn , up from EUR 0.5 mn in the corresponding period in 2009 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In August-October 2010 , the company 's result before taxes totalled EUR 9.6 mn , up from EUR 0.5 mn in the corresponding period in",110.92389019951224
+"Operating profit fell to EUR 35.4 mn from EUR 68.8 mn in 2007 , including vessel sales gain of EUR 12.3 mn .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Operating profit fell to EUR 35.4 mn from EUR 68.8 mn in 2007 , including vessel sales gain of EUR 12.3 mn .""
+Allowed labels: posit",110.79331202805042
+"In the second quarter of 2010 , the company 's net profit was EUR1 .7 m compared to a net loss of EUR1 .3 m in April-June 2009 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In the second quarter of 2010 , the company 's net profit was EUR1 .7 m compared to a net loss of EUR1 .3 m in April-June 2009 .""
+A",110.23794336244464
+"Cargo traffic fell 1 % year-on-year to 8,561 tonnes in September 2009 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Cargo traffic fell 1 % year-on-year to 8,561 tonnes in September 2009 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Re",110.27657031267881
+"Operating profit totalled EUR 9.6 mn , down from EUR 42.0 mn the year before .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Operating profit totalled EUR 9.6 mn , down from EUR 42.0 mn the year before .""
+Allowed labels: positive, negative, neutral.
+Constr",111.01729852333665
+Rapala aims to move the distribution unit Ragot from Loudeac in Bretagne and the distribution unit Waterqueen and the fishing line supplier Tortue from Saint Marcel in Central France to Morvillars .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specified.
+
+Sentence: Rapala aims to mov",110.80612950399518
+"Profit after taxes for the period was up to EUR0 .9 m , from EUR0 .01 m last year .",positive,[parse_error],"[parse_error] Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Task: Classify financial sentiment for a given sentence.
+    *   Allowed labels: positive, negative, neutral.
+    *   Format constraint: EXACTLY",110.74119018018246
+"Stockholm , 3 March 2011 About Cybercom The Cybercom Group is a high-tech consultancy that offers global sourcing for end-to-end solutions .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Stockholm , 3 March 2011 About Cybercom The Cybercom Group is a high-tech consultancy that offers global sourcing for end-to-end so",110.64383536949754
+"ADPnews - Aug 3 , 2009 - Finnish media group Ilkka-Yhtyma Oyj HEL : ILK2S said today its net profit fell 45 % on the year to EUR 5.9 million USD 8.4 m in the first half of 2009 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",110.7423774190247
+"Operating loss of the Pulp & Paper Machinery unit was over EUR 3mn in September 2007 - August 2008 , compared to a profit of EUR 3.7 mn a year earlier .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Operating loss of the Pulp & Paper Machinery unit was over EUR 3mn in September 2007 - August 2008 , compared to a profit of EUR 3.",110.89884525537491
+"Also , a six-year historic analysis is provided for these markets .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Also , a six-year historic analysis is provided for these markets .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return",110.74062358215451
+The value of the orders is about EUR 70mn .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The value of the orders is about EUR 70mn .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format:
+Lab",110.65505466237664
+"Finnish flexible packaging manufacturer Suominen Corporation reports net sales of EUR 54.5 mn in the first quarter of 2008 , compared with EUR 54.3 mn a year earlier .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",110.56845499947667
+The EPS improved to EUR0 .38 from EUR0 .27 .,positive,positive,"<brief reason>
+
+The sentence states that EPS (Earnings Per Share) improved from 0.27 to 0.38. An improvement in earnings is generally positive.
+
+Label: positive",82.90461118519306
+"The order comprises four ball mills , which will be organized in two different streams for treating ore in the Pilanesberg platinum mine .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The order comprises four ball mills , which will be organized in two different streams for treating ore in the Pilanesberg platinum",110.52195980772376
+"Proline Plus is available in both adjustable single and multichannel models and fixed volume single-channel models , in volume ranges from 0.1 micro litres to 10 ml .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Proline Plus is available in both adjustable single and multichannel models and fixed volume single-channel models , in volume rang",113.7244485206902
+"Our customers include companies in the energy and process industry sectors , in particular .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Our customers include companies in the energy and process industry sectors , in particular .""
+Allowed labels: positive, negative, n",111.48711347579956
+"Net cash flow from operating activities was a negative EUR 3.1 mn , compared to EUR 23.3 mn in the corresponding period in 2009 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Net cash flow from operating activities was a negative EUR 3.1 mn , compared to EUR 23.3 mn in the corresponding period in 2009 .""
+",111.66582331806421
+"Last year , 8.3 million passengers flew the airline , down 4 percent from 2007 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Last year , 8.3 million passengers flew the airline , down 4 percent from 2007 .""
+Allowed labels: positive, negative, neutral.
+Cons",111.64021020010114
+"LEED is an internationally recognized green building certification system , developed by the U.S. Green Building Council .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""LEED is an internationally recognized green building certification system , developed by the U.S. Green Building Council .""
+Allowed",112.1396141499281
+The duration of the contract is 37 months .,neutral,[parse_error],"[parse_error] The sentence states a fact about the duration of a contract (37 months). It does not express any opinion, profit, loss, or positive/negative sentiment regarding the company's performance.
+
+Label: neut",75.01971359550953
+"The process , technology , project management , basic engineering and quality assurance within Forest Industry will be consolidated in Vantaa , southern Finland .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The process , technology , project management , basic engineering and quality assurance within Forest Industry will be consolidated",112.33189248293638
+"Ragutis , which is based in Lithuania 's second-largest city Kaunas , boosted its sales last year 22.3 per cent to 36.4 million liters .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Ragutis , which is based in Lithuania 's second-largest city Kaunas , boosted its sales last year 22.3 per cent to 36.4 million lit",110.85039490833879
+"The reductions will be implemented immediately , beginning in October 2009 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The reductions will be implemented immediately , beginning in October 2009 .""
+Allowed labels: positive, negative, neutral.
+
+Analysi",112.012884311378
+"The major breweries increased their domestic beer sales by 4.5 per cent last year , to 256.88 million litres from 245.92 million litres in 2004 .",positive,[parse_error],"[parse_error] Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Task: Classify financial sentiment for the given sentence.
+    *   Allowed labels: positive, negative, neutral.
+    *   Format constraint: EXACT",111.0435926169157
+"With this acquisition the wireless modem unit and its approximately 1,100 employees were transferred to Renesas Electronics Corporation .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""With this acquisition the wireless modem unit and its approximately 1,100 employees were transferred to Renesas Electronics Corpora",111.29230645298958
+"In a separate announcement to the Helsinki stock exchange , Atria revealed that the company 's third quarter profits declined from EUR13 .9 m in the third quarter of last year to EUR12 .7 m in this year 's Q3 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",111.99948473274708
+"comparable operating profit totaled EUR 854mn , up from EUR 730mn in 2004 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""comparable operating profit totaled EUR 854mn , up from EUR 730mn in 2004 .""
+Allowed labels: positive, negative, neutral.
+Format re",112.47576937824488
+`` Demand for sports equipment was good in 2005 .,positive,positive,"<brief reason>
+
+Analysis:
+The sentence states that demand was ""good"". In financial sentiment analysis, positive adjectives like ""good"", ""strong"", ""high"" usually indicate positive sentiment.
+Label: positive",28.072619080543518
+Operating profit rose to EUR 13.1 mn from EUR 8.7 mn in the corresponding period in 2007 representing 7.7 % of net sales .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Operating profit rose to EUR 13.1 mn from EUR 8.7 mn in the corresponding period in 2007 representing 7.7 % of net sales .""
+
+Allowe",111.79519647732377
+The employee negotiations are to address measures needed to adjust the operations to the present production situation .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The employee negotiations are to address measures needed to adjust the operations to the present production situation .""
+Allowed la",111.56180730462074
+Operating profit improved by 44.0 % to ER 4.7 mn from EUR 3.3 mn in 2004 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Operating profit improved by 44.0 % to ER 4.7 mn from EUR 3.3 mn in 2004 .""
+Allowed labels: positive, negative, neutral.
+Constraint",111.79891071096063
+Raisio is the site of the main production plants as well as company headquarters .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Raisio is the site of the main production plants as well as company headquarters .""
+Allowed labels: positive, negative, neutral.
+Co",112.09856980293989
+"The order values at EUR 6.9 mn , and it consists of design services and hardware and software licences .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The order values at EUR 6.9 mn , and it consists of design services and hardware and software licences .""
+
+Allowed labels: positive",111.00014701113105
+Stora is due to release its fourth-quarter and 2009 full-year earnings on Feb. 4 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Stora is due to release its fourth-quarter and 2009 full-year earnings on Feb. 4 .""
+Allowed labels: positive, negative, neutral.
+Co",111.0593896061182
+"Tiimari 's registered share capital is 16,474,755 shares as per today .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Tiimari 's registered share capital is 16,474,755 shares as per today .""
+Allowed labels: positive, negative, neutral.
+Constraint: R",111.09639101102948
+The expansion is to be finalized in the autumn of 2009 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The expansion is to be finalized in the autumn of 2009 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY th",59.04572309553623
+"Operating profit totalled EUR 9.0 mn , down from EUR 9.7 mn in the first half of 2008 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Operating profit totalled EUR 9.0 mn , down from EUR 9.7 mn in the first half of 2008 .""
+Allowed labels: positive, negative, neutra",111.4368016757071
+"The contractor of the shopping center , China State Construction Engineering Corporation , has previously built e.g. airports , hotels and factories for large international customers in different parts of the world .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",111.30864723399282
+"Finnish pharmaceuticals company Orion reports profit before taxes of EUR 70.0 mn in the third quarter of 2010 , up from EUR 54.9 mn in the corresponding period in 2009 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.63848741725087
+"Pretax loss totalled EUR 49.9 mn , compared to a loss of EUR 15.4 mn in the corresponding period in 2008 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Pretax loss totalled EUR 49.9 mn , compared to a loss of EUR 15.4 mn in the corresponding period in 2008 .""
+Allowed labels: positiv",111.36409586668015
+"Both operating profit and net sales for the nine-month period increased , respectively by 26.6 % and 3.4 % , as compared to the corresponding period in 2006 .",positive,[parse_error],[parse_error] Label: positive,6.6263646222651005
+"Pretax profit rose to EUR 1,019 mn from EUR 1,007 in the corresponding period in 2005 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Pretax profit rose to EUR 1,019 mn from EUR 1,007 in the corresponding period in 2005 .""
+Allowed labels: positive, negative, neutra",111.77536297217011
+"Outotec 's scope of delivery includes design , basic engineering and supply of proprietary equipment for a sinter plant with a grate area of 496 square meters .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Outotec 's scope of delivery includes design , basic engineering and supply of proprietary equipment for a sinter plant with a grat",111.74414806440473
+Revenue grew 12 percent to (  x20ac ) 3.6 billion ( US$ 4.5 billion ) .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Revenue grew 12 percent to ( x20ac ) 3.6 billion ( US$ 4.5 billion ) ."".
+Allowed labels: positive, negative, neutral.
+Constraint: Re",111.11801236495376
+"The maximum obligated total trades per day is ISK 400,000,000 market value .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The maximum obligated total trades per day is ISK 400,000,000 market value .""
+Allowed labels: positive, negative, neutral.
+Constrai",112.30123901367188
+"In the Baltic countries , sales fell by 42.6 % .",negative,negative,"<brief reason>
+
+Analysis:
+The sentence states that sales fell by 42.6% in the Baltic countries.
+A decrease in sales is generally negative financial sentiment.
+
+Label: negative",27.895793985575438
+"Revenue grew by 2 percent to  x20ac 580 million $ 743 million , from  x20ac 569 million .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Revenue grew by 2 percent to  x20ac 580 million $ 743 million , from  x20ac 569 million .""
+
+Allowed labels: positive, negative, neu",106.09522747248411
+Unit costs for flight operations fell by 6.4 percent .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Unit costs for flight operations fell by 6.4 percent .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the ",110.04536718130112
+The company 's board of directors will propose a dividend of EUR 0.14 for 2008 at the annual general meeting .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The company 's board of directors will propose a dividend of EUR 0.14 for 2008 at the annual general meeting .""
+Allowed labels: pos",112.48247528076172
+The company 's model is based on developer contracting construction projects and customer focused project management .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The company 's model is based on developer contracting construction projects and customer focused project management .""
+Allowed lab",112.855902697891
+"In October , UPM reported a third-quarter net loss of euro86 million $ 110 million compared with a net profit of euro120 million in 2007 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In October , UPM reported a third-quarter net loss of euro86 million $ 110 million compared with a net profit of euro120 million in",112.90160731598735
+"3 February 2011 - Finnish broadband data communication systems provider Teleste Oyj HEL : TLT1V said yesterday its net profit rocketed to EUR4 .8 m in 2010 from EUR416 ,000 in 2009 and it lifted its dividend proposal .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.59753016754985
+"The broker started UPM-Kymmene , Stora Enso and Sappi with ` equal-weight ' recommendations and Holmen and Norske Skog with ` underweight ' ratings .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.63933462649584
+The value of the orders is over EUR 10mn .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The value of the orders is over EUR 10mn .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format Label",112.54516272991896
+"Participants at any of the book discussions or other special events , or visitors to the car dealership were eligible to enter the drawing for the 2005 silver , four-door Altima .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Participants at any of the book discussions or other special events , or visitors to the car dealership were eligible to enter the ",112.51564286276698
+Net profit was 35.5 mln compared with 29.8 mln .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Net profit was 35.5 mln compared with 29.8 mln .""
+Allowed labels: positive, negative, neutral.
+Format required:
+Label: <positive|neg",111.6172384172678
+Finnish metal products company Componenta Oyj net profit went slightly down to 25.1 mln euro ( $ 40.2 mln ) for the first half of 2008 from 25.4 mln euro ( $ 40.7 mln ) for the same period of 2007 .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.77914401888847
+"The total investment necessary will be EUR40m , the company estimated .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The total investment necessary will be EUR40m , the company estimated .""
+Allowed labels: positive, negative, neutral.
+Constraint: R",109.74867464974523
+Earnings per share EPS rose to EUR 0.11 from EUR 0.03 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Earnings per share EPS rose to EUR 0.11 from EUR 0.03 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the",111.37699792906642
+"In volume , the focus is already outside Finland , as 60 % of the group 's products are made in Poland and the Baltic countries .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In volume , the focus is already outside Finland , as 60 % of the group 's products are made in Poland and the Baltic countries .""
+",111.31504233554006
+It will report full-year results on August 22 .,neutral,[parse_error],"[parse_error] The sentence states a fact about when a company will report its full-year results. It does not contain any positive, negative, or sentiment-bearing words regarding performance, profit, loss, growth, e",100.23084527626634
+"Koduextra is operating a retail chain of 11 stores , controlled by Finnish Non-Food Center KY , Rukax OY , and Scan-Tukka OY .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Koduextra is operating a retail chain of 11 stores , controlled by Finnish Non-Food Center KY , Rukax OY , and Scan-Tukka OY .""
+All",111.38819318637252
+"Founded in 1985 , Quatrocon 's clientele consists of public sector builders , central trading companies and major construction firms .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Founded in 1985 , Quatrocon 's clientele consists of public sector builders , central trading companies and major construction firm",111.6501242890954
+Sanoma Magazines International will invite other shareholders holding approximately 15 % of the shares to sell their shares .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Sanoma Magazines International will invite other shareholders holding approximately 15 % of the shares to sell their shares .""
+Allo",99.26540898531675
+"`` We have come out with a decision which is based on our preliminary economic , operational and environmental findings , '' Karvinen said .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence `` We have come out with a decision which is based on our preliminary economic , operational and environmental findings , '' Karvinen",111.68385040387511
+"Typical end-uses include roof structures , floorings , walls and ceilings , non-visible structures in vehicles , packaging and boxes , construction site structures , fencing and shelters , and formwork with a limited number of concrete pourings .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",111.83541438356042
+Other details were not provided .,neutral,neutral,"<brief reason>
+
+The sentence states that information is missing (""not provided""). It does not express positive or negative sentiment regarding the financial performance or news. It is factual/neutral.
+
+Label: neutral",25.78361978009343
+Talvivaara is listed on the London Stock Exchange Main Market and NASDAQ OMX Helsinki and is included in the FTSE 250 Index .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Talvivaara is listed on the London Stock Exchange Main Market and NASDAQ OMX Helsinki and is included in the FTSE 250 Index .""
+Allo",112.16796429082751
+Pharmaceuticals group Orion Corp reported a fall in its third-quarter earnings that were hit by larger expenditures on R&D and marketing .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Pharmaceuticals group Orion Corp reported a fall in its third-quarter earnings that were hit by larger expenditures on R&D and mark",103.11634387820959
+"Net sales surged by 18.5 % to EUR167 .8 m. Teleste said that EUR20 .4 m , or 12.2 % , of the sales came from the acquisitions made in 2009 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.1066310890019
+Mr. Doring has been with Eaton since 1989 and acted as the Business Unit Manager for Eaton 's Power Controls Business Unit since January 2007 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Mr. Doring has been with Eaton since 1989 and acted as the Business Unit Manager for Eaton 's Power Controls Business Unit since Ja",110.73862254992127
+"CapMan Plc Press Release 31 March 2008 Jukka Ruuska , President of the OMX Nordic Exchanges and the Stockholm Stock Exchange , will transfer to CapMan effective no later than September 2008 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.01938895881176
+"That address also happens to house Italian megamart Eataly , meaning that `` Come on , kids , we 're going to the Toy Building ! ''",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.19631426036358
+"Dealers said the share was largely hit by investor disappointment about a refining margin of just 9.48 usd per barrel for the quarter and the performance of its shipping unit , which saw EBIT drop to 5 mln eur from 20 mln eur a year amid a fall in volumes and tanker rates .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.12326039373875
+"Harold W. Young is an independent broker working closely with several retailers including Ahold USA , Market Basket , CVS , BJ 's Wholesale Club , Hannaford and Cumberland Farms .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Harold W. Young is an independent broker working closely with several retailers including Ahold USA , Market Basket , CVS , BJ 's W",112.08237559348345
+"`` This is a significant milestone for Benefon , helping us to secure critical USP 's for our personal navigation product roadmap for 2007 and beyond , '' commented Simon Button , Chief Technology Officer at Benefon .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",111.8918647132814
+"Both operating profit and net sales for the 12-month period increased , respectively from EUR4 .7 m and EUR26 .7 m , as compared to 2004 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Both operating profit and net sales for the 12-month period increased , respectively from EUR4 .7 m and EUR26 .7 m , as compared to",112.09316620975733
+Cash flow from operations rose to EUR 52.7 mn from EUR 15.6 mn in 2007 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Cash flow from operations rose to EUR 52.7 mn from EUR 15.6 mn in 2007 .""
+Allowed labels: positive, negative, neutral.
+Constraint: R",112.20343147963285
+"Shareholder 's full name and ID code : - Petri Ailus , born 15.9.1966 For further information , please contact Isto Hantila , CEO , tel. +358 9 591 8342 .",neutral,[parse_error],"[parse_error] The sentence contains administrative details about a shareholder and contact information for the CEO. It does not express any financial sentiment (positive, negative, neutral regarding performance, pr",84.37727611139417
+"Berling Capital , Umo Capital and Veikko Laine are the biggest shareholders in Amanda Capital .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Berling Capital , Umo Capital and Veikko Laine are the biggest shareholders in Amanda Capital .""
+Allowed labels: positive, negative",112.12084189429879
+According to an  posted by the World Intellectual Property Organization : `` The present invention relates to hydrocarbons and particularly to the manufacture of hydrocarbon components suitable as aviation fuels or jet fuels and as blending stocks for aviation fuels .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.18932562693954
+"The Web-Marela application handles invitations to quote , quote comparisons , agreements , purchases , invoice inspections , inventory management , and deliveries .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The Web-Marela application handles invitations to quote , quote comparisons , agreements , purchases , invoice inspections , invent",90.77170969545841
+RL-Nordic is a part of Raiffeisen-Banking-Group Austria and is a subsidiary to Raiffeisen-Leasing GmbH in Austria .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""RL-Nordic is a part of Raiffeisen-Banking-Group Austria and is a subsidiary to Raiffeisen-Leasing GmbH in Austria .""
+Allowed labels",112.01881021261215
+"Glaston 's own glass processing unit , Tamglass Glass Processing , is a manufacturer of high quality safety glass products , and operates in Finland .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Glaston 's own glass processing unit , Tamglass Glass Processing , is a manufacturer of high quality safety glass products , and op",112.06881233677268
+"HELSINKI ( AFX ) - Shares closed higher , led by Nokia after it announced plans to team up with Sanyo to manufacture 3G handsets , and by Nokian Tyres after its fourth-quarter earnings report beat analysts ' expectations , dealers said .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.29511138424277
+"Sales in Finland decreased by 10.5 % in January , while sales outside Finland dropped by 17 % .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Sales in Finland decreased by 10.5 % in January , while sales outside Finland dropped by 17 % .""
+
+Allowed labels: positive, negativ",106.04143295437098
+"Neste Oil s refineries have a combined crude oil refining capacity of approximately 260,000 barrels a day .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Neste Oil s refineries have a combined crude oil refining capacity of approximately 260,000 barrels a day .""
+Allowed labels: positi",112.11975386366248
+"Sullivan said some of the boards `` really involve a lot of work , and people should get paid for their time . ''",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Sullivan said some of the boards `` really involve a lot of work , and people should get paid for their time . ''""
+
+Allowed labels:",112.31457522138953
+It will also strengthen Ruukki 's offshore business .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""It will also strengthen Ruukki 's offshore business .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the f",109.3342472165823
+"Metsaliitto will sell 1.1 million B shares of Neomarkka , accounting for about 18.3 pct of Neomarkka 's equity and about 12.7 pct of the voting rights .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",112.08487138152122
+"For the first nine months of 2010 , Talvivaara 's net loss narrowed to EUR 8.3 million from EUR 21.9 million for the same period of 2009 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""For the first nine months of 2010 , Talvivaara 's net loss narrowed to EUR 8.3 million from EUR 21.9 million for the same period of",112.47161664813757
+"MegaFon 's subscriber base increased 16.1 % in 2009 to 50.5 million users as of December 31 , while its market share by the number of customers amounted to 24 % as of late 2009 , up from 23 % as of late 2008 , according to TeliaSonera estimates .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.23039492219687
+"Finnish pulp and paper machinery maker Vaahto Group Oyj swung to a 1.1 mln euro $ 1.4 mln net profit in the fiscal 2005-06 , ended August 31 , 2006 , from a 249,000 euro $ 319,000 net loss in the fiscal 2004-05 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.38234997540712
+"- The Group -¦ s sales during the period were EUR 31.6 million EUR 36.6 million , 1-6/2007 and profit before taxes was EUR 0.2 1.3 million .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",112.3476308323443
+"The development of the technological park , which will specialize in telecommunications and information technologies , is part of the state program for the formation of technoparks for hi-tech sectors in Russia .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",112.05207107588649
+Terms were not disclosed .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Terms were not disclosed .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specified.
+
+Sentence ",91.56772224605083
+"In the first nine months of 2010 , the company 's net loss narrowed to EUR415 ,000 from EUR7 .4 m for the corresponding period of 2009 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In the first nine months of 2010 , the company 's net loss narrowed to EUR415 ,000 from EUR7 .4 m for the corresponding period of 2",86.63389526307583
+Loss for the period totalled EUR 15.6 mn compared to a profit of EUR 6.3 mn in 2008 .,negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Loss for the period totalled EUR 15.6 mn compared to a profit of EUR 6.3 mn in 2008 .""
+Allowed labels: positive, negative, neutral.",112.7432850934565
+Almost two thirds of Olvi 's net sales come from outside Finland .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Almost two thirds of Olvi 's net sales come from outside Finland .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return ",113.06618069857359
+`` I am extremely delighted with this project and the continuation of cooperation with Viking Line .,positive,positive,"<brief reason>
+
+The sentence expresses delight and satisfaction with a project and cooperation. This indicates a positive sentiment.
+
+Label: positive",26.074548840522766
+"Its annual capacity is some 10,000 MW .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Its annual capacity is some 10,000 MW .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specifie",92.83670649304986
+"A data processing unit collects the data , calculates RVR values and provides the data to users via various interfaces .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""A data processing unit collects the data , calculates RVR values and provides the data to users via various interfaces .""
+Allowed l",99.67194418981671
+"BasWare 's CEO Ilkka Sihvo comments in conjunction with the Interim Report : `` As a whole , BasWare succeeded well in the second quarter of 2007 .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""BasWare 's CEO Ilkka Sihvo comments in conjunction with the Interim Report : `` As a whole , BasWare succeeded well in the second q",112.68737862631679
+The share subscription period for C options will commence on 1 September 2008 and expire on 31 March 2011 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The share subscription period for C options will commence on 1 September 2008 and expire on 31 March 2011 .""
+Allowed labels: positi",112.92779359966516
+"Finnish silicon wafer technology company Okmetic Oyj ( OMX Helsinki : OKM1V ) reported on Thursday ( 7 August ) an operating profit of EUR5 .3 m for the period January-June 2008 , up from EUR3 .3 m in the corresponding period in 2007 .",positive,[parse_error],[parse_error] Label: positive,60.0892199575901
+"The cost of the deal could range from 70 million to 90 million euros depending on the financial results of the two companies in 2008 , the statement says .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The cost of the deal could range from 70 million to 90 million euros depending on the financial results of the two companies in 200",113.42655945196748
+"The port facilities ' throughput is 250,000 TEUs and 7.5 mln tons of general cargo .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The port facilities ' throughput is 250,000 TEUs and 7.5 mln tons of general cargo .""
+Allowed labels: positive, negative, neutral.
+",113.04818691685796
+"`` Adjustment to the fall in price level , in contrast , has been less effective .",negative,[parse_error],"[parse_error] The sentence discusses the effectiveness of price level adjustments in a negative context (less effective), but does not express positive or negative sentiment about the company, market, or financial ",75.42048406228423
+"CapMan has four investment areas ( CapMan Buyout , CapMan Technology , CapMan Life Science and CapMan Real Estate ) , and each of them has a dedicated team .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""CapMan has four investment areas ( CapMan Buyout , CapMan Technology , CapMan Life Science and CapMan Real Estate ) , and each of t",112.49334339052439
+Russia 's Video International Group holds a controlling stake in Russian Media Ventures .,neutral,neutral,"The sentence states a factual corporate relationship without expressing positive or negative sentiment.
+</think>
+
+Label: neutral",23.285864111036062
+Major Order in India Comptel Corporation has received a significant long-term order for mediation and provisioning solutions being used by a leading operator in India .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Major Order in India Comptel Corporation has received a significant long-term order for mediation and provisioning solutions being ",109.44184207171202
+The value of the orders is over EUR 25mn .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""The value of the orders is over EUR 25mn .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format speci",112.37220912054181
+"Trading in the new shares , which have right to dividends and other distributions of funds , will start on the exchange in Helsinki tomorrow .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Trading in the new shares , which have right to dividends and other distributions of funds , will start on the exchange in Helsinki",112.23165836557746
+"Biohit Oyj develops , manufactures and markets liquid handling products and diagnostic test systems for use in research , healthcare and industrial laboratories .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Biohit Oyj develops , manufactures and markets liquid handling products and diagnostic test systems for use in research , healthcar",112.27001989260316
+"The offer of some 30 million shares aimed to raise more than  x20ac 500 million US$ 640 million , was expected to be completed by Oct. 9 , Outokumpu said .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",112.51571051776409
+The power generated annually by Loviisa covers about 10 % of Finland 's electricity consumption .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The power generated annually by Loviisa covers about 10 % of Finland 's electricity consumption .""
+Allowed labels: positive, negati",99.41558863967657
+"The reason for this is St. Petersburg status as a capital , one of the participants in the meeting quoted Chikunov as saying .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The reason for this is St. Petersburg status as a capital , one of the participants in the meeting quoted Chikunov as saying .""
+
+Al",112.62825367227197
+"Additionally , the company will use the solutions to automate the preparation of financial statements according to IFRS standard .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Additionally , the company will use the solutions to automate the preparation of financial statements according to IFRS standard .""",112.3004842363298
+A paper mill in the central Maine town of Madison soon will have a new owner .,neutral,[parse_error],"[parse_error] The sentence states a factual event about a change of ownership for a paper mill. It does not express positive or negative sentiment regarding the company's performance, prospects, or reputation. It i",82.35248968750238
+Finnish Outokumpu Technology has been awarded several new grinding technology contracts .,positive,positive,"<brief reason>
+
+Analysis:
+The sentence states that the company received new contracts. Receiving contracts is generally a positive business event indicating growth or business activity.
+Label: positive",111.44387361034751
+An audio webcast will be available live and archived on Cerner 's Web site at www.cerner.com .,neutral,neutral,The sentence states a,108.64687551185489
+The acquisition will considerably increase Kemira 's sales and market position in the Russian metal industry coatings market .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The acquisition will considerably increase Kemira 's sales and market position in the Russian metal industry coatings market .""
+All",112.59264932200313
+"Tyrv+ñinen is of the opinion that the airline has been repeating this for some time already , however .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Tyrv+ñinen is of the opinion that the airline has been repeating this for some time already , however .""
+
+Allowed labels: positive,",112.36077674105763
+"Steek , which was set up in 2002 , is based in Bordeaux , southwestern France .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Steek , which was set up in 2002 , is based in Bordeaux , southwestern France .""
+Allowed labels: positive, negative, neutral.
+Const",112.58213209360838
+Pharmaceutical market in Czech Republic Global Research & Data Services published recently a market analysis about the pharmaceutical markets in Czech Republic .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Pharmaceutical market in Czech Republic Global Research & Data Services published recently a market analysis about the pharmaceutic",108.80688640475273
+"Consolidated net sales increased 16 % to reach EUR74 .8 m , while operating profit amounted to EUR0 .9 m compared to a loss of EUR0 .7 m in the prior year period .",positive,[parse_error],"[parse_error] Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Task: Classify financial sentiment for the given sentence.
+    *   Allowed labels: positive, negative, neutral.
+    *   Format constraint: EXACT",32.79316923767328
+It therefore seems that Finnish shipping company Viking Line will get the subsidy it needs to order its new LNG-fuelled vessel .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""It therefore seems that Finnish shipping company Viking Line will get the subsidy it needs to order its new LNG-fuelled vessel .""
+A",111.90791093185544
+"After the split , the company would have 26,885,540 Series A shares and 9,540,000 Series K shares .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""After the split , the company would have 26,885,540 Series A shares and 9,540,000 Series K shares .""
+Allowed labels: positive, nega",111.64674123749137
+Tiimari operates 194 stores in six countries -- including its core Finnish market -- and generated a turnover of 76.5 mln eur in 2005 .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Tiimari operates 194 stores in six countries -- including its core Finnish market -- and generated a turnover of 76.5 mln eur in 20",111.79385274648666
+"The train is expected to cross the Russian territory in 9 days , reaching the Vostochny port .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The train is expected to cross the Russian territory in 9 days , reaching the Vostochny port .""
+Allowed labels: positive, negative,",112.2433216497302
+They will be sunk to a depth of some 360-380 metres and fixed to the bottom mud by vacuum .,neutral,neutral,The sentence describes a technical procedure without financial implications or sentiment,61.521442748606205
+"A total of 16.5 mn passenger ship journeys took place in the northern Baltic Sea in 2007 , slightly down from 16.5 mn in 2006 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""A total of 16.5 mn passenger ship journeys took place in the northern Baltic Sea in 2007 , slightly down from 16.5 mn in 2006 .""
+
+A",111.59772238135338
+"Founded in 1923 , Finnair is one of the world 's oldest airlines and flies to 60 destinations with a fleet of 63 aircraft , employing 9,500 people .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Founded in 1923 , Finnair is one of the world 's oldest airlines and flies to 60 destinations with a fleet of 63 aircraft , employi",111.58140686526895
+"The contract also includes installation work in a new multistorey carpark for close on 1,000 vehicles .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The contract also includes installation work in a new multistorey carpark for close on 1,000 vehicles .""
+Allowed labels: positive, ",111.6633289642632
+"Based on the first quarter result , existing order backlog and new order prospects , the company expects that full-year sales will contract by 25 % from 2008 , the gross margin will stay at a healthy level , and the operating profit margin will be lower than in 2008 due to lower sales volume .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.6312894076109
+"Finland-based Elcoteq SE , a privately held provider of electronics manufacturing services to communications companies , said Thursday it signed a long-term manufacturing supply deal with communications equipment company Andrew Corp. .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.4961619451642
+Both the net sales and operating profit were record high in the company 's history .,positive,positive,"<brief reason>
+
+The sentence states that net sales and operating profit were record high. This indicates a positive financial performance.
+
+Label: positive",110.03377312794328
+"Previously , Grimaldi held a 46.43 pct stake in the Finnish company following the takeover bid launched in November 2006 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Previously , Grimaldi held a 46.43 pct stake in the Finnish company following the takeover bid launched in November 2006 .""
+Allowed",111.4914230927825
+"Kemira , headquartered in Helsinki , Finland , is an international chemicals group comprising the business areas Kemira Pulp & Paper , Kemira Water , Kemira Specialty and Kemira Coatings .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format constraints: EXACTLY Label: <positive|negative|neutral> followed by Exp",112.05089118331671
+"These include software development for internet and mobile telephone content , communications , value-added software , financial services , security applications , systems integration and electronics , '' EBRD informed .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.84170129150152
+"Profit before taxes amounted to EUR 56.5 mn , down from EUR 232.9 mn a year ago .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Profit before taxes amounted to EUR 56.5 mn , down from EUR 232.9 mn a year ago .""
+
+Allowed labels: positive, negative, neutral.
+
+A",111.2693693228066
+"Nordstjernan will make the offer in approximately one month , in September 2007 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Nordstjernan will make the offer in approximately one month , in September 2007 .""
+Allowed labels: positive, negative, neutral.
+Con",85.54986756667495
+Currency conversions are based on exchange rates at the time of the deal .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Currency conversions are based on exchange rates at the time of the deal .""
+Allowed labels: positive, negative, neutral.
+Constraint:",111.36942865327
+"F-Secure , a developer of security solutions as a service through Internet Service Providers and mobile operators , announced results from its annual Online Wellbeing Survey .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""F-Secure , a developer of security solutions as a service through Internet Service Providers and mobile operators , announced resul",111.24805673211813
+The customers will have an access to integrated propeller and gear packages from one source .,neutral,[parse_error],"[parse_error] The sentence describes a business capability or service offering (access to integrated packages from one source). It does not contain positive or negative sentiment indicators (words like good, bad, p",70.64456449449062
+Welcome !,neutral,neutral,"<brief reason>
+
+The sentence ""Welcome !"" is a greeting and does not contain financial information, sentiment regarding a company, market, or financial event. It is neutral.
+
+Label: neutral",79.63138984516263
+No financial details were revealed .,neutral,neutral,"<brief reason>
+
+Return EXACTLY this format.
+</think>
+
+Label: neutral",61.59187890589237
+"561,470 new shares under 2003 option rights plan Packaging company Huhtamaki Oyj reported on Monday that a total of 561,470 new shares of the company have been issued based on share subscriptions under its 2003 option rights plan .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",110.45062280446291
+"Insurer Axa ( PAR : CS ) slid by 5.35 % to EUR 14.15 , after Citigroup and ING slashed their targets on the stock .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Insurer Axa ( PAR : CS ) slid by 5.35 % to EUR 14.15 , after Citigroup and ING slashed their targets on the stock .""
+Allowed labels",110.91182901337743
+Construction volumes meanwhile grow at a rate of 10-15 percent annually .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Construction volumes meanwhile grow at a rate of 10-15 percent annually .""
+Allowed labels: positive, negative, neutral.
+Constraint: ",111.13398641720414
+"As part of the transaction , the +ä+ñnekoski paper mill remained in M-real 's ownership and continued Galerie Art production for Sappi under a long-term contract .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""As part of the transaction , the +ä+ñnekoski paper mill remained in M-real 's ownership and continued Galerie Art production for Sa",111.39048098772764
+"However , sales volumes in the food industry are expected to remain at relatively good levels in Finland and in Scandinavia , Atria said .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""However , sales volumes in the food industry are expected to remain at relatively good levels in Finland and in Scandinavia , Atria",112.13429802656174
+"Acando AB ( ACANB SS ) fell 8.9 percent to 13.35 kronor , the lowest close since Dec. 11 .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Acando AB ( ACANB SS ) fell 8.9 percent to 13.35 kronor , the lowest close since Dec. 11 .""
+
+Allowed labels: positive, negative, ne",110.97382344678044
+The group reiterated its forecast that handset manufacturers will sell around 915 mln units this year globally .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The group reiterated its forecast that handset manufacturers will sell around 915 mln units this year globally .""
+Allowed labels: p",110.73566614091396
+"Consisting of seven interconnected units , Mega Image 's logistics center will be 347 metres in length and 12 metres in height .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Consisting of seven interconnected units , Mega Image 's logistics center will be 347 metres in length and 12 metres in height .""
+
+",110.98306516930461
+The group 's net sales in 2007 were EUR683 .6 m.,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The group 's net sales in 2007 were EUR683 .6 m.""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the forma",111.08211132511497
+Operating income rose to EUR 696.4 mn from EUR 600.3 mn in 2009 .,positive,[parse_error],"[parse_error] Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Task: Classify financial sentiment for a given sentence.
+    *   Allowed labels: positive, negative, neutral.
+    *   Format constraint: EXACTLY",110.88999578729272
+The plan is estimated to generate some EUR 5 million ( USD 6.5 m ) in cost savings on an annual basis .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The plan is estimated to generate some EUR 5 million ( USD 6.5 m ) in cost savings on an annual basis .""
+Allowed labels: positive, ",110.72038121894002
+"The gross area of the Innova 2 project will be about 10,000 sq m ( 107,600 sq ft ) .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The gross area of the Innova 2 project will be about 10,000 sq m ( 107,600 sq ft ) .""
+Allowed labels: positive, negative, neutral.
+",110.6661259047687
+"Indigo and Somoncom serve 377,000 subscribers and had a market share of approximately 27 % as of May 2007 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Indigo and Somoncom serve 377,000 subscribers and had a market share of approximately 27 % as of May 2007 .""
+Allowed labels: positi",110.20488735288382
+"Operating profit totalled EUR 83.0 mn , up from EUR 23.5 mn year-on-year .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Operating profit totalled EUR 83.0 mn , up from EUR 23.5 mn year-on-year .""
+Allowed labels: positive, negative, neutral.
+Format req",110.35657400637865
+Orion Pharma 's operating profit increased by 42.5 % from 2004 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Orion Pharma 's operating profit increased by 42.5 % from 2004 .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return E",110.2684729732573
+No financial information was provided .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""No financial information was provided .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specifie",109.66341387853026
+"Following the issue , the new shares will constitute 10 percent of the firm 's capital .",neutral,[parse_error],"[parse_error] The sentence states a factual detail about share issuance (10 percent of capital) without expressing positive or negative sentiment.
+
+Label: neutral",91.08737322315574
+"Cramo is a service company specialising in construction machinery and equipment rental and rental-related services , as well as the rental and sale of modular space .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Cramo is a service company specialising in construction machinery and equipment rental and rental-related services , as well as the",110.69184711202979
+N-Viro operates processing facilities independently as well as in partnership with municipalities .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""N-Viro operates processing facilities independently as well as in partnership with municipalities .""
+Allowed labels: positive, nega",95.84448398277164
+Less than ten people will face pension agreements .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence ""Less than ten people will face pension agreements .""
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the for",109.9635857976973
+"For the current year , Raute expects its net sales to increase and the operating result -- to be positive .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""For the current year , Raute expects its net sales to increase and the operating result -- to be positive .""
+Allowed labels: positi",110.16199145838618
+"EXEL COMPOSITES IN BRIEF Exel Composites is a technology company which designs , manufactures and markets composite profiles and tubes for industrial applications .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""EXEL COMPOSITES IN BRIEF Exel Composites is a technology company which designs , manufactures and markets composite profiles and tu",110.92535768821836
+"- Demand for fireplace products was lower than expected , especially in Germany .",negative,negative,"<brief reason>.
+
+Sentence analysis: ""lower than expected"" indicates a negative performance or deviation from forecasts.
+Sentiment: negative.
+
+Format check:
+Label: negative
+Explanation: brief reason",76.73963723704219
+"The dividend is payable on February 1 , 2010 to shareholders of record on January 19 , 2010 .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""The dividend is payable on February 1 , 2010 to shareholders of record on January 19 , 2010 .""
+Allowed labels: positive, negative, ",74.4369997382164
+The share subscription period for stock options 2007A is between 1 April 2010 and 31 March 2012 .,neutral,[parse_error],"[parse_error] The sentence states facts about a share subscription period for stock options. It does not express positive or negative sentiment regarding the company's performance, strategy, or market position. It ",96.02669110521674
+Cash flow from business operations totalled EUR 0.4 mn compared to a negative EUR 15.5 mn in the first half of 2008 .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Cash flow from business operations totalled EUR 0.4 mn compared to a negative EUR 15.5 mn in the first half of 2008 .""
+Allowed labe",110.92282201722264
+Technical indicators for the stock are bullish and S&P gives NOK a positive 4 STARS out of 5 buy ranking .,positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Technical indicators for the stock are bullish and S&P gives NOK a positive 4 STARS out of 5 buy ranking .""
+
+Allowed labels: positi",111.02024694159627
+"Finnish electronics contract manufacturer Scanfil had net sales of EUR 52.2 mn in the first quarter of 2007 , down from EUR 60.1 mn a year before .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Finnish electronics contract manufacturer Scanfil had net sales of EUR 52.2 mn in the first quarter of 2007 , down from EUR 60.1 mn",111.23027074337006
+"In the third quarter of 2010 , net sales increased by 5.2 % to EUR 205.5 mn , and operating profit by 34.9 % to EUR 23.5 mn .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""In the third quarter of 2010 , net sales increased by 5.2 % to EUR 205.5 mn , and operating profit by 34.9 % to EUR 23.5 mn .""
+Allo",111.15313170105219
+National sponsors for The Big Read include National Endowment for the Arts in cooperation with the Institute of Museum and Library Services and Arts Midwest .,neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""National sponsors for The Big Read include National Endowment for the Arts in cooperation with the Institute of Museum and Library ",108.86291023343801
+"In the reporting period , net sales rose by 8 % year-on-year to EUR64 .3 m , due to the business acquisitions realized during the first half of 2008-09 , the effect of which was EUR10 .9 m in the review period .",positive,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Required format:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.68540579080582
+"Glaston 's share GLA1V is listed on the NASDAQ OMX Helsinki , Mid Cap List .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Glaston 's share GLA1V is listed on the NASDAQ OMX Helsinki , Mid Cap List .""
+Allowed labels: positive, negative, neutral.
+Constrai",111.3453103788197
+"The Group owns and operates a fleet of more than 800dwt , while container capacity is 17,000 TEUs , and manages a diversified fleet of its own railway rolling stock of over 17,000 units .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specified.
+
+Sentence: The Group owns and",111.38030748814344
+"Finnish Scanfil , a contract manufacturer and systems supplier for communication and industrial electronics reports net sales of EUR 108.7 mn in the first half of 2008 , down from EUR 111.1 mn a year earlier .",negative,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format must be exact:
+Label: <positive|negative|neutral>
+Explanation: <brief r",111.69506630301476
+"8,600 m , and at the time of investment it is fully leased to several tenants .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""8,600 m , and at the time of investment it is fully leased to several tenants .""
+Allowed labels: positive, negative, neutral.
+Const",111.445995002985
+"The floor area of the Yliopistonrinne project will be 7,900 sq m and the building 's gross area will total 12,800 sq m. A total 25.1 % of the facilities have been let .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Constraint: Return EXACTLY the format specified.
+
+Sentence: The floor area of ",111.45345359668136
+"Cramo , headquartered in Vantaa , Finland , rents construction machinery and equipment , as well as rents and sells modular space .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence: ""Cramo , headquartered in Vantaa , Finland , rents construction machinery and equipment , as well as rents and sells modular space .",111.27236703410745
+"Sampo Housing Loan Bank , a unit of Finland 's Sampo Bank , has priced its EUR1bn ( USD1 .3 bn ) bond at 99.889 % , Reuters reported .",neutral,[parse_error],"[parse_error] The user wants financial sentiment classification for the sentence provided.
+Allowed labels: positive, negative, neutral.
+Format required:
+Label: <positive|negative|neutral>
+Explanation: <brief reason",111.56608798354864

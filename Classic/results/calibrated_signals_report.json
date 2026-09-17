@@ -1,0 +1,38 @@
+{
+  "logreg": {
+    "original": {
+      "accuracy": 0.9088235294117647,
+      "brier_multiclass": 0.14270394996974006,
+      "ece_10bin": 0.09851222744266405
+    },
+    "calibrated": {
+      "accuracy": 0.9,
+      "brier_multiclass": 0.13647477338065148,
+      "ece_10bin": 0.08156738119640036
+    }
+  },
+  "svm": {
+    "original": {
+      "accuracy": 0.9205882352941176,
+      "brier_multiclass": 0.20411339292922873,
+      "ece_10bin": 0.23008402459070548
+    },
+    "calibrated": {
+      "accuracy": 0.9176470588235294,
+      "brier_multiclass": 0.12345829040601959,
+      "ece_10bin": 0.05820724468055774
+    }
+  },
+  "xgboost": {
+    "original": {
+      "accuracy": 0.9,
+      "brier_multiclass": 0.14657247644943583,
+      "ece_10bin": 0.040585074705882386
+    },
+    "calibrated": {
+      "accuracy": 0.8941176470588236,
+      "brier_multiclass": 0.15553805131674492,
+      "ece_10bin": 0.05357139358325933
+    }
+  }
+}

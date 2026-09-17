@@ -1,0 +1,26 @@
+{
+  "qwen_sentonly_vs_qwen_sentence+panel": {
+    "b": 16,
+    "c": 28,
+    "chi2_cc": 2.75,
+    "p_exact": 0.09614175442061423
+  },
+  "gemma_sentonly_vs_qwen_sentence+panel": {
+    "b": 17,
+    "c": 68,
+    "chi2_cc": 29.41176470588235,
+    "p_exact": 2.1750638050848607e-08
+  },
+  "qwen_panelonly_vs_qwen_sentence+panel": {
+    "b": 0,
+    "c": 9,
+    "chi2_cc": 7.111111111111111,
+    "p_exact": 0.00390625
+  },
+  "gemma_panelonly_vs_qwen_sentence+panel": {
+    "b": 3,
+    "c": 16,
+    "chi2_cc": 7.578947368421052,
+    "p_exact": 0.004425048828125
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "gemma_r8_s120": {
+    "lora_r": 8,
+    "max_steps": 120,
+    "val_accuracy": 0.9441176470588235,
+    "train_loss": 1.4680003623167674,
+    "effective_epochs": 0.606
+  },
+  "gemma_r8_s480": {
+    "lora_r": 8,
+    "max_steps": 480,
+    "val_accuracy": 0.9882352941176471,
+    "train_loss": 0.9138282763461272,
+    "effective_epochs": 2.424
+  },
+  "gemma_r16_s120": {
+    "lora_r": 16,
+    "max_steps": 120,
+    "val_accuracy": 0.9735294117647059,
+    "train_loss": 1.2703418125708899,
+    "effective_epochs": 0.606
+  },
+  "gemma_r16_s480": {
+    "lora_r": 16,
+    "max_steps": 480,
+    "val_accuracy": 0.9941176470588236,
+    "train_loss": 0.8532269110282262,
+    "effective_epochs": 2.424
+  }
+}

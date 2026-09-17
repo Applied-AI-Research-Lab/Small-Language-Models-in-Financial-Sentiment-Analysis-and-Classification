@@ -1,0 +1,10 @@
+metric,Qwen3.5-4B (ZS),Gemma3-4B (ZS)
+unanimous_row_overrides,5,30
+override_correct,5,13
+override_incorrect,0,17
+override_precision,1.0,0.43333333333333335
+unanimous_error_recovery,0.29411764705882354,0.7647058823529411
+split_row_deviations,5,8
+total_label_changes,10,38
+label_change_rate,0.029411764705882353,0.11176470588235295
+net_accuracy_vs_majority_pp,2.6470588235294117,0.0

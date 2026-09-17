@@ -1,0 +1,43 @@
+{
+  "model": "qwen",
+  "smoke": false,
+  "grid": {
+    "qwen_r8_s120": {
+      "lora_r": 8,
+      "max_steps": 120,
+      "val_accuracy": 0.05,
+      "train_loss": 0.875090924402078,
+      "effective_epochs": 0.606
+    },
+    "qwen_r8_s480": {
+      "lora_r": 8,
+      "max_steps": 480,
+      "val_accuracy": 0.06764705882352941,
+      "train_loss": 0.688416090173026,
+      "effective_epochs": 2.424
+    },
+    "qwen_r16_s120": {
+      "lora_r": 16,
+      "max_steps": 120,
+      "val_accuracy": 0.9735294117647059,
+      "train_loss": 0.8436342363556226,
+      "effective_epochs": 0.606
+    },
+    "qwen_r16_s480": {
+      "lora_r": 16,
+      "max_steps": 480,
+      "val_accuracy": 1.0,
+      "train_loss": 0.6555659723157684,
+      "effective_epochs": 2.424
+    }
+  },
+  "selected": "qwen_r16_s480",
+  "selected_config": {
+    "lora_r": 16,
+    "max_steps": 480
+  },
+  "original_config": {
+    "lora_r": 16,
+    "max_steps": 120
+  }
+}

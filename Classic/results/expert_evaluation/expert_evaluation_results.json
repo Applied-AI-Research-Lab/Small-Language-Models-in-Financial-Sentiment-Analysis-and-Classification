@@ -1,0 +1,106 @@
+{
+  "n_experts": 2,
+  "experts": [
+    "1",
+    "2"
+  ],
+  "fleiss_kappa_Q1": 0.13505089368333903,
+  "fleiss_kappa_Q2": 0.49395942557556405,
+  "fleiss_kappa_Q3": 0.23700772075520662,
+  "fleiss_kappa_Q4_trust": 0.4599549962496875,
+  "gemma_zs": {
+    "n_ratings": 120,
+    "Q1_mean": 3.191666666666667,
+    "Q2_mean": 3.825,
+    "Q3_mean": 2.7416666666666667,
+    "trust_rate": 0.1,
+    "trust_ci95": [
+      0.0581330169931076,
+      0.16668319985163604
+    ]
+  },
+  "qwen_zs": {
+    "n_ratings": 120,
+    "Q1_mean": 3.85,
+    "Q2_mean": 4.716666666666667,
+    "Q3_mean": 3.3,
+    "trust_rate": 0.49166666666666664,
+    "trust_ci95": [
+      0.40387415869894916,
+      0.5799761791519831
+    ]
+  },
+  "per_expert": {
+    "1": {
+      "Q1_mean": 3.408333333333333,
+      "Q2_mean": 4.15,
+      "Q3_mean": 3.1083333333333334,
+      "trust_rate": 0.325,
+      "n": 120
+    },
+    "2": {
+      "Q1_mean": 3.6333333333333333,
+      "Q2_mean": 4.391666666666667,
+      "Q3_mean": 2.933333333333333,
+      "trust_rate": 0.26666666666666666,
+      "n": 120
+    }
+  },
+  "wilcoxon_Q2_systems": {
+    "stat": 34.0,
+    "p": 5.965083119680232e-07
+  },
+  "q5_rater_agreement": {
+    "n_items": 60,
+    "n_agree": 58,
+    "agreement_rate": 0.9666666666666667
+  },
+  "expert_vs_gold": {
+    "n_items": 58,
+    "accuracy": 0.9655172413793104
+  },
+  "expert_vs_system": {
+    "gemma_zs": {
+      "n_items": 58,
+      "agreement": 0.8793103448275862
+    },
+    "qwen_zs": {
+      "n_items": 58,
+      "agreement": 0.896551724137931
+    }
+  },
+  "quality_split_by_expert_agreement": {
+    "gemma_zs": {
+      "Q1": {
+        "when_expert_agrees_with_system_label": 3.3009708737864076,
+        "when_expert_disagrees": 2.5294117647058822
+      },
+      "Q2": {
+        "when_expert_agrees_with_system_label": 4.029126213592233,
+        "when_expert_disagrees": 2.588235294117647
+      },
+      "Q3": {
+        "when_expert_agrees_with_system_label": 2.7475728155339807,
+        "when_expert_disagrees": 2.7058823529411766
+      },
+      "Q4_trust_rate_agree": 0.11650485436893204,
+      "Q4_trust_rate_disagree": 0.0
+    },
+    "qwen_zs": {
+      "Q1": {
+        "when_expert_agrees_with_system_label": 3.9245283018867925,
+        "when_expert_disagrees": 3.2857142857142856
+      },
+      "Q2": {
+        "when_expert_agrees_with_system_label": 4.839622641509434,
+        "when_expert_disagrees": 3.7857142857142856
+      },
+      "Q3": {
+        "when_expert_agrees_with_system_label": 3.311320754716981,
+        "when_expert_disagrees": 3.2142857142857144
+      },
+      "Q4_trust_rate_agree": 0.5283018867924528,
+      "Q4_trust_rate_disagree": 0.21428571428571427
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "bert_fine_tuned": {
+    "accuracy": 0.961764705882353,
+    "macro_f1": 0.9500519934659629,
+    "weighted_f1": 0.9619513629689477,
+    "n": 340,
+    "epochs": 3,
+    "lr": 2e-05,
+    "batch": 16,
+    "seed": 42,
+    "base_model": "google-bert/bert-base-uncased"
+  },
+  "mcnemar": {
+    "bert_ft_vs_qwen_zs": {
+      "b": 14,
+      "c": 8,
+      "chi2_cc": 1.1363636363636365,
+      "p_exact": 0.28627872467041016
+    }
+  }
+}

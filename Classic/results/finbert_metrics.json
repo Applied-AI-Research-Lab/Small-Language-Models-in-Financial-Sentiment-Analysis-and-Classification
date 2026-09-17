@@ -1,0 +1,32 @@
+{
+  "finbert_zero_shot": {
+    "accuracy": 0.9794117647058823,
+    "macro_f1": 0.9721461789587753,
+    "weighted_f1": 0.9795754101435875,
+    "n": 340
+  },
+  "finbert_fine_tuned": {
+    "accuracy": 0.9823529411764705,
+    "macro_f1": 0.9733625761480823,
+    "weighted_f1": 0.9823853610609965,
+    "n": 340,
+    "epochs": 3,
+    "lr": 2e-05,
+    "batch": 16,
+    "seed": 42
+  },
+  "mcnemar": {
+    "finbert_zero_shot_vs_qwen_zs": {
+      "b": 18,
+      "c": 6,
+      "chi2_cc": 5.041666666666667,
+      "p_exact": 0.022655844688415527
+    },
+    "finbert_fine_tuned_vs_qwen_zs": {
+      "b": 17,
+      "c": 4,
+      "chi2_cc": 6.857142857142857,
+      "p_exact": 0.007197380065917969
+    }
+  }
+}

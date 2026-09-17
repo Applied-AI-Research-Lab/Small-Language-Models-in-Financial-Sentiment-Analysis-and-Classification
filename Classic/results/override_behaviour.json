@@ -1,0 +1,39 @@
+{
+  "n_rows": 340,
+  "n_unanimous": 310,
+  "n_split": 30,
+  "n_unanimous_wrong": 17,
+  "majority_vote_accuracy": 0.9176470588235294,
+  "per_slm": {
+    "Qwen3.5-4B (ZS)": {
+      "unanimous_overrides": 5,
+      "override_correct": 5,
+      "override_incorrect": 0,
+      "override_precision": 1.0,
+      "unanimous_error_recovery": 0.29411764705882354,
+      "split_deviations": 5,
+      "split_dev_slm_right": 4,
+      "split_dev_majority_right": 0,
+      "split_dev_both_wrong": 1,
+      "total_label_changes": 10,
+      "label_change_rate": 0.029411764705882353,
+      "slm_accuracy": 0.9441176470588235,
+      "net_accuracy_vs_majority_pp": 2.6470588235294117
+    },
+    "Gemma3-4B (ZS)": {
+      "unanimous_overrides": 30,
+      "override_correct": 13,
+      "override_incorrect": 17,
+      "override_precision": 0.43333333333333335,
+      "unanimous_error_recovery": 0.7647058823529411,
+      "split_deviations": 8,
+      "split_dev_slm_right": 6,
+      "split_dev_majority_right": 2,
+      "split_dev_both_wrong": 0,
+      "total_label_changes": 38,
+      "label_change_rate": 0.11176470588235295,
+      "slm_accuracy": 0.9176470588235294,
+      "net_accuracy_vs_majority_pp": 0.0
+    }
+  }
+}

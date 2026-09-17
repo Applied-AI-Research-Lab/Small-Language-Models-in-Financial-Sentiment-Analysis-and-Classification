@@ -1,0 +1,15 @@
+{
+  "model": "gemma",
+  "config": "panel-augmented (selected tuned config)",
+  "selected_config": {
+    "lora_r": 16,
+    "max_steps": 480
+  },
+  "prompt": "zero-shot advisory-panel prompt (sentence + panel signals)",
+  "panel_signals_train": "out-of-fold (5-fold stratified, train+val pool)",
+  "panel_signals_eval": "final stored artifacts (deployment condition)",
+  "validation_accuracy": 0.9794117647058823,
+  "test_accuracy": 0.9705882352941176,
+  "test_parse_errors": 0,
+  "test_macro_f1": 0.9706898096606859
+}
