@@ -1,51 +1,4 @@
 #!/usr/bin/env python3
-"""
-Input-ablation study: sentence-only (LLM-only) and panel-only zero-shot SLM
-conditions (R1.2 / R2.2 / R2.1).
-=============================================================================
-The original framework (zero_shot_slm_predictions.py) gives each SLM the
-sentence verbatim PLUS the three classical models' signals. This script runs
-the two ablation conditions that isolate each information source:
-
-  sentence-only ("LLM-only baseline"): prompt = task instruction + sentence
-      + JSON instruction. NO panel signals. This is the LLM-only baseline the
-      reviewers requested: how well does the SLM do the task alone?
-
-  panel-only: prompt = the classical panel signals + agreement status + JSON
-      instruction, WITHOUT the sentence. Tests how much of the SLM's accuracy
-      comes from arbitrating second-order signals alone.
-
-Together with the existing sentence+panel results (qwen_zs_*, gemma_zs_*),
-this completes the ablation triad.
-
-Procedure is identical to zero_shot_slm_predictions.py: same models
-(unsloth/Qwen3.5-4B, unsloth/gemma-3-4b-it), same sampling parameters
-(Qwen t=0.3/top_p=0.9/512 tok, enable_thinking=False; Gemma t=0.7/top_p=0.95/
-top_k=64/256 tok), same JSON parsing with 4 retries, checkpoint every 10 rows.
-
-New columns written to test.csv (existing columns untouched):
-  qwen_sentonly_zs_{label,explanation,recommendation,time_sec}
-  gemma_sentonly_zs_{...}
-  qwen_panelonly_zs_{...}
-  gemma_panelonly_zs_{...}
-
-Fallback on persistent parse failure:
-  sentence-only -> majority class of the training corpus ("neutral"), marked
-  [parse_error] in the explanation (metrics exclude these rows);
-  panel-only    -> classical panel majority vote (as in the original script).
-
-Metrics saved to Classic/results/test_metrics_zs_ablation.csv; paired McNemar
-tests against the full-information condition (qwen_zs_label) are printed and
-saved to Classic/results/ablation_mcnemar.json.
-
-Usage (GPU server):
-    python Classic/ablation_input_conditions.py --smoke            # 20 rows, env check
-    python Classic/ablation_input_conditions.py --condition sentence --slm qwen
-    python Classic/ablation_input_conditions.py --condition sentence --slm gemma
-    python Classic/ablation_input_conditions.py --condition panel --slm qwen
-    python Classic/ablation_input_conditions.py --condition panel --slm gemma
-    python Classic/ablation_input_conditions.py                   # all four runs
-"""
 
 from __future__ import annotations
 
@@ -62,7 +15,7 @@ import pandas as pd
 
 try:
     import torch
-except ImportError:  # torch only needed on the GPU server at runtime
+except ImportError:
     torch = None
 
 ALLOWED_LABELS = {"positive", "negative", "neutral"}
@@ -78,10 +31,6 @@ JSON_INSTRUCTION = (
     '"recommendation": "<1-2 sentences of actionable advice for a financial decision-maker>"}'
 )
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Prompt builders
-# ──────────────────────────────────────────────────────────────────────────────
 
 class FormatError(RuntimeError):
     pass
@@ -100,7 +49,6 @@ def _agreement_status(preds: list[str]) -> str:
 
 
 def build_sentence_only_prompt(row: pd.Series) -> str:
-    """LLM-only baseline: task instruction + sentence + JSON instruction."""
     sentence = str(row["sentence"]).strip()
     return (
         "You are a senior financial sentiment analyst. Classify the sentiment "
@@ -115,7 +63,6 @@ def build_sentence_only_prompt(row: pd.Series) -> str:
 
 
 def build_panel_only_prompt(row: pd.Series) -> str:
-    """Panel-only condition: the original advisory prompt WITHOUT the sentence."""
     preds = [str(row["logreg_pred"]), str(row["svm_pred"]), str(row["xgb_pred"])]
     agree = _agreement_status(preds)
 
@@ -176,7 +123,6 @@ def build_panel_only_prompt(row: pd.Series) -> str:
 
 
 def parse_response(raw: str) -> tuple[str, str, str]:
-    """Same semantics as zero_shot_slm_predictions.parse_response."""
     text = str(raw).strip()
     text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
     text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.IGNORECASE).strip()
@@ -198,10 +144,6 @@ def parse_response(raw: str) -> tuple[str, str, str]:
     return label, explanation, recommendation
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# SLM inference (same protocol as zero_shot_slm_predictions.py)
-# ──────────────────────────────────────────────────────────────────────────────
-
 from dataclasses import dataclass
 
 @dataclass
@@ -221,7 +163,6 @@ class SLMConfig:
 
 
 def _apply_chat_template_compat(tokenizer, messages, enable_thinking=False, **kwargs):
-    """Same compatibility shim as zero_shot_slm_predictions.py."""
     call_kwargs = dict(enable_thinking=enable_thinking, **kwargs)
     try:
         return tokenizer.apply_chat_template(messages, **call_kwargs)
@@ -297,8 +238,7 @@ def _generate_and_parse(model, tokenizer, messages, gen_kwargs, cfg, tag):
 
 def run_condition(df: pd.DataFrame, prompts: list[str], cfg: SLMConfig,
                    slm: str, condition: str, test_path: Path):
-    """Run one (SLM, condition) cell; checkpoint into test.csv."""
-    prefix = f"{slm}_{condition}_zs"          # e.g. qwen_sentonly_zs
+    prefix = f"{slm}_{condition}_zs"
 
     if slm == "qwen":
         tag = "Qwen"
@@ -356,8 +296,8 @@ def run_condition(df: pd.DataFrame, prompts: list[str], cfg: SLMConfig,
             if condition == "panelonly":
                 label = Counter([str(row["logreg_pred"]), str(row["svm_pred"]),
                                  str(row["xgb_pred"])]).most_common(1)[0][0]
-            else:  # sentence-only: no panel to fall back on
-                label = "neutral"          # majority class; excluded from metrics
+            else:
+                label = "neutral"
                 label = f"[parse_error]{label}"
             expl = f"[parse_error] {raw[:300]}"
             rec = "Unable to generate recommendation due to format error."
@@ -378,10 +318,6 @@ def run_condition(df: pd.DataFrame, prompts: list[str], cfg: SLMConfig,
     print(f"{tag}/{condition} complete. Fallbacks: {n_fb}")
     return df
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Metrics + McNemar
-# ──────────────────────────────────────────────────────────────────────────────
 
 def _metrics(y_true: list[str], y_pred: list[str]):
     n = len(y_true)
@@ -414,7 +350,6 @@ def mcnemar_exact(y_a: list[str], y_b: list[str], truth: list[str]):
 
 def compute_and_save_metrics(df: pd.DataFrame, cells: list[tuple[str, str]],
                              full_run: bool) -> None:
-    """cells = [(slm, condition), ...]"""
     truth = df["label"].str.strip().str.lower().tolist()
     rows = []
     mcn = {}
@@ -438,7 +373,6 @@ def compute_and_save_metrics(df: pd.DataFrame, cells: list[tuple[str, str]],
             "accuracy": acc, "macro_f1": mf1, "weighted_f1": wf1,
             "avg_time_sec": df.loc[clean, f"{slm}_{condition}_zs_time_sec"].mean(),
         })
-        # paired comparison vs the full-information condition (same rows)
         if ref_q is not None:
             ref = df.loc[clean, "qwen_zs_label"].astype(str).str.strip().str.lower().tolist()
             b, c, chi2, p = mcnemar_exact(y_pred, ref, y_true)
@@ -447,7 +381,6 @@ def compute_and_save_metrics(df: pd.DataFrame, cells: list[tuple[str, str]],
                 "b": b, "c": c, "chi2_cc": chi2, "p_exact": p}
             print(f"[McNemar] {name} vs full-info condition: "
                   f"b={b} c={c} chi2={chi2:.2f} p={p:.4f}")
-        # sentence-only vs panel-only (both SLM cells done?)
     if not full_run:
         return
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -462,16 +395,7 @@ def compute_and_save_metrics(df: pd.DataFrame, cells: list[tuple[str, str]],
         print(f"McNemar saved to: {RESULTS_DIR}/ablation_mcnemar.json")
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Main
-# ──────────────────────────────────────────────────────────────────────────────
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Hub-robust model loading
-# ──────────────────────────────────────────────────────────────────────────────
-
 def _hub_reachable() -> bool:
-    """Quick reachability probe for huggingface.co."""
     import urllib.request
     try:
         urllib.request.urlopen("https://huggingface.co", timeout=5)
@@ -481,16 +405,6 @@ def _hub_reachable() -> bool:
 
 
 def resolve_local_snapshot(repo_id: str) -> str:
-    """Resolve a HF repo id to its local cache snapshot directory if cached.
-
-    Loading from the local snapshot avoids ANY Hub access (robust to network
-    outages on the node) and pins the run to the exact cached revision --- the
-    same weights used by the previously completed experiments. This also
-    sidesteps unsloth's loader, which queries the Hub unconditionally for
-    repo-style names but takes a purely local branch when given a directory
-    path. Returns the repo id unchanged if no local snapshot exists (normal
-    online behaviour).
-    """
     import os, glob
     hf_home = os.environ.get("HF_HOME") or os.path.expanduser(
         os.path.join("~", ".cache", "huggingface"))
@@ -513,9 +427,6 @@ def resolve_local_snapshot(repo_id: str) -> str:
 
 
 def main() -> None:
-    # Prefer LOCAL cache snapshots: identical weights as previous runs, and no
-    # Hub dependency (the node's DNS has proven flaky). Falls back to normal
-    # online loading if a model is not cached.
     hub_ok = _hub_reachable()
     if not hub_ok:
         print("WARNING: huggingface.co unreachable from this node.")
@@ -578,7 +489,6 @@ def main() -> None:
             df_work = run_condition(df_work, prompts, SLMConfig(), slm,
                                      cond_tag[condition], test_path)
 
-    # merge back into the full test.csv
     new_cols = [c for c in df_work.columns
                 if (c.endswith("_zs_label") or c.endswith("_zs_explanation")
                     or c.endswith("_zs_recommendation") or c.endswith("_zs_time_sec"))

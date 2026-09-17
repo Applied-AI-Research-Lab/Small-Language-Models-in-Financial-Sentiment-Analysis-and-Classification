@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Split Financial PhraseBank (allagree) into train/validation/test CSV files."""
 
 from __future__ import annotations
 
@@ -26,7 +25,6 @@ def main() -> None:
     df["sentence"] = df["sentence"].astype(str).str.strip()
     df["label"] = df["label"].astype(str).str.strip().str.lower()
 
-    # 70/15/15 split with stratification for label balance.
     train_df, temp_df = train_test_split(
         df,
         test_size=0.30,

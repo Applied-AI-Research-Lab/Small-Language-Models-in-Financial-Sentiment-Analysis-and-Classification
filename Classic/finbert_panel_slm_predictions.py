@@ -1,46 +1,4 @@
 #!/usr/bin/env python3
-"""
-FinBERT-as-Panel Zero-Shot SLM Experiment
-==========================================
-Same procedure as Classic/zero_shot_slm_predictions.py, but the advisory panel
-is a single FinBERT model instead of the three classical classifiers.
-
-Per test row, FinBERT provides:
-  * predicted label (argmax over its 3-class financial sentiment head)
-  * class probabilities (softmax)          -> as percentages
-  * confidence (max probability)           -> as percentage
-  * Shannon entropy of the probability vector
-  * NO lexical driving words (opaque transformer; the prompt states this
-    explicitly, mirroring the framework's transparency argument).
-
-These signals are assembled into a structured advisory prompt (same style as
-the classic panel prompt) and passed in zero-shot mode to Qwen3.5-4B and
-Gemma3-4B, which produce: final label, explanation, recommendation --- exactly
-as in the original framework.
-
-New columns written to test.csv (NOT overwriting any existing columns):
-  finbert_qwen_zs_label, finbert_qwen_zs_explanation,
-  finbert_qwen_zs_recommendation, finbert_qwen_zs_time_sec
-  finbert_gemma_zs_label, ... (same for Gemma)
-
-Also saved: Classic/results/test_metrics_zs_finbert_panel.csv
-
-Usage (GPU server):
-    python Classic/finbert_panel_slm_predictions.py --smoke        # 20 rows
-    python Classic/finbert_panel_slm_predictions.py --panel-model zero-shot
-    python Classic/finbert_panel_slm_predictions.py --panel-model ft
-    python Classic/finbert_panel_slm_predictions.py --slm qwen     # only Qwen
-    python Classic/finbert_panel_slm_predictions.py --slm gemma    # only Gemma
-    python Classic/finbert_panel_slm_predictions.py                # both SLMs
-
-Panel model choice:
-    --panel-model zero-shot  (default) -> ProsusAI/finbert as released
-    --panel-model ft               -> the checkpoint fine-tuned by
-                                         finbert_baseline.py (3 epochs on the
-                                         train split, seed 42). If that
-                                         checkpoint does not exist yet, the
-                                         script errors with instructions.
-"""
 
 from __future__ import annotations
 
@@ -58,7 +16,7 @@ import pandas as pd
 
 try:
     import torch
-except ImportError:  # torch only needed on the GPU server at runtime
+except ImportError:
     torch = None
 
 ALLOWED_LABELS = {"positive", "negative", "neutral"}
@@ -72,10 +30,6 @@ FINBERT_FT_CKPT = Path("Classic/results/finbert_ft_checkpoint")
 MAX_LEN = 256
 EVAL_BATCH = 64
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# FinBERT panel signal extraction
-# ──────────────────────────────────────────────────────────────────────────────
 
 def load_finbert(panel_model: str):
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
@@ -93,8 +47,6 @@ def load_finbert(panel_model: str):
     print(f"Loading FinBERT panel model: {name} ...")
     tokenizer = AutoTokenizer.from_pretrained(name)
     model = AutoModelForSequenceClassification.from_pretrained(name)
-    # label order (ProsusAI/finbert: {0: positive, 1: negative, 2: neutral});
-    # id2label keys may be int or str depending on transformers version
     raw_map = model.config.id2label
     id2label = {int(k): str(v).lower() for k, v in raw_map.items()}
     hf_labels = [id2label[i] for i in range(model.config.num_labels)]
@@ -106,7 +58,6 @@ def load_finbert(panel_model: str):
 
 def finbert_probs_for_all(model, tokenizer, hf_labels, device,
                           texts: list[str]) -> list[dict]:
-    """Return per-row dict: pred, probs{neg,neu,pos}, confidence, entropy."""
     if torch is None:
         raise RuntimeError("torch is required on the GPU server")
     hf2our = {i: OUR_LABELS.index(hf_labels[i]) for i in range(len(hf_labels))}
@@ -130,10 +81,6 @@ def finbert_probs_for_all(model, tokenizer, hf_labels, device,
                         "entropy": ent})
     return out
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Prompt builder (FinBERT single-member panel)
-# ──────────────────────────────────────────────────────────────────────────────
 
 class FormatError(RuntimeError):
     pass
@@ -189,10 +136,6 @@ def parse_response(raw: str) -> tuple[str, str, str]:
     return label, explanation, recommendation
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# SLM inference (same protocol as zero_shot_slm_predictions.py)
-# ──────────────────────────────────────────────────────────────────────────────
-
 @dataclass
 class SLMConfig:
     qwen_model_name: str = "unsloth/Qwen3.5-4B"
@@ -210,8 +153,6 @@ class SLMConfig:
 
 
 def _apply_chat_template_compat(tokenizer, messages, enable_thinking=False, **kwargs):
-    """Same compatibility shim as zero_shot_slm_predictions.py (handles Qwen
-    block-format content and enable_thinking template flag)."""
     call_kwargs = dict(enable_thinking=enable_thinking, **kwargs)
     try:
         return tokenizer.apply_chat_template(messages, **call_kwargs)
@@ -310,7 +251,6 @@ def _generate_and_parse(model, tokenizer, messages, gen_kwargs, cfg, tag):
 def run_slm_over_finbert(df: pd.DataFrame, prompts: list[str],
                           cfg: SLMConfig, slm: str,
                           finbert_preds: list[str], test_path: Path):
-    """Run one SLM over the FinBERT-panel prompts; checkpoint into test.csv."""
     if slm == "qwen":
         prefix = "finbert_qwen_zs"
         print("Loading Qwen3.5-4B ...")
@@ -356,7 +296,7 @@ def run_slm_over_finbert(df: pd.DataFrame, prompts: list[str],
             raw = str(exc)
             print(f"\n[{tag}] ALL RETRIES FAILED — row {i} (idx {idx}). "
                   f"Falling back to FinBERT panel prediction.")
-            label = finbert_preds[i]          # single-member panel: its vote
+            label = finbert_preds[i]
             expl = f"[parse_error] {raw[:300]}"
             rec = "Unable to generate recommendation due to format error."
             elapsed = 0.0
@@ -433,13 +373,11 @@ def main() -> None:
     n_rows = 20 if args.smoke else len(df)
     df_work = df.iloc[:n_rows].copy()
 
-    # 1. FinBERT panel signals for all rows
     fb_model, fb_tok, hf_labels, device = load_finbert(args.panel_model)
     texts = df_work["sentence"].astype(str).tolist()
     print(f"Extracting FinBERT panel signals for {len(texts)} rows ...")
     sigs = finbert_probs_for_all(fb_model, fb_tok, hf_labels, device, texts)
     fb_preds = [s["pred"] for s in sigs]
-    # quick report: panel-only accuracy on these rows
     acc = sum(1 for s, t in zip(fb_preds, df_work["label"]) if s == t) / len(df_work)
     print(f"FinBERT panel-only accuracy on these {len(df_work)} rows: {acc*100:.2f}%")
 
@@ -448,19 +386,16 @@ def main() -> None:
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
-    # 2. Build prompts
     prompts = [build_finbert_prompt(s, sig) for s, sig in
                zip(df_work["sentence"].astype(str), sigs)]
     print(f"Built {len(prompts)} FinBERT-panel prompts.")
 
-    # 3. Run SLMs
     which = ["qwen", "gemma"] if args.slm == "both" else [args.slm]
     if args.smoke:
-        which = which[:1]  # smoke: one SLM is enough to validate the chain
+        which = which[:1]
     for slm in which:
         df_work = run_slm_over_finbert(df_work, prompts, cfg, slm, fb_preds, test_path)
 
-    # 4. Merge back into the full test.csv (only the rows we ran)
     for col in [c for c in df_work.columns if c.startswith("finbert_") and c.endswith(("_label", "_explanation", "_recommendation", "_time_sec"))]:
         if col not in df.columns:
             df[col] = None
@@ -470,7 +405,6 @@ def main() -> None:
     df.to_csv(test_path, index=False)
     print(f"\nUpdated test CSV with new columns: {test_path}")
 
-    # 5. Metrics
     compute_and_save_metrics(df_work, which)
 
     if args.smoke:

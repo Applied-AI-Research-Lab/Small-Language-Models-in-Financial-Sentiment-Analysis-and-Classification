@@ -1,24 +1,3 @@
-"""B2 — Override behaviour analysis (R2.4 data half).
-
-Quantifies how each zero-shot SLM deviates from the classical panel on the
-340-row test set:
-
-- Unanimous-row overrides (SLM disagrees with a unanimous panel verdict):
-    correct overrides   (panel wrong -> SLM right)  = "rescues"
-    incorrect overrides (panel right -> SLM wrong)  = "damages"
-  precision = correct / total unanimous overrides
-  recovery  = rescues / unanimous-but-wrong rows (17)
-- Split-row deviations from the panel majority, with outcome breakdown
-  (SLM right / majority right / both wrong)
-- Total label changes vs. the panel majority vote (net label-change rate)
-- Net accuracy change vs. the majority vote (recorded, not tabulated)
-
-Outputs (Classic/results/):
-  override_behaviour.csv / .json  — all computed metrics
-  Console: verification summary + LaTeX table fragment
-
-Stdlib only; fully deterministic.
-"""
 
 import csv
 import json
@@ -35,7 +14,6 @@ SLMS = {
 
 
 def majority(preds):
-    """Panel majority vote (no 3-way ties occur in this test set)."""
     return Counter(preds).most_common(1)[0][0]
 
 
@@ -66,26 +44,21 @@ def main():
     for name, col in SLMS.items():
         pred = [r[col] for r in rows]
 
-        # --- Unanimous-row overrides ---
         ov_unan = [i for i in range(n) if unanimous[i] and pred[i] != maj[i]]
         ov_correct = [i for i in ov_unan if pred[i] == truth[i]]
         ov_incorrect = [i for i in ov_unan if pred[i] != truth[i]]
         precision = len(ov_correct) / len(ov_unan) if ov_unan else None
-        # consistency check: a correct override on a unanimous row rescues an error
         assert all(unan_wrong[i] for i in ov_correct), "correct override on correct panel?"
         recovery = len(ov_correct) / n_unan_wrong
 
-        # --- Split-row deviations from majority ---
         split_dev = [i for i in range(n) if not unanimous[i] and pred[i] != maj[i]]
         sd_slm_right = sum(1 for i in split_dev if pred[i] == truth[i])
         sd_maj_right = sum(1 for i in split_dev if maj[i] == truth[i])
         sd_both_wrong = len(split_dev) - sd_slm_right - sd_maj_right
 
-        # --- Totals vs majority vote ---
         changes = [i for i in range(n) if pred[i] != maj[i]]
         slm_correct = sum(1 for i in range(n) if pred[i] == truth[i])
 
-        # --- Consistency checks ---
         assert len(changes) == len(ov_unan) + len(split_dev)
         assert len(ov_correct) + len(ov_incorrect) == len(ov_unan)
 
@@ -107,7 +80,6 @@ def main():
 
     results["per_slm"] = per_slm
 
-    # ── Persist ──────────────────────────────────────────────────────────
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     with open(OUT_DIR / "override_behaviour.json", "w") as f:
         json.dump(results, f, indent=2)
@@ -131,7 +103,6 @@ def main():
         for m, a, b in rows_csv:
             w.writerow([m, a, b])
 
-    # ── Console summary ──────────────────────────────────────────────────
     print(f"n={n} | unanimous={n_unan} (wrong on {n_unan_wrong}) | split={n_split}")
     print(f"majority-vote accuracy: {maj_correct}/{n} = {maj_correct/n*100:.2f}%\n")
     for name, m in per_slm.items():
@@ -148,7 +119,6 @@ def main():
         print(f"  accuracy: {m['slm_accuracy']*100:.2f}%  "
               f"net vs majority: {m['net_accuracy_vs_majority_pp']:+.2f} pp\n")
 
-    # ── LaTeX fragment ────────────────────────────────────────────────────
     print("% ---- LaTeX table fragment ----")
     for name, m in per_slm.items():
         prec = f"{m['override_precision']*100:.1f}\\%"

@@ -1,43 +1,4 @@
 #!/usr/bin/env python3
-"""
-C5 — Calibrated panel signals + Qwen3.5-4B zero-shot re-run (GPU server).
-
-Motivation (Section sec:calibration): all three panel members are
-under-confident; the SVM softmax scores are not calibrated probabilities.
-This experiment applies leakage-free sigmoid calibration to the panel
-members and re-runs the zero-shot advisory-panel evaluation with the
-calibrated signals.
-
-Pipeline
---------
-1. Fit sigmoid-calibrated versions of LogReg (control), Linear SVM, and
-   XGBoost on the 1,924-sentence train+validation pool using 5-fold
-   cross-validated CalibratedClassifierCV (leakage-free: calibration is
-   fitted on held-out folds).
-2. Report test-set Brier / ECE of the calibrated probabilities vs the
-   original uncalibrated signals (B4 values: LR .143/.099, SVM .204/.230,
-   XGB .147/.041).
-3. Write calibrated per-row panel signals to test.csv as NEW columns
-   (prefix *_cal_*): pred, confidence, entropy, prob_{negative,neutral,
-   positive}. Original columns are left untouched.
-4. Build the advisory prompt from the CALIBRATED signals (identical prompt
-   structure, "calibrated" wording preserved from the original) and re-run
-   Qwen3.5-4B zero-shot over the 340 test rows with column prefix
-   qwen_calzs_* (checkpointed every 10 rows, resumable).
-5. McNemar (exact) of the calibrated-signal run vs the original
-   qwen_zs_label run.
-
-New test.csv columns:
-  logreg_cal_pred/_confidence/_entropy/_prob_{negative,neutral,positive}
-  svm_cal_*, xgb_cal_*
-  qwen_calzs_label/_explanation/_recommendation/_time_sec
-
-Usage (GPU server, from the project root):
-    source ./activate_project.csh
-    python Classic/calibrated_signals_rerun.py --slm      # full pipeline
-    python Classic/calibrated_signals_rerun.py            # CPU part only
-    python Classic/calibrated_signals_rerun.py --smoke     # 20-row SLM check
-"""
 
 from __future__ import annotations
 
@@ -59,8 +20,6 @@ CLASSES = ("negative", "neutral", "positive")
 SAVE_EVERY = 10
 CAL_SEED = 42
 
-
-# ── CPU: models + calibration ──────────────────────────────────────────────
 
 def make_vectorizer():
     from sklearn.feature_extraction.text import TfidfVectorizer
@@ -90,13 +49,6 @@ def entropy_of(p):
 
 
 def fit_calibrated_models():
-    """Fit per-fold-calibrated models on the pool; return fitted pipelines
-    (vectorizer + calibrated classifier) that can transform test rows.
-
-    Labels are integer-encoded (negative=0, neutral=1, positive=2) because
-    XGBoost requires numeric classes; predictions are decoded back to
-    strings by write_calibrated_columns.
-    """
     from sklearn.calibration import CalibratedClassifierCV
     from sklearn.model_selection import StratifiedKFold
     from sklearn.pipeline import Pipeline
@@ -109,10 +61,6 @@ def fit_calibrated_models():
 
     pipelines = {}
     for name, base in make_base_models().items():
-        # per-fold TF-IDF to keep calibration leakage-free:
-        # CalibratedClassifierCV(cv=5) internally cross-fits the base model
-        # and fits the sigmoid on held-out predictions; the vectorizer is
-        # rebuilt inside each fold via the Pipeline.
         pipe = Pipeline([
             ("tfidf", make_vectorizer()),
             ("clf", CalibratedClassifierCV(estimator=base, method="sigmoid",
@@ -154,22 +102,13 @@ def ece_confidence(probs, labels, n_bins=10):
 
 
 def write_calibrated_columns(pipelines, df_test):
-    """Predict calibrated probabilities for test rows; add *_cal_* columns.
-
-    Integer class codes are decoded back to labels via CLASSES (the
-    predict_proba column order matches the encoded classes 0/1/2).
-    Column prefixes follow the existing signal columns: xgboost -> xgb.
-    """
     prefix_map = {"logreg": "logreg", "svm": "svm", "xgboost": "xgb"}
     for name, pipe in pipelines.items():
         prefix = prefix_map[name]
         probs = pipe.predict_proba(df_test["sentence"].astype(str))
-        # sklearn orders predict_proba columns by the encoded classes [0,1,2],
-        # which is exactly CLASSES order (negative, neutral, positive)
         order = np.argsort(pipe.classes_)
         probs = probs[:, order]
         preds_idx = probs.argmax(axis=1)
-        # normalise away any tiny numeric drift
         probs = probs / probs.sum(axis=1, keepdims=True)
         for k, cls in enumerate(CLASSES):
             df_test[f"{prefix}_cal_prob_{cls}"] = probs[:, k]
@@ -182,7 +121,6 @@ def write_calibrated_columns(pipelines, df_test):
 
 
 def calibration_report(df_test):
-    """Brier/ECE of calibrated signals vs the original uncalibrated ones."""
     labels = df_test["label"].astype(str).str.lower().tolist()
     csv_prefix = {"logreg": "logreg", "svm": "svm", "xgboost": "xgb"}
     report = {}
@@ -204,12 +142,7 @@ def calibration_report(df_test):
     return report
 
 
-# ── Prompt (identical structure; calibrated signals substituted) ───────────
-
 def build_calibrated_prompt(row) -> str:
-    """Advisory-panel prompt built from the *_cal_* columns; the structure
-    and wording are identical to the original build_prompt so that the only
-    difference is the numerical scale of the panel signals."""
     preds = [str(row["logreg_cal_pred"]), str(row["svm_cal_pred"]),
              str(row["xgb_cal_pred"])]
     from collections import Counter
@@ -279,8 +212,6 @@ def build_calibrated_prompt(row) -> str:
     )
 
 
-# ── SLM part (GPU) ─────────────────────────────────────────────────────────
-
 def resolve_local_snapshot(repo_id: str) -> str:
     import os
     import glob
@@ -305,11 +236,6 @@ def resolve_local_snapshot(repo_id: str) -> str:
 
 
 def run_qwen_calibrated(df, cfg, n_rows, smoke=False):
-    """Run Qwen ZS over the calibrated signals for the first n_rows rows.
-
-    `df` is the FULL test frame — only the first n_rows rows are processed,
-    and every checkpoint saves the full frame (never a truncated slice).
-    """
     import torch
     from unsloth import FastLanguageModel
     from zero_shot_slm_predictions import (
@@ -321,9 +247,6 @@ def run_qwen_calibrated(df, cfg, n_rows, smoke=False):
         if col not in df.columns:
             df[col] = None
 
-    # completeness guard: prompts must never be built from incomplete
-    # calibrated signals (a missing neutral/positive probability would be
-    # rendered as 0.0% and corrupt the evaluation)
     work_check = df.iloc[:n_rows]
     for pfx in ("logreg", "svm", "xgb"):
         for cls in CLASSES:
@@ -348,7 +271,7 @@ def run_qwen_calibrated(df, cfg, n_rows, smoke=False):
     import time as _time
     for i, (idx, row) in enumerate(work.iterrows()):
         if pd.notna(df.at[idx, f"{prefix}_label"]):
-            continue  # resume from checkpoint
+            continue
         t0 = _time.perf_counter()
         messages = [
             {"role": "system",
@@ -386,7 +309,7 @@ def run_qwen_calibrated(df, cfg, n_rows, smoke=False):
             df.at[idx, f"{prefix}_label"] = "[parse_error]"
             df.at[idx, f"{prefix}_time_sec"] = _time.perf_counter() - t0
         if (i + 1) % SAVE_EVERY == 0 or (i + 1) == n_rows:
-            df.to_csv(TEST_CSV, index=False)   # saves the FULL frame
+            df.to_csv(TEST_CSV, index=False)
             print(f"  calibrated Qwen ZS: {i+1}/{n_rows} rows (checkpoint saved)")
 
     df.to_csv(TEST_CSV, index=False)
@@ -426,11 +349,6 @@ def main():
     df = pd.read_csv(TEST_CSV)
     n_rows = 20 if args.smoke else len(df)
 
-    # ── guard: a previous qwen_calzs run may have been produced with
-    # incomplete calibrated signals (the pre-fix merge bug wrote only
-    # *_cal_prob_negative to the CSV, so prompts were rendered with
-    # neutral/positive probabilities of 0.0%). Such a run is invalid and
-    # is cleared automatically for a clean re-run. ─────────────────────
     if "qwen_calzs_label" in df.columns and df["qwen_calzs_label"].notna().any():
         cal_complete = all(
             f"{p}_cal_prob_{cls}" in df.columns
@@ -447,7 +365,6 @@ def main():
             df = df.drop(columns=drop)
             df.to_csv(TEST_CSV, index=False)
 
-    # ── CPU part: calibration + signals + report ────────────────────────────
     print(f"Fitting leakage-free sigmoid calibration on the pool "
           f"(CalibratedClassifierCV, cv=5, seed {CAL_SEED}) ...")
     pipelines = fit_calibrated_models()
@@ -456,9 +373,6 @@ def main():
     df_work = write_calibrated_columns(pipelines, df_work)
     report = calibration_report(df_work)
 
-    # write the *_cal_* columns — COMPLETE (all three class probabilities per
-    # panel member; the pre-fix version merged only *_cal_prob_negative, so
-    # prompts were later rendered with neutral/positive probabilities of 0.0%)
     if args.smoke:
         df_full = pd.read_csv(TEST_CSV)
         for c in df_work.columns:
@@ -470,12 +384,10 @@ def main():
                 df_full.loc[df_work.index, c] = df_work[c]
         df_full.to_csv(TEST_CSV, index=False)
     else:
-        df_work.to_csv(TEST_CSV, index=False)   # df_work IS the full frame
+        df_work.to_csv(TEST_CSV, index=False)
     print(f"Written calibrated panel-signal columns to {TEST_CSV}")
 
     if args.smoke:
-        # a smoke run covers 20 rows only — never overwrite the genuine
-        # 340-row report; print the 20-row numbers for inspection instead
         print("\n== 20-row smoke report (NOT saved) ==")
         for name in report:
             o, c = report[name]["original"], report[name]["calibrated"]
@@ -509,7 +421,6 @@ def main():
               "Qwen re-evaluation.")
         return
 
-    # ── GPU part: Qwen ZS over calibrated signals ──────────────────────────
     df_full = pd.read_csv(TEST_CSV)
     have = [c for c in df_full.columns if c.endswith("_cal_prob_negative")]
     if len(have) != 3:
@@ -518,7 +429,6 @@ def main():
     cfg = ZeroShotConfig()
     df_run = run_qwen_calibrated(df_full, cfg, n_run, smoke=False)
 
-    # ── metrics + McNemar vs original ──────────────────────────────────────
     labels = df_run["label"].astype(str).str.lower().tolist()
     cal = df_run["qwen_calzs_label"].astype(str).str.lower().tolist()
     orig = df_run["qwen_zs_label"].astype(str).str.lower().tolist()

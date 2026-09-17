@@ -1,30 +1,3 @@
-"""C1 — External FinBERT baseline (R2.1).
-
-Runs ProsusAI/finbert (BERT-base, 3-class financial sentiment head) on the same
-340-row test set in two configurations:
-
-  1. zero-shot : the released model out-of-the-box (argmax over its
-                 positive/negative/neutral head) - no task training.
-  2. fine-tuned: the same checkpoint fine-tuned on the 1,584-sentence training
-                 split for 3 epochs (matching the SLM fine-tuning protocol of
-                 the paper: train split only; validation split used only for
-                 monitoring; test set untouched until final evaluation).
-
-Per-row predictions are saved so that paired McNemar tests against the
-framework models (incl. Qwen3.5-4B zero-shot, if its column is present in the
-test CSV) can be computed. Seeds are fixed (42).
-
-Usage (GPU server):
-    python Classic/finbert_baseline.py --mode all          # zero-shot + FT
-    python Classic/finbert_baseline.py --mode zero-shot    # zero-shot only
-    python Classic/finbert_baseline.py --mode ft           # fine-tune only
-    python Classic/finbert_baseline.py --smoke             # 20-row env check
-
-Outputs (Classic/results/):
-    finbert_per_row.csv        sentence,label,finbert_zs_pred,finbert_ft_pred
-    finbert_metrics.json/csv   accuracy/macro-F1/weighted-F1 per configuration
-    finbert_mcnemar.json       paired tests vs qwen_zs_label (if present)
-"""
 
 import argparse
 import csv
@@ -34,7 +7,6 @@ import random
 import sys
 from pathlib import Path
 
-# ── configuration ────────────────────────────────────────────────────────────
 TEST_CSV = Path("Datasets/financial_phrasebank/test.csv")
 TRAIN_CSV = Path("Datasets/financial_phrasebank/train.csv")
 VAL_CSV = Path("Datasets/financial_phrasebank/validation.csv")
@@ -65,7 +37,6 @@ def load_csv(path: Path) -> list[dict]:
 
 
 def macro_metrics(y_true: list[str], y_pred: list[str]):
-    """Accuracy + macro/weighted F1 over OUR_LABELS (no sklearn needed)."""
     n = len(y_true)
     acc = sum(1 for t, p in zip(y_true, y_pred) if t == p) / n
     f1s, supports = [], []
@@ -84,7 +55,6 @@ def macro_metrics(y_true: list[str], y_pred: list[str]):
 
 
 def mcnemar_exact(y_a_correct, y_b_correct):
-    """Exact McNemar between two correctness vectors."""
     b = sum(1 for a, w in zip(y_a_correct, y_b_correct) if a and not w)
     c = sum(1 for a, w in zip(y_a_correct, y_b_correct) if not a and w)
     nd = b + c
@@ -111,7 +81,7 @@ def main():
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
     try:
         from transformers import get_linear_schedule_with_warmup
-    except ImportError:  # moved in some transformers versions
+    except ImportError:
         try:
             from transformers.optimization import get_linear_schedule_with_warmup
         except ImportError:
@@ -128,12 +98,9 @@ def main():
         args.mode = "zero-shot"
         args.no_ft = True
 
-    # ── load model & tokenizer ─────────────────────────────────────────
     print(f"Loading {MODEL_NAME} ...")
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
-    # the released head's label order (ProsusAI/finbert: positive/negative/neutral);
-    # id2label keys can be int or str depending on the transformers version
     raw_map = model.config.id2label
     id2label = {int(k): str(v).lower() for k, v in raw_map.items()}
     hf_labels = [id2label[i] for i in range(model.config.num_labels)]
@@ -153,7 +120,6 @@ def main():
         for i in range(0, len(texts), EVAL_BATCH):
             ids, mask = encode(texts[i:i + EVAL_BATCH])
             logits = model(input_ids=ids.to(device), attention_mask=mask.to(device)).logits
-            # remap HF label order -> our label order
             probs = torch.softmax(logits, dim=-1)
             reord = torch.zeros_like(probs)
             for hf_i in range(len(hf_labels)):
@@ -164,7 +130,6 @@ def main():
     results = {}
     zs_preds, ft_preds = None, None
 
-    # ── 1. zero-shot ────────────────────────────────────────────────────
     if args.mode in ("all", "zero-shot"):
         print(f"\n[zero-shot] evaluating {len(test_rows)} test rows ...")
         zs_preds = predict([r["sentence"] for r in test_rows])
@@ -172,24 +137,19 @@ def main():
         results["finbert_zero_shot"] = {"accuracy": acc, "macro_f1": mf1,
                                        "weighted_f1": wf1, "n": len(test_rows)}
         print(f"[zero-shot] acc={acc*100:.2f}%  macroF1={mf1:.4f}  wF1={wf1:.4f}")
-        # persist immediately so a later failure cannot lose this result
         OUT_DIR.mkdir(parents=True, exist_ok=True)
         with open(OUT_DIR / "finbert_metrics.json", "w") as f:
             json.dump(results, f, indent=2)
 
-    # ── 2. fine-tuned ────────────────────────────────────────────────────
     if args.mode in ("all", "ft") and not args.no_ft:
         print("\n[fine-tune] loading training data ...")
         train_rows = load_csv(TRAIN_CSV)
         val_rows = load_csv(VAL_CSV)
 
-        # NOTE: encode all texts in ONE call so they are padded to a common
-        # length within each dataset (per-sentence encoding produces unequal
-        # tensor shapes, which torch.stack rejects).
         def prep(rows):
             texts = [r["sentence"] for r in rows]
             ys = torch.tensor([OUR_LABELS.index(r["label"]) for r in rows])
-            ids, mask = encode(texts)  # single call -> uniform padding
+            ids, mask = encode(texts)
             return TensorDataset(ids, mask, ys)
 
         train_ds = prep(train_rows)
@@ -213,7 +173,6 @@ def main():
             for ids, mask, ys in train_dl:
                 ids, mask, ys = ids.to(device), mask.to(device), ys.to(device)
                 out = model(input_ids=ids, attention_mask=mask)
-                # loss over our label order: reorder logits
                 reord = torch.zeros_like(out.logits)
                 for hf_i in range(len(hf_labels)):
                     reord[:, hf2our[hf_i]] = out.logits[:, hf_i]
@@ -225,7 +184,6 @@ def main():
                     sched.step()
                 optim.zero_grad()
                 running += loss.item() * len(ys); seen += len(ys)
-            # val monitoring
             model.eval()
             correct = total = 0
             with torch.no_grad():
@@ -249,15 +207,12 @@ def main():
                                          "batch": FT_BATCH, "seed": SEED}
         print(f"[fine-tune] acc={acc*100:.2f}%  macroF1={mf1:.4f}  wF1={wf1:.4f}")
 
-        # persist the fine-tuned checkpoint for downstream use
-        # (e.g., finbert_panel_slm_predictions.py --panel-model ft)
         ckpt_dir = OUT_DIR / "finbert_ft_checkpoint"
         ckpt_dir.mkdir(parents=True, exist_ok=True)
         model.save_pretrained(ckpt_dir)
         tokenizer.save_pretrained(ckpt_dir)
         print(f"Fine-tuned checkpoint saved to: {ckpt_dir}")
 
-    # ── persist ──────────────────────────────────────────────────────────
     if args.smoke:
         print("\nSMOKE TEST COMPLETE - environment OK.")
         return
@@ -270,7 +225,6 @@ def main():
                            ft_preds or [None]*len(test_rows)):
             w.writerow([r["sentence"], r["label"], z, t])
 
-    # McNemar vs framework models (incl. Qwen ZS if present in test.csv)
     mcn = {}
     if "qwen_zs_label" in test_rows[0]:
         qs = [r["qwen_zs_label"] for r in test_rows]

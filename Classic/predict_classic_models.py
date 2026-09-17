@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Run predictions with trained classical models and export signals into test.csv."""
 
 from __future__ import annotations
 
@@ -181,8 +180,6 @@ def add_xgb_signals(df: pd.DataFrame, cfg: PredictConfig) -> pd.DataFrame:
         cls_idx = class_labels.index(cls)
         df[f"xgb_prob_{cls}"] = probs[:, cls_idx]
 
-    # XGBoost native per-row feature contributions are expensive and version-sensitive.
-    # We export the globally strongest model features as additional explainability signal.
     global_feats = " | ".join([f"{d['feature']}:{d['importance']:.4f}" for d in top_features[: cfg.top_k_features]])
     df["xgb_top_features_global"] = global_feats
 

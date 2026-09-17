@@ -1,40 +1,4 @@
 #!/usr/bin/env python3
-"""
-R1.2 — Adequately tuned fine-tuning configurations (GPU server).
-
-The reviewer's necessary ablation: the original fine-tuning used a fixed,
-minimal budget (120 steps, ~0.61 epochs, LoRA r=16 Qwen / r=8 Gemma) with no
-hyperparameter search; the eval-loss trajectory was still monotonically
-decreasing at the final step (0.694 -> 0.628), indicating under-training.
-This script executes a proper tuning protocol that MIRRORS the original
-pipeline exactly (same prompt, same chat formats, same LoRA target modules,
-same generation parameters for evaluation) and varies only what the reviewer
-asked to be tuned:
-
-  grid:
-    lora_r      in {8, 16}            (both models; covers both original values)
-    max_steps   in {120, 480}         (0.61 vs 2.42 epochs)
-  selection:
-    best (lora_r, max_steps) per model by VALIDATION-SPLIT accuracy
-    (the 340-row validation split is used for tuning; the 340-row test set
-    is evaluated exactly once, with the selected configuration, at the end)
-
-Everything is checkpointed and resumable: per-config adapters are saved under
-Models/tuned/<model>/<cfg>/; validation predictions are cached in
-Classic/results/ft_tuning/val_<model>_<cfg>.csv; the final test predictions
-are written to test.csv with NEW columns <model>_ft_tuned_label/_explanation/
-_time_sec (original *_ft_* columns untouched).
-
-Usage (server, from project root):
-    source ./activate_project.csh
-    python finetune_tuned.py --model qwen           # Qwen grid (4 configs)
-    python finetune_tuned.py --model gemma          # Gemma grid (4 configs)
-    python finetune_tuned.py --model qwen --smoke    # 1 config, 20 rows
-Timings (H100, measured from the original runs: ~36 min / 120 steps Qwen):
-    Qwen grid:  120-step runs ~2x36 min + 480-step runs ~2x144 min + inference
-                ≈ 7-8 h total. Use --quick for a reduced grid if needed.
-    python finetune_tuned.py --model qwen --quick   # only (16, 120) and (16, 480)
-"""
 
 from __future__ import annotations
 
@@ -56,9 +20,6 @@ OUT_DIR = Path("Classic/results/ft_tuning")
 ADAPTER_ROOT = Path("Models/tuned")
 ALLOWED_LABELS = {"positive", "negative", "neutral"}
 
-# ═════════════════════════════════════════════════════════════════════════════
-# Configs — mirror the original scripts exactly except the tuned dimensions
-# ═════════════════════════════════════════════════════════════════════════════
 
 @dataclass
 class BaseCfg:
@@ -73,26 +34,19 @@ class BaseCfg:
     eval_steps: int = 20
     random_state: int = 42
     generation_retry_attempts: int = 4
-    # inference params mirror the originals exactly
     max_new_tokens: int = 96
     temperature: float = 0.3
     top_p: float = 0.9
-    top_k: int = 64  # only used by gemma
+    top_k: int = 64
 
 
 QWEN_MODEL = "unsloth/Qwen3.5-4B"
 GEMMA_MODEL = "unsloth/gemma-3-4b-it"
 
-# tuned grid: (lora_r, max_steps)
 GRID = [(8, 120), (8, 480), (16, 120), (16, 480)]
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# Prompting — identical to the original scripts (verbatim copies)
-# ═════════════════════════════════════════════════════════════════════════════
-
 def prediction_prompt(sentence: str) -> str:
-    # verbatim from finetune_predict_qwen3_5_4b.py / finetune_predict_gemma3_4b.py
     return (
         "Classify financial sentiment for the sentence below. "
         "Allowed labels: positive, negative, neutral.\n"
@@ -104,7 +58,6 @@ def prediction_prompt(sentence: str) -> str:
 
 
 def parse_prediction(raw: str) -> tuple[str, str]:
-    # verbatim from the original scripts
     text = str(raw).strip()
     label_match = re.search(r"label\s*:\s*(positive|negative|neutral)", text, flags=re.IGNORECASE)
     expl_match = re.search(r"explanation\s*:\s*(.+)", text, flags=re.IGNORECASE | re.DOTALL)
@@ -122,18 +75,6 @@ class FormatError(RuntimeError):
 
 
 def parse_prediction_label(raw: str) -> tuple[str, str]:
-    """Lenient parse for the tuned-FT protocol.
-
-    The current server template (Transformers 5.3.0) places the think-block
-    scaffold in the assistant turn during training, so the LoRA learns to
-    emit the training target verbatim --- 'Label: X' followed by EOS ---
-    without the Explanation field the original (May-environment) run still
-    produced. Label accuracy is the only quantity the tuned-FT comparison
-    contributes to the paper (vs. the original fine-tuning and the
-    zero-shot layer), so label-only outputs are accepted; the explanation
-    defaults to an empty string and is recorded but not analyzed.
-    Rows with NO parseable label still raise FormatError (retries apply).
-    """
     text = str(raw).strip()
     label_match = re.search(
         r"label\s*:\s*(positive|negative|neutral)", text, flags=re.IGNORECASE)
@@ -149,7 +90,6 @@ def parse_prediction_label(raw: str) -> tuple[str, str]:
 
 
 def to_chat_content_blocks(messages):
-    # verbatim from finetune_predict_qwen3_5_4b.py
     block_messages = []
     for message in messages:
         content = message.get("content", "")
@@ -164,7 +104,6 @@ def to_chat_content_blocks(messages):
 
 
 def apply_chat_template_compat(tokenizer, messages, **kwargs):
-    # verbatim from finetune_predict_qwen3_5_4b.py
     try:
         return tokenizer.apply_chat_template(messages, **kwargs)
     except TypeError as exc:
@@ -185,17 +124,6 @@ def normalize_label(value: str) -> str:
 
 
 def apply_chat_template_no_think(tokenizer, messages, **kwargs):
-    """Qwen chat template with thinking mode DISABLED (battle-tested shim,
-    mirroring zero_shot_slm_predictions.py).
-
-    The current server environment (Unsloth 2026.3.8 / Transformers 5.3.0)
-    defaults Qwen3.5's template to thinking mode: without this flag the
-    generation prompt lets the model reason first, and a 96-token budget is
-    consumed before the strict 'Label:/Explanation:' answer appears —
-    causing systematic parse failures. The original May fine-tuning run
-    predated this template default; the zero-shot layer always passed
-    enable_thinking=False, which is why its Qwen runs parse reliably.
-    """
     call_kwargs = dict(enable_thinking=False, **kwargs)
     try:
         return tokenizer.apply_chat_template(messages, **call_kwargs)
@@ -204,13 +132,11 @@ def apply_chat_template_no_think(tokenizer, messages, **kwargs):
         if "string indices must be integers" not in err and "enable_thinking" not in err:
             raise
         if "enable_thinking" in err:
-            # tokenizer does not understand the flag — retry without it
             try:
                 return tokenizer.apply_chat_template(messages, **kwargs)
             except TypeError as exc2:
                 if "string indices must be integers" not in str(exc2):
                     raise
-        # block-content fallback
         block_msgs = []
         for m in messages:
             content = m.get("content", "")
@@ -225,7 +151,6 @@ def apply_chat_template_no_think(tokenizer, messages, **kwargs):
 
 
 def qwen_training_text(tokenizer, sentence: str, label: str) -> str:
-    # verbatim format from the original Qwen script (system role + compat shim)
     messages = [
         {"role": "system",
          "content": "You classify financial sentiment into positive, negative, neutral."},
@@ -237,7 +162,6 @@ def qwen_training_text(tokenizer, sentence: str, label: str) -> str:
 
 
 def gemma_training_text(tokenizer, sentence: str, label: str) -> str:
-    # verbatim format from the original Gemma script (block content, no <bos>)
     messages = [
         {"role": "user",
          "content": [{"type": "text", "text": prediction_prompt(sentence)}]},
@@ -249,12 +173,7 @@ def gemma_training_text(tokenizer, sentence: str, label: str) -> str:
     return formatted.removeprefix("<bos>")
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# Model wrappers
-# ═════════════════════════════════════════════════════════════════════════════
-
 def resolve_local_snapshot(repo_id: str) -> str:
-    """Resolve a HF repo id to a cached snapshot dir if available (DNS-robust)."""
     hf_home = os.environ.get("HF_HOME") or os.path.expanduser(
         os.path.join("~", ".cache", "huggingface"))
     model_dir = os.path.join(hf_home, "hub", "models--" + repo_id.replace("/", "--"))
@@ -297,14 +216,13 @@ def load_model(model_key: str, cfg: BaseCfg, adapter_path: str | None = None):
 
 
 def attach_lora(model_key: str, model, lora_r: int, random_state: int):
-    # target modules identical to the original scripts
     if model_key == "qwen":
         from unsloth import FastLanguageModel
         return FastLanguageModel.get_peft_model(
             model, r=lora_r,
             target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                             "gate_proj", "up_proj", "down_proj"],
-            lora_alpha=lora_r,          # original: alpha == r (16/16, 8/8)
+            lora_alpha=lora_r,
             lora_dropout=0.0, bias="none",
             use_gradient_checkpointing="unsloth",
             random_state=random_state, use_rslora=False)
@@ -314,19 +232,13 @@ def attach_lora(model_key: str, model, lora_r: int, random_state: int):
             model, r=lora_r,
             target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                             "gate_proj", "up_proj", "down_proj"],
-            lora_alpha=lora_r,          # original: alpha == r
+            lora_alpha=lora_r,
             lora_dropout=0.0, bias="none",
             use_gradient_checkpointing="unsloth",
             random_state=random_state, use_rslora=False)
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# Train / evaluate one configuration
-# ═════════════════════════════════════════════════════════════════════════════
-
 def cfg_id(model_key: str, lora_r: int, max_steps: int, smoke: bool = False) -> str:
-    # smoke runs are namespaced so their artifacts (adapter dirs, caches,
-    # tuning records) can never be mistaken for full-grid results
     return f"{model_key}_r{lora_r}_s{max_steps}{'_smoke' if smoke else ''}"
 
 
@@ -342,7 +254,6 @@ def prepare_train_dataset(model_key: str, tokenizer, df):
 
 def train_one(model_key: str, lora_r: int, max_steps: int, cfg: BaseCfg,
               smoke: bool = False) -> Path:
-    """Train one grid config; returns the adapter path. Resumable per config."""
     cid = cfg_id(model_key, lora_r, max_steps, smoke=smoke)
     adapter_dir = ADAPTER_ROOT / cid
     marker = adapter_dir / "TRAIN_DONE"
@@ -413,7 +324,6 @@ def train_one(model_key: str, lora_r: int, max_steps: int, cfg: BaseCfg,
 
 def infer_rows(model_key: str, model, tokenizer, sentences: list[str], cfg: BaseCfg,
                progress_every: int = 5):
-    """Batch of per-row predictions, mirroring the original infer_one logic."""
     import torch
     preds, expls, times = [], [], []
     use_top_k = (model_key == "gemma")
@@ -483,7 +393,6 @@ def infer_rows(model_key: str, model, tokenizer, sentences: list[str], cfg: Base
 
 def evaluate_on_validation(model_key: str, lora_r: int, max_steps: int,
                            cfg: BaseCfg, smoke: bool = False) -> float:
-    """Predict the validation split with the trained adapter; return accuracy."""
     cid = cfg_id(model_key, lora_r, max_steps, smoke=smoke)
     adapter_dir = ADAPTER_ROOT / cid
     cache = OUT_DIR / f"val_{cid}.csv"
@@ -524,7 +433,6 @@ def evaluate_on_validation(model_key: str, lora_r: int, max_steps: int,
 
 def final_test_run(model_key: str, lora_r: int, max_steps: int,
                    cfg: BaseCfg, smoke: bool = False) -> None:
-    """Evaluate the SELECTED config once on the test set; write new columns."""
     cid = cfg_id(model_key, lora_r, max_steps, smoke=smoke)
     adapter_dir = ADAPTER_ROOT / cid
     prefix = f"{model_key}_ft_tuned{'_smoke' if smoke else ''}"
@@ -565,14 +473,9 @@ def final_test_run(model_key: str, lora_r: int, max_steps: int,
     print(f"[{cid}] test predictions written: {prefix}_* columns")
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# Orchestration
-# ═════════════════════════════════════════════════════════════════════════════
-
 def run_model_grid(model_key: str, cfg: BaseCfg, quick: bool, smoke: bool) -> None:
     grid = GRID
     if quick:
-        # original config + the long-budget variant of the same rank
         orig_r = 16 if model_key == "qwen" else 8
         grid = [(orig_r, 120), (orig_r, 480)]
     if smoke:
@@ -589,8 +492,6 @@ def run_model_grid(model_key: str, cfg: BaseCfg, quick: bool, smoke: bool) -> No
             continue
         train_one(model_key, lora_r, max_steps, cfg, smoke=smoke)
         acc = evaluate_on_validation(model_key, lora_r, max_steps, cfg, smoke=smoke)
-        # reload the per-config training summary for the record (smoke cids
-        # point at the smoke-namespaced adapter dir)
         tsum_path = ADAPTER_ROOT / cid / "training_summary.json"
         tsum = json.loads(tsum_path.read_text()) if tsum_path.exists() else {}
         results[cid] = {
@@ -601,7 +502,6 @@ def run_model_grid(model_key: str, cfg: BaseCfg, quick: bool, smoke: bool) -> No
         }
         results_path.write_text(json.dumps(results, indent=2))
 
-    # select best config by validation accuracy (ties -> fewer steps)
     best_cid = max(results, key=lambda c: (results[c]["val_accuracy"],
                                            -results[c]["max_steps"]))
     best = results[best_cid]

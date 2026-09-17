@@ -1,58 +1,4 @@
 #!/usr/bin/env python3
-"""
-R1.2 — Panel-augmented fine-tuning (GPU server).
-
-The reviewer's remaining requested ablation: "fine-tuned SLMs receiving
-equivalent panel information." The original and tuned fine-tuning runs
-trained the SLMs on the sentence alone, while the zero-shot layer receives
-the sentence plus the full advisory-panel signal block. This script closes
-that asymmetry: it fine-tunes both SLMs on prompts that contain EXACTLY the
-zero-shot advisory-panel prompt (sentence + predictions + probabilities +
-confidence + entropy + driving words + panel status), with the gold label
-as the training target.
-
-Design decisions (all mirror the paper's established protocols):
-
-  1. LEAKAGE-FREE SIGNALS: the panel signals for the 1,584 training rows are
-     generated OUT-OF-FOLD (5-fold stratified CV on the train+validation
-     pool, vectorizer fit per fold on the training partition only --- the
-     identical protocol to the stacking baseline). The validation and test
-     rows use the FINAL panel signals (models fit on the full 1,924-row
-     pool --- the exact signals stored in test.csv that the zero-shot layer
-     receives). The XGBoost feature list is the panel's GLOBAL ranking
-     (identical across sentences, by design of the framework), so it is
-     reused from the stored artifacts for every row.
-
-  2. NO RETUNING: the configuration already selected by the validation grid
-     is used verbatim (LoRA rank 16, 480 steps for both models; see
-     Classic/results/ft_tuning/tuning_<model>_selected.json). The point of
-     this experiment is an input-matched comparison, not a second search.
-
-  3. LABEL-ONLY TRAINING TARGET: identical to the tuned-FT protocol
-     ('Label: <label>' + EOS; label-only outputs accepted by the lenient
-     parser), so the comparison against the sentence-only tuned runs is
-     apples-to-apples on label accuracy.
-
-Outputs (server, from project root):
-  Models/panel_aug/<model>/            LoRA adapters
-  Classic/results/ft_panel_aug/panel_aug_<model>.json       metrics record
-  Classic/results/ft_panel_aug/val_<model>.csv              validation predictions
-  Datasets/financial_phrasebank/test.csv  new columns:
-      <model>_ft_panaug_label / _explanation / _time_sec
-  (original and tuned *_ft_* columns untouched)
-
-Usage (server, from project root):
-    source ./activate_project.csh
-    python finetune_panel_aug.py --model qwen           # full run
-    python finetune_panel_aug.py --model gemma
-    python finetune_panel_aug.py --model qwen --smoke   # 10 steps, 20 val+20 test rows
-
-Pipeline:
-    phase 1  generate leakage-free panel signals for train rows (CPU, ~1 min)
-    phase 2  train LoRA on panel-augmented prompts (GPU, ~2.5 h/model)
-    phase 3  evaluate on validation (340 rows, sanity check only — NOT selection)
-    phase 4  evaluate once on test (340 rows) -> new test.csv columns + metrics
-"""
 
 from __future__ import annotations
 
@@ -86,10 +32,6 @@ QWEN_MODEL = "unsloth/Qwen3.5-4B"
 GEMMA_MODEL = "unsloth/gemma-3-4b-it"
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# Config — identical training hyperparameters to finetune_tuned.py
-# ═════════════════════════════════════════════════════════════════════════════
-
 @dataclass
 class BaseCfg:
     max_seq_length: int = 2048
@@ -105,11 +47,10 @@ class BaseCfg:
     max_new_tokens: int = 96
     temperature: float = 0.3
     top_p: float = 0.9
-    top_k: int = 64  # only used by gemma
+    top_k: int = 64
 
 
 def selected_config(model_key: str) -> tuple[int, int]:
-    """Load the grid-selected (lora_r, max_steps) from the tuned-FT records."""
     path = TUNING_DIR / f"tuning_{model_key}_selected.json"
     if not path.exists():
         raise FileNotFoundError(
@@ -118,11 +59,6 @@ def selected_config(model_key: str) -> tuple[int, int]:
     sel = json.loads(path.read_text())["selected_config"]
     return int(sel["lora_r"]), int(sel["max_steps"])
 
-
-# ═════════════════════════════════════════════════════════════════════════════
-# Phase 1 — leakage-free panel signals (mirrors stacking_baseline.py + the
-# per-row signal construction of predict_classic_models.py)
-# ═════════════════════════════════════════════════════════════════════════════
 
 def entropy_of_probs(prob_row) -> float:
     p = np.clip(np.asarray(prob_row, dtype=float), 1e-12, 1.0)
@@ -146,21 +82,6 @@ def make_vectorizer():
 
 
 def oof_signals(smoke: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Out-of-fold panel signals for the TRAIN rows (1,584) and the
-    VALIDATION rows (340).
-
-    5-fold stratified CV over the train+validation pool (identical to the
-    stacking baseline): for each fold, all three models + the TF-IDF
-    vectorizer are fit on the fold's training partition, and the signals
-    are computed for the held-out rows. A train (or validation) row
-    therefore never sees a signal from a panel model that was trained on
-    that row --- the validation sanity check is leakage-free in every
-    respect, matching the stacking baseline's construction. The TEST rows
-    keep the stored final-pool signals from test.csv (the exact deployment
-    condition the zero-shot layer received).
-
-    Returns (train_signals, val_signals).
-    """
     if SIGNALS_CACHE.exists():
         cached = pd.read_csv(SIGNALS_CACHE)
         n_train = (cached["split"] == "train").sum()
@@ -185,9 +106,6 @@ def oof_signals(smoke: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
     pool["label"] = pool["label"].astype(str).str.strip().str.lower()
     y_enc = np.array([CLASSES.index(t) for t in pool["label"]])
 
-    # XGBoost global feature list — identical across sentences BY DESIGN
-    # (the framework supplies the panel's global ranking in every prompt);
-    # taken from the stored artifacts so it matches the test-row prompts.
     xgb_bundle = __import__("joblib").load(ARTIFACTS / "xgboost_tfidf.joblib")
     global_feats = " | ".join(
         f"{d['feature']}:{d['importance']:.4f}"
@@ -220,8 +138,6 @@ def oof_signals(smoke: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
         lr_p = lr.predict_proba(Xte)
         sv_p = sklearn_softmax(svm.decision_function(Xte))
         xg_p = xgb.predict_proba(Xte)
-        # all three models are fit on integer-encoded labels (CLASSES index),
-        # so classes_ holds the code for CLASSES[i]
         lr_cls = [CLASSES[int(c)] for c in lr.classes_]
         sv_cls = [CLASSES[int(c)] for c in svm.classes_]
         xg_cls = [CLASSES[int(c)] for c in xgb.classes_]
@@ -230,7 +146,6 @@ def oof_signals(smoke: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
                                    ("svm", sv_p, sv_cls),
                                    ("xgb", xg_p, xg_cls)):
             argmax = P.argmax(axis=1)
-            # map probability columns to CLASSES order via the model's class order
             probs_cls = np.zeros_like(P)
             for local_i, cls_i in enumerate(cls_order):
                 probs_cls[:, CLASSES.index(cls_i)] = P[:, local_i]
@@ -240,14 +155,13 @@ def oof_signals(smoke: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
             sig[f"{name}_confidence"][te] = P.max(axis=1)
             sig[f"{name}_entropy"][te] = [entropy_of_probs(r) for r in P]
 
-        # per-sentence linear driving words (predicted-class coefficients)
         lr_argmax_local = lr_p.argmax(axis=1)
         sv_argmax_local = sv_p.argmax(axis=1)
         for name, model, argmax_local in (
                 ("logreg", lr, lr_argmax_local),
                 ("svm", svm, sv_argmax_local)):
             for j, i in enumerate(te):
-                cls_i = int(argmax_local[j])   # local coef row index
+                cls_i = int(argmax_local[j])
                 coef_row = model.coef_[cls_i]
                 tok = top_tokens_from_linear_row(Xte[j], coef_row, feat_names,
                                                  TOP_K_FEATURES)
@@ -284,11 +198,6 @@ def oof_signals(smoke: bool = False) -> tuple[pd.DataFrame, pd.DataFrame]:
     return tr, vl
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# Prompting — the ZERO-SHOT advisory-panel prompt (imported verbatim from
-# zero_shot_slm_predictions.py) + tuned-FT training-format helpers
-# ═════════════════════════════════════════════════════════════════════════════
-
 def import_zero_shot_module():
     sys_path = str(Path("Classic").resolve())
     if sys_path not in __import__("sys").path:
@@ -302,12 +211,7 @@ class FormatError(RuntimeError):
 
 
 def parse_prediction_label(raw: str) -> tuple[str, str]:
-    """Lenient parse (label required, explanation optional) — identical to
-    finetune_tuned.py."""
     text = str(raw).strip()
-    # quote-tolerant: also matches JSON-style "label": "negative" (the
-    # panel prompt instructs a JSON response; an under-trained model may
-    # comply with the prompt instead of the trained 'Label:' format)
     label_match = re.search(
         r"label\s*[\"']?\s*:\s*[\"']?\s*(positive|negative|neutral)",
         text, flags=re.IGNORECASE)
@@ -352,25 +256,14 @@ THINK_CLOSE_BLOCK = "\n\n</think>\n\n"
 
 
 def _force_no_think_prefill(tokenizer, inputs):
-    """Token-level guarantee that Qwen thinking mode is OFF.
-
-    Transformers 5.3.0 processors may ACCEPT the enable_thinking kwarg but
-    IGNORE it with a warning ('not a valid argument for this processor'),
-    leaving thinking mode active; the model then spends the whole
-    generation budget reasoning before the answer. The deterministic fix:
-    inspect the rendered generation prompt — if it does not already end
-    with the (closed) empty think block, append the missing tokens so the
-    model continues directly with the answer.
-    """
     try:
         ids = inputs["input_ids"]
     except (KeyError, TypeError):
         return inputs
     tail = tokenizer.decode(ids[0, -12:], skip_special_tokens=False)
     if THINK_CLOSE_TAG in tail:
-        return inputs  # flag was honoured; closed block present
+        return inputs
     if any(tag in tail for tag in THINK_OPEN_TAGS):
-        # thinking-mode template prefilled the opening tag; close it
         block, what = THINK_CLOSE_BLOCK, "closing think block appended"
     else:
         block, what = EMPTY_THINK_BLOCK, "empty think block appended"
@@ -395,10 +288,6 @@ def _force_no_think_prefill(tokenizer, inputs):
 
 
 def apply_chat_template_no_think(tokenizer, messages, **kwargs):
-    """Qwen template with thinking mode disabled — flag-based shim PLUS a
-    token-level guarantee: even if the processor silently ignores
-    enable_thinking (Transformers 5.3.0 warns and ignores), the empty think
-    block is prefilled so no generation budget is spent reasoning."""
     call_kwargs = dict(enable_thinking=False, **kwargs)
     result = None
     try:
@@ -444,14 +333,6 @@ def normalize_label(value: str) -> str:
 
 
 def panel_aug_user_prompt(build_prompt, signals_row: pd.Series) -> str:
-    """The advisory-panel prompt built from a signals row.
-
-    NOTE: the zero-shot prompt ends with an instruction to respond with a
-    JSON object; for fine-tuning we keep the prompt VERBATIM (the model must
-    learn to answer the real deployment prompt) and supply the training
-    target in the 'Label: X' format used across all fine-tuning runs, so
-    label accuracy remains comparable across conditions.
-    """
     return build_prompt(signals_row)
 
 
@@ -478,10 +359,6 @@ def gemma_training_text(tokenizer, build_prompt, signals_row, label: str) -> str
         messages, tokenize=False, add_generation_prompt=False)
     return formatted.removeprefix("<bos>")
 
-
-# ═════════════════════════════════════════════════════════════════════════════
-# Model wrappers (identical to finetune_tuned.py)
-# ═════════════════════════════════════════════════════════════════════════════
 
 def resolve_local_snapshot(repo_id: str) -> str:
     hf_home = os.environ.get("HF_HOME") or os.path.expanduser(
@@ -544,10 +421,6 @@ def attach_lora(model_key: str, model, lora_r: int, random_state: int):
         use_gradient_checkpointing="unsloth",
         random_state=random_state, use_rslora=False)
 
-
-# ═════════════════════════════════════════════════════════════════════════════
-# Phases 2-4 — train, validate, test
-# ═════════════════════════════════════════════════════════════════════════════
 
 def prefix_for(model_key: str, smoke: bool) -> str:
     return f"{model_key}_ft_panaug{'_smoke' if smoke else ''}"
@@ -705,15 +578,6 @@ def infer_rows(model_key: str, model, tokenizer, prompts: list[str], cfg: BaseCf
 
 def evaluate_split(model_key: str, adapter_dir: Path, cfg: BaseCfg,
                    split: str, smoke: bool):
-    """Evaluate the trained adapter on validation (sanity) or test (final).
-
-    Validation rows use the SAME out-of-fold signals the training rows use
-    (they are part of the 5-fold CV pool, so their signals are computed
-    leakage-free exactly like the stacking baseline). Test rows use the
-    stored final-pool signals from test.csv --- byte-identical to what the
-    zero-shot layer received (the deployment condition), and untouched by
-    any training decision.
-    """
     zsm = import_zero_shot_module()
     if split == "test":
         df = pd.read_csv(TEST_CSV)
@@ -750,7 +614,6 @@ def evaluate_split(model_key: str, adapter_dir: Path, cfg: BaseCfg,
 
 
 def final_metrics(model_key: str, test_out: pd.DataFrame) -> dict:
-    """Accuracy + macro F1 for the test predictions."""
     from collections import Counter
     y_true = [normalize_label(t) for t in test_out["label"]]
     y_pred = [str(p) for p in test_out["pred"]]
@@ -774,7 +637,7 @@ def write_test_columns(model_key: str, test_out: pd.DataFrame, smoke: bool):
         if f"{prefix}_{col}" not in df.columns:
             df[f"{prefix}_{col}"] = None
     for i, (_, r) in enumerate(test_out.iterrows()):
-        idx = int(i)  # test_out preserves head(n) order == positional index
+        idx = int(i)
         df.at[idx, f"{prefix}_label"] = r["pred"]
         df.at[idx, f"{prefix}_explanation"] = r["explanation"]
         df.at[idx, f"{prefix}_time_sec"] = r["time_sec"]
@@ -787,7 +650,6 @@ def run_model(model_key: str, cfg: BaseCfg, smoke: bool) -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     adapter_dir = train_panel_aug(model_key, cfg, smoke)
 
-    # validation — sanity check only (selection was done in ft_tuning)
     val_cache = OUT_DIR / f"val_{model_key}{'_smoke' if smoke else ''}.csv"
     if val_cache.exists():
         val_out = pd.read_csv(val_cache)
@@ -799,7 +661,6 @@ def run_model(model_key: str, cfg: BaseCfg, smoke: bool) -> None:
             model_key, adapter_dir, cfg, "validation", smoke)
         val_out.to_csv(val_cache, index=False)
 
-    # test — evaluated once
     prefix = prefix_for(model_key, smoke)
     test_df = pd.read_csv(TEST_CSV)
     n_test = 20 if smoke else len(test_df)
@@ -851,7 +712,6 @@ def main() -> None:
         cfg.top_k = 64
 
     if not args.smoke:
-        # require the tuned-FT selection records (no retuning by design)
         selected_config(args.model)
 
     run_model(args.model, cfg, smoke=args.smoke)

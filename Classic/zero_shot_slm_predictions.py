@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""
-Multi-Model Framework — Zero-Shot SLM Layer
-============================================
-Reads classic model predictions + signals from test.csv, builds a structured
-advisory-panel prompt per row, and passes it to Qwen3.5-4B and Gemma3-4B in
-zero-shot mode (no fine-tuning).  Each SLM returns:
-  • final classification label
-  • explanation referencing the panel signals
-  • business recommendation
-
-New columns written back to test.csv:
-  qwen_zs_label, qwen_zs_explanation, qwen_zs_recommendation, qwen_zs_time_sec
-  gemma_zs_label, gemma_zs_explanation, gemma_zs_recommendation, gemma_zs_time_sec
-
-A test-metrics CSV is also saved to Classic/results/test_metrics_zs.csv.
-"""
 
 from __future__ import annotations
 
@@ -31,12 +15,8 @@ import torch
 
 ALLOWED_LABELS = {"positive", "negative", "neutral"}
 
-SAVE_EVERY = 10  # checkpoint to disk every N rows
+SAVE_EVERY = 10
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Configuration
-# ──────────────────────────────────────────────────────────────────────────────
 
 @dataclass
 class ZeroShotConfig:
@@ -49,12 +29,10 @@ class ZeroShotConfig:
     max_seq_length: int = 2048
     load_in_4bit: bool = True
 
-    # Qwen generation
     qwen_max_new_tokens: int = 512
     qwen_temperature: float = 0.3
     qwen_top_p: float = 0.9
 
-    # Gemma generation
     gemma_max_new_tokens: int = 256
     gemma_temperature: float = 0.7
     gemma_top_p: float = 0.95
@@ -62,10 +40,6 @@ class ZeroShotConfig:
 
     generation_retry_attempts: int = 4
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Prompt builder
-# ──────────────────────────────────────────────────────────────────────────────
 
 class FormatError(RuntimeError):
     pass
@@ -90,12 +64,10 @@ def _agreement_status(preds: list[str]) -> str:
 
 
 def build_prompt(row: pd.Series) -> str:
-    """Construct the advisory-panel prompt for a single test row."""
     preds = [str(row["logreg_pred"]), str(row["svm_pred"]), str(row["xgb_pred"])]
     agree = _agreement_status(preds)
     sentence = str(row["sentence"]).strip()
 
-    # Probabilities as percentages
     lr_neg = float(row.get("logreg_prob_negative", 0)) * 100
     lr_neu = float(row.get("logreg_prob_neutral", 0)) * 100
     lr_pos = float(row.get("logreg_prob_positive", 0)) * 100
@@ -154,23 +126,13 @@ def build_prompt(row: pd.Series) -> str:
 
 
 def parse_response(raw: str) -> tuple[str, str, str]:
-    """Parse label / explanation / recommendation from a JSON model response.
-    
-    Handles:
-    - Plain JSON: {"label": ...}
-    - Markdown-fenced JSON: ```json\n{...}\n```
-    - Qwen3 <think>...</think> blocks before the JSON
-    """
     text = str(raw).strip()
 
-    # Strip <think>...</think> blocks (Qwen3 thinking tokens)
     text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
 
-    # Strip markdown code fences if present
     text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.IGNORECASE).strip()
     text = re.sub(r"\s*```$", "", text).strip()
 
-    # Find the first JSON object in the text
     json_m = re.search(r"\{.*\}", text, re.DOTALL)
     if not json_m:
         raise FormatError(f"No JSON object found in: {text!r}")
@@ -203,18 +165,7 @@ def normalize_label(value: str) -> str:
     return "neutral"
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Qwen zero-shot inference
-# ──────────────────────────────────────────────────────────────────────────────
-
 def _apply_chat_template_compat(tokenizer, messages: list[dict], enable_thinking: bool = False, **kwargs):
-    """Handle Qwen models that require content as block dicts.
-    
-    Passes enable_thinking directly to apply_chat_template (forwarded as a Jinja
-    template variable by transformers).  Qwen3 templates use this flag to switch
-    between thinking and non-thinking mode.
-    """
-    # Build call kwargs — always forward enable_thinking so Qwen3 respects it
     call_kwargs = dict(enable_thinking=enable_thinking, **kwargs)
     try:
         return tokenizer.apply_chat_template(messages, **call_kwargs)
@@ -223,13 +174,11 @@ def _apply_chat_template_compat(tokenizer, messages: list[dict], enable_thinking
         if "string indices must be integers" not in err and "enable_thinking" not in err:
             raise
         if "enable_thinking" in err:
-            # Tokenizer does not understand enable_thinking — retry without it
             try:
                 return tokenizer.apply_chat_template(messages, **kwargs)
             except TypeError as exc2:
                 if "string indices must be integers" not in str(exc2):
                     raise
-        # Block-format content fallback
         block_msgs = []
         for m in messages:
             content = m.get("content", "")
@@ -260,7 +209,6 @@ def load_qwen_zero_shot(cfg: ZeroShotConfig):
 
 
 def infer_qwen(model, tokenizer, prompt: str, cfg: ZeroShotConfig) -> tuple[str, str, str, float]:
-    """Run zero-shot inference on a single prompt with Qwen."""
     messages = [
         {
             "role": "system",
@@ -272,7 +220,7 @@ def infer_qwen(model, tokenizer, prompt: str, cfg: ZeroShotConfig) -> tuple[str,
     inputs = _apply_chat_template_compat(
         tokenizer,
         messages,
-        enable_thinking=False,  # Disable Qwen3 thinking mode
+        enable_thinking=False,
         add_generation_prompt=True,
         tokenize=True,
         return_tensors="pt",
@@ -319,11 +267,9 @@ def infer_qwen(model, tokenizer, prompt: str, cfg: ZeroShotConfig) -> tuple[str,
 
 
 def run_qwen_zero_shot(df: pd.DataFrame, prompts: list[str], cfg: ZeroShotConfig) -> pd.DataFrame:
-    """Populate qwen_zs_* columns. Saves incremental checkpoints."""
     print("Loading Qwen3.5-4B for zero-shot inference...")
     model, tokenizer = load_qwen_zero_shot(cfg)
 
-    # Resume from checkpoint if columns already partially populated
     if "qwen_zs_label" not in df.columns:
         df["qwen_zs_label"] = None
         df["qwen_zs_explanation"] = None
@@ -335,13 +281,12 @@ def run_qwen_zero_shot(df: pd.DataFrame, prompts: list[str], cfg: ZeroShotConfig
 
     for i, (idx, row) in enumerate(df.iterrows()):
         if pd.notna(df.at[idx, "qwen_zs_label"]):
-            continue  # already done in a previous run
+            continue
 
         prompt = prompts[i]
         try:
             label, expl, rec, elapsed = infer_qwen(model, tokenizer, prompt, cfg)
         except FormatError as exc:
-            # All retries exhausted — print prompt and response for debugging
             raw = str(exc)
             print(
                 f"\n{'='*70}\n"
@@ -377,10 +322,6 @@ def run_qwen_zero_shot(df: pd.DataFrame, prompts: list[str], cfg: ZeroShotConfig
     return df
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Gemma zero-shot inference
-# ──────────────────────────────────────────────────────────────────────────────
-
 def load_gemma_zero_shot(cfg: ZeroShotConfig):
     from unsloth import FastModel
 
@@ -396,7 +337,6 @@ def load_gemma_zero_shot(cfg: ZeroShotConfig):
 
 
 def infer_gemma(model, tokenizer, prompt: str, cfg: ZeroShotConfig) -> tuple[str, str, str, float]:
-    """Run zero-shot inference on a single prompt with Gemma."""
     messages = [
         {
             "role": "user",
@@ -453,7 +393,6 @@ def infer_gemma(model, tokenizer, prompt: str, cfg: ZeroShotConfig) -> tuple[str
 
 
 def run_gemma_zero_shot(df: pd.DataFrame, prompts: list[str], cfg: ZeroShotConfig) -> pd.DataFrame:
-    """Populate gemma_zs_* columns. Saves incremental checkpoints."""
     print("Loading Gemma3-4B for zero-shot inference...")
     model, tokenizer = load_gemma_zero_shot(cfg)
 
@@ -474,7 +413,6 @@ def run_gemma_zero_shot(df: pd.DataFrame, prompts: list[str], cfg: ZeroShotConfi
         try:
             label, expl, rec, elapsed = infer_gemma(model, tokenizer, prompt, cfg)
         except FormatError as exc:
-            # All retries exhausted — print prompt and response for debugging
             raw = str(exc)
             print(
                 f"\n{'='*70}\n"
@@ -510,10 +448,6 @@ def run_gemma_zero_shot(df: pd.DataFrame, prompts: list[str], cfg: ZeroShotConfi
     return df
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Metrics
-# ──────────────────────────────────────────────────────────────────────────────
-
 def compute_and_save_metrics(df: pd.DataFrame, cfg: ZeroShotConfig) -> None:
     from sklearn.metrics import accuracy_score, f1_score
 
@@ -546,10 +480,6 @@ def compute_and_save_metrics(df: pd.DataFrame, cfg: ZeroShotConfig) -> None:
         print(f"Zero-shot metrics saved to: {metrics_path}")
         print(metrics_df.to_string(index=False))
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Main
-# ──────────────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     cfg = ZeroShotConfig()
@@ -584,22 +514,17 @@ def main() -> None:
 
     print(f"Loaded {len(df)} test rows with classic model signals.")
 
-    # Pre-build all prompts once (cheap, CPU-only)
     print("Building advisory-panel prompts...")
     prompts = [build_prompt(row) for _, row in df.iterrows()]
     print(f"Built {len(prompts)} prompts.")
 
-    # ── Qwen zero-shot ──────────────────────────────────────────────────────
     df = run_qwen_zero_shot(df, prompts, cfg)
 
-    # ── Gemma zero-shot ─────────────────────────────────────────────────────
     df = run_gemma_zero_shot(df, prompts, cfg)
 
-    # Final save
     df.to_csv(test_path, index=False)
     print(f"\nUpdated test CSV: {test_path}")
 
-    # Metrics
     compute_and_save_metrics(df, cfg)
 
     print("\nZero-shot SLM predictions completed.")

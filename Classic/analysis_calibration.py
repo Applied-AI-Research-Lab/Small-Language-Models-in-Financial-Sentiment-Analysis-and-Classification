@@ -1,28 +1,3 @@
-"""B4 — Calibration diagnostics of the panel signals (R1.3 diagnostic half).
-
-From the existing per-row probability columns in
-Datasets/financial_phrasebank/test.csv (340 rows), computes for each classical
-panel member (LogReg, SVM softmax, XGBoost):
-
-- Multiclass Brier score: (1/N) * sum_i sum_k (p_ik - y_ik)^2
-  (0 = perfect; 2.0 = worst possible for 3 classes)
-- Expected Calibration Error (ECE), confidence-based, 10 equal-width bins:
-  ECE = sum_b (n_b / N) * |acc_b - conf_b|, where conf_i = max_k p_ik
-- Mean confidence and accuracy
-- Reliability-curve data (per bin: mean confidence, accuracy, count)
-
-Also renders a reliability diagram (Paper/Figures/fig_calibration_reliability)
-if matplotlib is available.
-
-Note: LogReg and SVM were trained with balanced class weights, which distorts
-posterior probabilities toward minority classes; SVM 'probabilities' are a
-softmax over decision scores; XGBoost uses multi:softprob. None of the three
-is verified calibrated --- this script quantifies that.
-
-Outputs (Classic/results/):
-  calibration_metrics.json / .csv
-  calibration_reliability_bins.csv
-"""
 
 import csv
 import json
@@ -42,7 +17,6 @@ N_BINS = 10
 
 
 def brier_multiclass(probs, labels):
-    """probs: list of [p_neg, p_neu, p_pos]; labels: class strings."""
     total = 0.0
     for p, y in zip(probs, labels):
         for k, cls in enumerate(CLASSES):
@@ -52,9 +26,8 @@ def brier_multiclass(probs, labels):
 
 
 def ece_confidence(probs, labels, n_bins=N_BINS):
-    """Confidence-based ECE with equal-width bins over [0, 1]."""
     n = len(probs)
-    bins = [[] for _ in range(n_bins)]  # (conf, correct)
+    bins = [[] for _ in range(n_bins)]
     for p, y in zip(probs, labels):
         conf = max(p)
         pred = CLASSES[p.index(conf)]
@@ -83,7 +56,6 @@ def main():
     results = {}
     for name, prefix in MODELS.items():
         probs = [[float(r[f"{prefix}_prob_{c}"]) for c in CLASSES] for r in rows]
-        # sanity: probabilities sum to 1
         for p in probs:
             assert abs(sum(p) - 1.0) < 1e-6, f"{name}: probs do not sum to 1"
         confs = [max(p) for p in probs]
@@ -112,7 +84,6 @@ def main():
                 print(f"    bin {b}: conf {mc*100:5.1f}%  acc {ma*100:5.1f}%  n={cnt}")
         print()
 
-    # persist
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     with open(OUT_DIR / "calibration_metrics.json", "w") as f:
         json.dump({k: {kk: vv for kk, vv in v.items() if kk != "_curve"}
@@ -134,7 +105,6 @@ def main():
                             f"{mc:.4f}" if mc is not None else "",
                             f"{ma:.4f}" if ma is not None else "", cnt])
 
-    # reliability figure (optional)
     try:
         import matplotlib
         matplotlib.use("Agg")
@@ -163,7 +133,7 @@ def main():
         fig.savefig(FIG_DIR / "fig_calibration_reliability.pdf")
         fig.savefig(FIG_DIR / "fig_calibration_reliability.png", dpi=200)
         print(f"Figure written: {FIG_DIR}/fig_calibration_reliability.pdf/.png")
-    except Exception as exc:  # matplotlib missing etc.
+    except Exception as exc:
         print(f"Figure not generated: {exc}")
 
 

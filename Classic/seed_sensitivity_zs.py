@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""
-C6 (GPU half) — Decode-seed sensitivity of the Qwen3.5-4B zero-shot layer.
-
-Re-runs the full 340-row zero-shot advisory-panel inference with Qwen3.5-4B
-under additional decoding seeds (torch.manual_seed varies per run), measuring
-label stability: the fraction of rows whose final label is identical across
-runs, and the accuracy of each run. The original run (stored in qwen_zs_label)
-corresponds to the default RNG state at load time.
-
-The script reuses the EXACT original prompt builder (imported from
-zero_shot_slm_predictions.py) and the identical sampling parameters
-(temperature 0.3, top_p 0.9, 512 tokens, enable_thinking=False).
-
-New columns written to test.csv per extra run (torch seed S = 1001, 1002, ...):
-  qwen_zs_seed{S}_label (+ qwen_zs_seed{S}_explanation with --keep-text)
-
-Usage (GPU server, from the project root):
-    source ./activate_project.csh
-    python Classic/seed_sensitivity_zs.py --runs 3
-    python Classic/seed_sensitivity_zs.py --smoke        # 20-row check
-"""
 
 from __future__ import annotations
 
@@ -39,9 +18,6 @@ SEED_BASE = 1000
 
 
 def resolve_local_snapshot(repo_id: str) -> str:
-    """Resolve a HF repo id to its local cache snapshot directory if cached
-    (avoids Hub access; unsloth's loader takes a purely local branch when
-    given a directory path)."""
     import os, glob
     hf_home = os.environ.get("HF_HOME") or os.path.expanduser(
         os.path.join("~", ".cache", "huggingface"))
@@ -74,7 +50,6 @@ def main():
     args = ap.parse_args()
 
     sys.path.insert(0, "Classic")
-    # reuse the original prompt builder + parser + chat-template shim
     from zero_shot_slm_predictions import (build_prompt, parse_response,
                                            FormatError,
                                            _apply_chat_template_compat,
@@ -90,8 +65,8 @@ def main():
     if args.smoke:
         print("SMOKE MODE: first 20 rows, columns suffixed _smoke")
 
-    df_work = df  # the FULL frame — checkpoints must never truncate test.csv
-    work = df.iloc[:n_rows]     # only these rows are processed/analysed
+    df_work = df
+    work = df.iloc[:n_rows]
     prompts = [build_prompt(row) for _, row in work.iterrows()]
     print(f"Built {len(prompts)} prompts (original advisory-panel format).")
 
@@ -106,8 +81,8 @@ def main():
     all_labels = {}
     truth = df_work["label"].iloc[:n_rows].astype(str).str.lower().tolist()
     for run in range(1, args.runs + 1):
-        seed = SEED_BASE + run       # torch seeds 1001, 1002, ... (distinct
-        torch.manual_seed(seed)      # from the original default RNG state)
+        seed = SEED_BASE + run
+        torch.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
         col = f"qwen_zs_seed{seed}_label{suffix}"
         if col not in df_work.columns:
@@ -119,7 +94,7 @@ def main():
         n_done = 0
         for i, (idx, row) in enumerate(work.iterrows()):
             if pd.notna(df_work.at[idx, col]):
-                continue  # resume from checkpoint
+                continue
             messages = [
                 {"role": "system",
                  "content": "You are a financial sentiment analyst. Follow the output format exactly."},
@@ -170,7 +145,6 @@ def main():
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
-    # ── stability analysis (original + extra runs) ─────────────────────────
     orig = df_work["qwen_zs_label"].iloc[:n_rows].astype(str).str.lower().tolist()
     runs_labels = [orig] + [all_labels[s] for s in sorted(all_labels)]
     n = n_rows
@@ -204,8 +178,6 @@ def main():
     else:
         print("SMOKE MODE: metrics printed only, no results files written.")
 
-    # the full frame was already saved in-place; the merge below is a no-op
-    # safety net that re-reads the file and re-assigns the same columns
     df_full = pd.read_csv(TEST_CSV)
     for c in df_work.columns:
         if c.startswith("qwen_zs_seed") and c.endswith(suffix):

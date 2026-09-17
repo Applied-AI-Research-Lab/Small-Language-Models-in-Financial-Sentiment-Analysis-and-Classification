@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Train classical sentiment models with Stratified K-Fold CV and save artifacts."""
 
 from __future__ import annotations
 
@@ -183,7 +182,6 @@ def train_full_models(
 ) -> list[dict]:
     timing_rows = []
 
-    # Logistic Regression
     t0 = time.perf_counter()
     vec_lr = make_vectorizer(cfg)
     X_lr = vec_lr.fit_transform(X_text)
@@ -210,7 +208,6 @@ def train_full_models(
         }
     )
 
-    # Linear SVM
     t0 = time.perf_counter()
     vec_svm = make_vectorizer(cfg)
     X_svm = vec_svm.fit_transform(X_text)
@@ -231,7 +228,6 @@ def train_full_models(
         }
     )
 
-    # XGBoost
     t0 = time.perf_counter()
     vec_xgb = make_vectorizer(cfg)
     X_xgb = vec_xgb.fit_transform(X_text)
@@ -286,7 +282,7 @@ def train_full_models(
 def summarize_cv(cv_df: pd.DataFrame) -> pd.DataFrame:
     summary = (
         cv_df.groupby("model", as_index=False)[["accuracy", "macro_f1", "weighted_f1"]]
-        .agg(["mean", "std"])  # type: ignore[arg-type]
+        .agg(["mean", "std"])
         .reset_index()
     )
     summary.columns = ["_".join(col).strip("_") for col in summary.columns.values]
@@ -307,7 +303,6 @@ def main() -> None:
     cv_rows.extend(cv_svm(X_text, y_label, cfg))
 
     xgb_rows, xgb_le = cv_xgb(X_text, y_label, cfg)
-    # Convert fold metrics from encoded labels to same shape/keys only.
     cv_rows.extend(xgb_rows)
 
     cv_df = pd.DataFrame(cv_rows)
@@ -316,7 +311,6 @@ def main() -> None:
     cv_df.to_csv(results_dir / "cv_folds_metrics.csv", index=False)
     cv_summary_df.to_csv(results_dir / "cv_summary_metrics.csv", index=False)
 
-    # Fit final models on merged train+validation data.
     train_timing_rows = train_full_models(X_text, y_label, cfg, artifacts_dir)
     train_timing_df = pd.DataFrame(train_timing_rows)
     train_timing_df.to_csv(results_dir / "train_time_per_model.csv", index=False)

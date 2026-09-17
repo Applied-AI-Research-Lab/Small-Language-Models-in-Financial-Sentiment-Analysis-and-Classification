@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Fine-tune Gemma3 4B with Unsloth and run test predictions with explanations."""
 
 from __future__ import annotations
 
@@ -324,7 +323,6 @@ def run_predictions(config: GemmaRunConfig, paths: dict[str, Path]) -> None:
             explanations.append(explanation)
             times.append(elapsed)
         except FormatError as exc:
-            # Required by the project: stop and print prompt/response for debugging.
             print("Prediction failed strict format validation.")
             print("Prompt:")
             print(prediction_prompt(sentence))
@@ -336,7 +334,6 @@ def run_predictions(config: GemmaRunConfig, paths: dict[str, Path]) -> None:
     test_df["gemma_ft_explanation"] = explanations
     test_df["gemma_ft_time_sec"] = times
     test_df.to_csv(paths["test_csv"], index=False)
-
 
 
 def main() -> None:

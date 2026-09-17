@@ -1,16 +1,3 @@
-"""C6 (CPU half) — Seed sensitivity of the classical cross-validation.
-
-Re-runs the 5-fold stratified CV of the three classical models on the merged
-train+validation pool (1,924 sentences) across five random seeds, reporting
-mean ± std of accuracy across seeds (the paper's single-seed estimates are
-seed 42, matching the published CV table).
-
-Also re-fits the FINAL models per seed and reports test-set accuracy across
-seeds, giving the full pipeline's sensitivity in one script.
-
-Outputs (Classic/results/):
-  seed_sensitivity_cv.csv / .json
-"""
 
 import csv
 import json
@@ -61,7 +48,6 @@ def main():
     test_acc = {m: [] for m in ("logreg", "svm", "xgboost")}
 
     for seed in SEEDS:
-        # ── CV on the pool (per-fold TF-IDF, matching the paper protocol) ──
         skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=seed)
         fold_acc = {m: [] for m in cv_acc}
         for tr, te in skf.split(pool["sentence"], y_pool):
@@ -76,7 +62,6 @@ def main():
         for name in cv_acc:
             cv_acc[name].append(float(np.mean(fold_acc[name])))
 
-        # ── final model on the full pool → test accuracy ──
         vec = make_vectorizer()
         X_pool = vec.fit_transform(pool["sentence"])
         X_test = vec.transform(test["sentence"])

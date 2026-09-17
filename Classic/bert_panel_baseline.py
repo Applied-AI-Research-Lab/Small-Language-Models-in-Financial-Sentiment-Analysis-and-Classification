@@ -1,42 +1,4 @@
 #!/usr/bin/env python3
-"""
-Contamination-free BERT replication of the FinBERT study
-=========================================================
-The released ProsusAI/finbert checkpoint was fine-tuned on the Financial
-PhraseBank corpus (per its model card), the same dataset evaluated in this
-study — so its "zero-shot" numbers are potentially optimistic (train/test
-contamination at the corpus level). This script repeats BOTH roles of the
-FinBERT study with a contamination-free checkpoint:
-
-    google-bert/bert-base-uncased  — pre-trained ONLY on BookCorpus+WikiText
-    (no financial text, no PhraseBank exposure) — fine-tuned on OUR 1,584
-    training sentences for 3 epochs (identical protocol to the SLM
-    fine-tuning and to the FinBERT baseline).
-
-Roles, identical to the FinBERT scripts:
-  1. Reference model (zero-shot = task head? No: bert-base has no sentiment
-     head, so the reference role is SKIPPED — bert-base cannot classify 3-way
-     sentiment out of the box. Only the fine-tuned reference is meaningful.)
-     -> outputs per-row predictions + metrics.
-  2. Panel member: its fine-tuned predictions + softmax probabilities +
-     confidence + entropy are assembled into the advisory prompt (same
-     format as finbert_panel_slm_predictions.py, with the model renamed and
-     the same "no driving words" transparency disclosure), then passed to
-     Qwen3.5-4B and Gemma3-4B in zero-shot mode.
-
-Usage (GPU server):
-    python Classic/bert_panel_baseline.py --smoke            # env check
-    python Classic/bert_panel_baseline.py --mode baseline     # fine-tune + reference metrics
-    python Classic/bert_panel_baseline.py --mode panel       # panel + SLM runs
-    python Classic/bert_panel_baseline.py                     # both (default)
-
-Outputs (Classic/results/):
-    bert_baseline_metrics.json / bert_per_row.csv
-    (panel mode writes bert_* columns into test.csv and
-     test_metrics_zs_bert_panel.csv — same layout as the FinBERT runs)
-
-Column prefixes in test.csv: bert_qwen_zs_*, bert_gemma_zs_*
-"""
 
 from __future__ import annotations
 
@@ -66,8 +28,8 @@ TEST_CSV = Path("Datasets/financial_phrasebank/test.csv")
 TRAIN_CSV = Path("Datasets/financial_phrasebank/train.csv")
 VAL_CSV = Path("Datasets/financial_phrasebank/validation.csv")
 RESULTS_DIR = Path("Classic/results")
-BERT_NAME = "google-bert/bert-base-uncased"        # contamination-free base
-BERT_CKPT = RESULTS_DIR / "bert_ft_checkpoint"      # saved after fine-tuning
+BERT_NAME = "google-bert/bert-base-uncased"
+BERT_CKPT = RESULTS_DIR / "bert_ft_checkpoint"
 MAX_LEN = 256
 EPOCHS = 3
 FT_BATCH = 16
@@ -75,10 +37,6 @@ FT_LR = 2e-5
 EVAL_BATCH = 64
 SEED = 42
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Shared helpers (same conventions as finbert scripts)
-# ──────────────────────────────────────────────────────────────────────────────
 
 def set_seed(seed: int):
     random.seed(seed)
@@ -146,10 +104,6 @@ def parse_response(raw: str) -> tuple[str, str, str]:
         raise FormatError(f"Empty explanation or recommendation in: {data!r}")
     return label, explanation, recommendation
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Role 1: contamination-free reference (fine-tune bert-base on our split)
-# ──────────────────────────────────────────────────────────────────────────────
 
 def run_baseline(args):
     from torch.utils.data import DataLoader, TensorDataset
@@ -223,7 +177,6 @@ def run_baseline(args):
         print(f"[bert-ft] epoch {ep+1}/{EPOCHS}  train loss {running/seen:.4f}  "
               f"val acc {correct/total*100:.2f}%")
 
-    # eval on test
     model.eval()
     preds = []
     @torch.no_grad()
@@ -239,7 +192,6 @@ def run_baseline(args):
     acc, mf1, wf1 = macro_metrics([r["label"] for r in test_rows], preds)
     print(f"\n[bert-ft] TEST: acc={acc*100:.2f}%  macroF1={mf1:.4f}  wF1={wf1:.4f}")
 
-    # persist checkpoint + per-row + metrics
     BERT_CKPT.mkdir(parents=True, exist_ok=True)
     model.save_pretrained(BERT_CKPT)
     tokenizer.save_pretrained(BERT_CKPT)
@@ -271,10 +223,6 @@ def run_baseline(args):
         json.dump(results, f, indent=2)
     print(f"Written: {RESULTS_DIR}/bert_per_row.csv, bert_baseline_metrics.json")
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Role 2: BERT panel + SLM (mirror of finbert_panel_slm_predictions.py)
-# ──────────────────────────────────────────────────────────────────────────────
 
 def build_bert_prompt(sentence: str, sig: dict) -> str:
     p = sig["probs"]
@@ -520,7 +468,6 @@ def run_panel(args):
         df_work = run_slm_over_bert(df_work, prompts, SLMConfig(), slm,
                                     bert_preds, test_path)
 
-    # merge back
     new_cols = [c for c in df_work.columns
                 if c.startswith("bert_") and c.endswith(
                     ("_label", "_explanation", "_recommendation", "_time_sec"))]
@@ -533,7 +480,6 @@ def run_panel(args):
     df.to_csv(test_path, index=False)
     print(f"\nUpdated test CSV with new columns: {test_path}")
 
-    # metrics
     from sklearn.metrics import accuracy_score, f1_score
     rows = []
     name_map = {"qwen": ("bert_qwen_zs", "qwen_over_bert"),
@@ -574,7 +520,7 @@ def main():
     ap.add_argument("--smoke", action="store_true")
     args = ap.parse_args()
     if args.smoke:
-        args.mode = "panel"   # smoke = quick env check of the panel chain
+        args.mode = "panel"
     if args.mode in ("baseline", "all"):
         run_baseline(args)
     if args.mode in ("panel", "all"):

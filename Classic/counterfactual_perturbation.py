@@ -1,30 +1,4 @@
 #!/usr/bin/env python3
-"""
-Counterfactual panel-signal perturbation test (R1.4/R2.5 — automated half).
-
-For the SAME 60 items sampled for the expert evaluation (manifest-linked), we
-build counterfactual prompts in which every panel member's signal is cyclically
-permuted (negative -> neutral -> positive -> negative): predictions, class
-probabilities, confidence, entropy, and the panel-status line are all
-re-rendered consistently, while the SENTENCE is left untouched.
-
-Faithfulness metric: does the system's emitted label/explanation track the
-perturbed signals (counterfactual label == cyclic shift of original label) or
-the sentence (label unchanged)?  A high tracking rate demonstrates that the
-explanations genuinely condition on the panel signals they cite --- the
-counterfactual test the reviewers requested. BOTH deployed zero-shot SLMs
-(Qwen3.5-4B and Gemma3-4B) are evaluated on the same 60 items.
-
-Outputs (GPU server, from the project root):
-  Datasets/financial_phrasebank/test.csv  +  qwen_cf_* columns (60 rows filled)
-  Classic/results/counterfactual_metrics.json
-  Classic/results/counterfactual_per_row.csv
-
-Usage:
-  source ./activate_project.csh
-  python Classic/counterfactual_perturbation.py --smoke   # 8-row check
-  python Classic/counterfactual_perturbation.py            # full 60 items
-"""
 
 from __future__ import annotations
 
@@ -51,16 +25,10 @@ def entropy_of(p):
 
 
 def perturb_row(row) -> dict:
-    """Cyclically permute every panel signal; keep the sentence and features.
-
-    Returns a plain dict with the same keys build_prompt expects, so the
-    original prompt builder renders the counterfactual prompt verbatim.
-    """
     import numpy as np
     r = row.to_dict()
     for pfx in PREFIXES:
         probs = np.array([r[f"{pfx}_prob_{c}"] for c in CLASSES], dtype=float)
-        # cyclic shift of the probability vector: neg<-neu, neu<-pos, pos<-neg
         new_probs = np.array([
             probs[CLASSES.index(CYCLE[c])] for c in CLASSES
         ])
@@ -132,7 +100,6 @@ def main():
 
     cfg = ZeroShotConfig()
 
-    # ── Qwen pass ────────────────────────────────────────────────────────
     from unsloth import FastLanguageModel
     source = resolve_local_snapshot(cfg.qwen_model_name)
     print(f"Loading Qwen3.5-4B from: {source}")
@@ -145,7 +112,7 @@ def main():
     n_done = 0
     for i, (idx, row) in enumerate(work.iterrows()):
         if pd.notna(df_full.at[idx, f"qwen_cf_label{suffix}"]):
-            continue  # resume from checkpoint
+            continue
         messages = [
             {"role": "system",
              "content": "You are a financial sentiment analyst. Follow the output format exactly."},
@@ -188,7 +155,6 @@ def main():
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
-    # ── Gemma pass ───────────────────────────────────────────────────────
     from unsloth import FastModel
     source_g = resolve_local_snapshot(cfg.gemma_model_name)
     print(f"Loading Gemma3-4B from: {source_g}")
@@ -239,7 +205,6 @@ def main():
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
-    # ── analysis ───────────────────────────────────────────────────────────
     sub = df_full.loc[ids]
     results = {}
     for sys_name, orig_col in (("qwen", "qwen_zs_label"), ("gemma", "gemma_zs_label")):

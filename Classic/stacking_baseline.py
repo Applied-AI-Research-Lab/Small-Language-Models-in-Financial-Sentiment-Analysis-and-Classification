@@ -1,28 +1,3 @@
-"""C4 — Stacking meta-classifier baseline (R1.2).
-
-A conventional stacked generalisation over the classical panel's probability
-signals, trained leakage-free:
-
-  1. Load the merged train+validation pool (1,924 sentences).
-  2. Re-fit the three classical models under 5-fold stratified CV; collect
-     OUT-OF-FOLD probability vectors for every pool row (the TF-IDF vectorizer
-     is fit per-fold on the training partition only, matching the paper's CV
-     protocol).
-  3. Train the stacker (logistic regression) on the OOF probability features.
-  4. Apply the stacker to the 340 test rows using the probability signals
-     already stored in test.csv (produced by the final models trained on the
-     full pool --- exactly the signals the SLM receives in the prompt).
-  5. Report accuracy/macro F1/weighted F1, the panel majority vote (91.76%),
-     and paired McNemar vs the SLM layer (qwen_zs_label) and vs majority vote.
-
-Features per row: 9 class probabilities (3 models x 3 classes).
-(The probabilities sum to 1 per model, so this includes the labels,
-confidences, and margins implicitly; entropy is monotone in the probability
-vector.)
-
-Outputs (Classic/results/):
-  stacking_metrics.json / .csv
-"""
 
 import csv
 import json
@@ -75,7 +50,6 @@ def main():
     from sklearn.utils.extmath import softmax as sklearn_softmax
     from xgboost import XGBClassifier
 
-    # ── 1. pool ──────────────────────────────────────────────────────────
     pool = pd.concat([pd.read_csv(p) for p in POOL_CSVS], ignore_index=True)
     X_text = pool["sentence"].astype(str).tolist()
     y_pool = pool["label"].tolist()
@@ -102,9 +76,8 @@ def main():
         xgb.fit(X, labels)
         return lr, svm, xgb
 
-    # ── 2. OOF probabilities (leakage-free) ─────────────────────────────
     skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=SEED)
-    oof = np.zeros((len(pool), 9))     # 3 models x 3 classes
+    oof = np.zeros((len(pool), 9))
     for fold, (tr, te) in enumerate(skf.split(X_text, y_enc)):
         vec = make_vectorizer()
         Xtr = vec.fit_transform([X_text[i] for i in tr])
@@ -119,18 +92,15 @@ def main():
                             colsample_bytree=0.9, n_jobs=-1, random_state=SEED,
                             eval_metric="mlogloss", verbosity=0).fit(Xtr, ytr)
         oof[np.ix_(te, [0, 1, 2])] = lr.predict_proba(Xte)
-        # LinearSVC: softmax over decision scores (same as the pipeline)
         scores = svm.decision_function(Xte)
         oof[np.ix_(te, [3, 4, 5])] = sklearn_softmax(scores)
         oof[np.ix_(te, [6, 7, 8])] = xgb.predict_proba(Xte)
         print(f"  fold {fold+1}/5 done")
     print("OOF probability features complete.")
 
-    # ── 3. stacker on OOF ───────────────────────────────────────────────
     stacker = LogisticRegression(C=1.0, max_iter=2000, random_state=SEED)
     stacker.fit(oof, y_enc)
 
-    # ── 4. apply to test rows via the stored signals ────────────────────
     test = pd.read_csv(TEST_CSV)
     feats = []
     for _, r in test.iterrows():
@@ -148,7 +118,6 @@ def main():
     print(f"\nStacking (LR over 9 OOF probabilities): "
           f"acc={acc*100:.2f}%  macroF1={mf1:.4f}  wF1={wf1:.4f}")
 
-    # baselines & comparisons
     from collections import Counter
     maj = [Counter([r["logreg_pred"], r["svm_pred"], r["xgb_pred"]]).most_common(1)[0][0]
            for _, r in test.iterrows()]
