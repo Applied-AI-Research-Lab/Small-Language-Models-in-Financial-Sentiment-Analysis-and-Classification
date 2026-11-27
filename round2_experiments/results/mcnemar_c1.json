@@ -1,0 +1,106 @@
+{
+  "qwen/cot": {
+    "n": 340,
+    "vs_framework": {
+      "a_right_b_wrong": 16,
+      "a_wrong_b_right": 60,
+      "p_exact": 3.850977823529725e-07
+    },
+    "vs_sentence_only": {
+      "a_right_b_wrong": 11,
+      "a_wrong_b_right": 43,
+      "p_exact": 1.401305745618586e-05
+    }
+  },
+  "qwen/knn": {
+    "n": 340,
+    "vs_framework": {
+      "a_right_b_wrong": 14,
+      "a_wrong_b_right": 10,
+      "p_exact": 0.5412561893463135
+    },
+    "vs_sentence_only": {
+      "a_right_b_wrong": 22,
+      "a_wrong_b_right": 6,
+      "p_exact": 0.0037191659212112427
+    }
+  },
+  "qwen/supericl_bert": {
+    "n": 340,
+    "vs_framework": {
+      "a_right_b_wrong": 12,
+      "a_wrong_b_right": 19,
+      "p_exact": 0.28104151505976915
+    },
+    "vs_sentence_only": {
+      "a_right_b_wrong": 24,
+      "a_wrong_b_right": 19,
+      "p_exact": 0.542384011856484
+    }
+  },
+  "qwen/supericl_svm": {
+    "n": 340,
+    "vs_framework": {
+      "a_right_b_wrong": 13,
+      "a_wrong_b_right": 15,
+      "p_exact": 0.8505540192127228
+    },
+    "vs_sentence_only": {
+      "a_right_b_wrong": 24,
+      "a_wrong_b_right": 14,
+      "p_exact": 0.14330665429588407
+    }
+  },
+  "gemma/cot": {
+    "n": 340,
+    "vs_framework": {
+      "a_right_b_wrong": 11,
+      "a_wrong_b_right": 81,
+      "p_exact": 2.501505063220086e-14
+    },
+    "vs_sentence_only": {
+      "a_right_b_wrong": 21,
+      "a_wrong_b_right": 49,
+      "p_exact": 0.001093244972968613
+    }
+  },
+  "gemma/knn": {
+    "n": 340,
+    "vs_framework": {
+      "a_right_b_wrong": 10,
+      "a_wrong_b_right": 65,
+      "p_exact": 5.154208808246549e-11
+    },
+    "vs_sentence_only": {
+      "a_right_b_wrong": 14,
+      "a_wrong_b_right": 27,
+      "p_exact": 0.05958388801809633
+    }
+  },
+  "gemma/supericl_bert": {
+    "n": 340,
+    "vs_framework": {
+      "a_right_b_wrong": 5,
+      "a_wrong_b_right": 42,
+      "p_exact": 2.4579776436439715e-08
+    },
+    "vs_sentence_only": {
+      "a_right_b_wrong": 34,
+      "a_wrong_b_right": 29,
+      "p_exact": 0.6146550157654618
+    }
+  },
+  "gemma/supericl_svm": {
+    "n": 340,
+    "vs_framework": {
+      "a_right_b_wrong": 7,
+      "a_wrong_b_right": 51,
+      "p_exact": 2.4021645783633976e-09
+    },
+    "vs_sentence_only": {
+      "a_right_b_wrong": 32,
+      "a_wrong_b_right": 34,
+      "p_exact": 0.9021585000966994
+    }
+  }
+}

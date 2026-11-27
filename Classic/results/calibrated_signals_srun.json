@@ -1,0 +1,10 @@
+{
+  "qwen_calzs_accuracy": 0.9323529411764706,
+  "qwen_zs_accuracy_original": 0.9441176470588235,
+  "n_evaluated": 340,
+  "mcnemar_calzs_vs_orig": {
+    "b": 0,
+    "c": 4,
+    "p_exact": 0.125
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "model": "unsloth/gemma-3-4b-it",
+  "train_samples": 1584,
+  "validation_samples": 340,
+  "train_runtime_sec_wallclock": 831.8146562026814,
+  "train_runtime_sec_reported": 828.0352,
+  "train_loss": 1.3331031451622646,
+  "config": {
+    "model_name": "unsloth/gemma-3-4b-it",
+    "max_seq_length": 2048,
+    "load_in_4bit": true,
+    "lora_r": 8,
+    "lora_alpha": 8,
+    "lora_dropout": 0.0,
+    "per_device_train_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "warmup_steps": 5,
+    "max_steps": 120,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.001,
+    "logging_steps": 1,
+    "finetuned_max_new_tokens": 96,
+    "finetuned_temperature": 0.7,
+    "finetuned_top_p": 0.95,
+    "finetuned_top_k": 64,
+    "generation_retry_attempts": 4,
+    "random_state": 42
+  }
+}

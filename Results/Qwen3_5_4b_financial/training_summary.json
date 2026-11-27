@@ -1,0 +1,28 @@
+{
+  "model": "unsloth/Qwen3.5-4B",
+  "train_samples": 1584,
+  "validation_samples": 340,
+  "train_runtime_sec_wallclock": 2142.1053826510906,
+  "train_runtime_sec_reported": 2138.3647,
+  "train_loss": 0.7897378705441952,
+  "config": {
+    "model_name": "unsloth/Qwen3.5-4B",
+    "max_seq_length": 2048,
+    "load_in_4bit": true,
+    "lora_r": 16,
+    "lora_alpha": 16,
+    "lora_dropout": 0.0,
+    "per_device_train_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "warmup_steps": 5,
+    "max_steps": 120,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.001,
+    "logging_steps": 1,
+    "finetuned_max_new_tokens": 96,
+    "finetuned_temperature": 0.3,
+    "finetuned_top_p": 0.9,
+    "generation_retry_attempts": 4,
+    "random_state": 42
+  }
+}

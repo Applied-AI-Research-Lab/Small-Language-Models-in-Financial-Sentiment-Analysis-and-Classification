@@ -1,0 +1,48 @@
+{
+  "seed": 42,
+  "knn_k": 4,
+  "knn_dup_cos": 0.9,
+  "supericl_k": 16,
+  "max_seq_len": 2048,
+  "n_train_dups_excluded": 2,
+  "files": {
+    "prompts_cot.csv": "79abe299afeaea22b4e8dc49adc303fd3d0a39dd6b161832ecae0e750b7a7133",
+    "prompts_knn.csv": "e3e5dcaab4c54bfb7cba3581973c9cbfdad78663d38a38ca4d406360429ca15a",
+    "prompts_supericl_svm.csv": "a5cadeac3408c27fcc0c362f80de1560164405820059793a400a9c2043645a43",
+    "prompts_supericl_bert.csv": "5b95e9732bc4a55f6ea046c7d957cc387c88133aa9535952ad2fba84ed0f1dc4"
+  },
+  "max_tokens": {
+    "qwen/cot": {
+      "prompt": 252,
+      "generation": 1024
+    },
+    "qwen/knn": {
+      "prompt": 577,
+      "generation": 512
+    },
+    "qwen/supericl_svm": {
+      "prompt": 1130,
+      "generation": 512
+    },
+    "qwen/supericl_bert": {
+      "prompt": 1112,
+      "generation": 512
+    },
+    "gemma/cot": {
+      "prompt": 255,
+      "generation": 768
+    },
+    "gemma/knn": {
+      "prompt": 569,
+      "generation": 256
+    },
+    "gemma/supericl_svm": {
+      "prompt": 1110,
+      "generation": 256
+    },
+    "gemma/supericl_bert": {
+      "prompt": 1092,
+      "generation": 256
+    }
+  }
+}
